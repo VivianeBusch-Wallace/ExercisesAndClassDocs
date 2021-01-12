@@ -178,11 +178,24 @@ Be creative and show us your Artistic side
 */
 text = "";
 for (i = 1; i <= 5; i++) {
-  console.log(i);
+  text += i + "";
 }
+console.log(text.slice(0, 1));
+console.log(text.slice(0, 2));
+console.log(text.slice(0, 3));
+console.log(text.slice(0, 4));
 console.log(text);
 
-console.log("--------Exercise-------");
+// orientation
+// text = "";
+// for (let i = 1; i <= 4; i++) {
+//   for (let j = 0; j < 3; j++) {
+//     text += i + "";
+//   }
+// }
+// console.log(text);
+
+console.log("--------Exercise finish function-------");
 /*  Finish the following function so it outputs looks like this:
 1
 12
@@ -207,7 +220,7 @@ Bonus: create another function by doing some changes to the previous function in
   1
 */
 
-console.log("--------Exercise-------");
+console.log("--------Exercise inventory -------");
 /* create a function should that checks if a store contains a specific product in it's inventory.
 for example:
 let storeArr= ["milk", "eggs", "cheese", "butter"];
@@ -217,7 +230,7 @@ inventoryCheck("cheese") returns true
 inventoryCheck( "ham") returns false 
 */
 
-console.log("--------Exercise-------");
+console.log("--------Exercise password app-------");
 // Extra work :)
 // create a repo for this app. we are coming later to it :)
 // Create a program that generate a random password with the length of 30 character, every time you call the function should give you a different password
@@ -227,4 +240,4 @@ console.log("--------Exercise-------");
 // passwordGen()  ➞ Y3mI9x7bvPY86T?oM§hIbgh!MLwA77N
 // passwordGen()  ➞ Oy$tkBGoo5fg§mO4AdV&Kh8XXZR4d7K
 // passwordGen()  ➞ v0ZwDrn@hfI€kOKWH§k6kqub6zfpuyP
-console.log("--------Exercise-------");
+console.log("--------Exercise End-------");
