@@ -46,14 +46,16 @@ console.log("--------Exercise lifetime supply-------");
 // calcLifetimeSupply(25, 2) ➞ "The snack company should provide you with 54,788 units, until you are a ripe old age of 100. Happy snacking!"
 // calcLifetimeSupply(40, 3) ➞ "The snack company should provide you with 65,745 units, until you are a ripe old age of 100. Happy snacking!"
 
-const calcLifetimeSupply = (age, perDay) => {
-  age <= 100;
-  perDay = null;
-  let knoppersSupply = age * 365 * perDay;
+function calcLifetimeSupply(actualAge, perDay) {
+  yearsLeft = 100 - actualAge;
+  let knoppersSupply = yearsLeft * 365 * perDay;
   console.log(
     `The snack company should provide you with ${knoppersSupply} Knoppers, until you are a ripe old age of 100. Happy snacking!`
   );
-};
+}
+calcLifetimeSupply(30, 4);
+calcLifetimeSupply(25, 2);
+calcLifetimeSupply(40, 3);
 
 console.log("--------Exercise-------");
 //  Number to Month Name
