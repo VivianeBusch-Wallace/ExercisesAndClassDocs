@@ -47,7 +47,7 @@ console.log("--------Exercise lifetime supply-------");
 // calcLifetimeSupply(40, 3) ➞ "The snack company should provide you with 65,745 units, until you are a ripe old age of 100. Happy snacking!"
 
 function calcLifetimeSupply(actualAge, perDay) {
-  yearsLeft = 100 - actualAge;
+  let yearsLeft = 100 - actualAge;
   let knoppersSupply = yearsLeft * 365 * perDay;
   console.log(
     `The snack company should provide you with ${knoppersSupply} Knoppers, until you are a ripe old age of 100. Happy snacking!`
@@ -69,59 +69,65 @@ console.log("--------Exercise months -------");
 // monthName(12) ➞ "December"
 // monthName(6) ➞ "June"
 
-let months = [
-  "January",
-  "February",
-  "March",
-  "April",
-  "May",
-  "June",
-  "July",
-  "August",
-  "September",
-  "October",
-  "November",
-  "December",
-];
-const monthName = (month) => {
-  for (let i = 0; i <= months.length; i++) {
-    month = i + 1;
-  }
-  if ((month = 1)) {
-    console.log(months[0]);
-  } else {
-    if ((month = 2)) {
-      console.log(months[1]);
-    } else {
-      if ((month = 3)) {
-        console.log(months[2]);
-      } else {
-        if ((month = 4)) {
-          console.log(months[3]);
-        } else {
-          if ((month = 5)) {
-            console.log(months[4]);
-          } else {
-            if ((month = 6)) {
-              console.log(months[5]);
-            } else {
-              if ((month = 7)) {
-                console.log(months[6]);
-              } else {
-                if ((month = 8)) {
-                  console.log(months[8]);
-                } else {
-                }
-              }
-            }
-          }
-        }
-      }
-    }
-  }
+const monthName = (m) => {
+  let months = [
+    "January",
+    "February",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November",
+    "December",
+  ];
+  console.log(months[m - 1]);
 };
+monthName(3);
+monthName(12);
 
-monthName(1);
+// const monthName = (month) => {
+//   for (let i = 0; i <= months.length) {
+//     month = i + 1;
+//   }
+//   if ((month = 1)) {
+//     console.log(months[0]);
+//   } else {
+//     if ((month = 2)) {
+//       console.log(months[1]);
+//     } else {
+//       if ((month = 3)) {
+//         console.log(months[2]);
+//       } else {
+//         if ((month = 4)) {
+//           console.log(months[3]);
+//         } else {
+//           if ((month = 5)) {
+//             console.log(months[4]);
+//           } else {
+//             if ((month = 6)) {
+//               console.log(months[5]);
+//             } else {
+//               if ((month = 7)) {
+//                 console.log(months[6]);
+//               } else {
+//                 if ((month = 8)) {
+//                   console.log(months[8]);
+//                 } else {
+//                 }
+//               }
+//             }
+//           }
+//         }
+//       }
+//     }
+//   }
+// };
+
+// monthName(1);
 
 console.log("--------Exercise-------");
 // Try to do it by yourself and don't look in yesterday solution. I trust you :)
