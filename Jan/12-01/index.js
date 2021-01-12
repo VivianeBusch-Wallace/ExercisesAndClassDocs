@@ -89,6 +89,7 @@ const monthName = (m) => {
 monthName(3);
 monthName(12);
 
+//stupid idea below:
 // const monthName = (month) => {
 //   for (let i = 0; i <= months.length) {
 //     month = i + 1;
@@ -129,7 +130,7 @@ monthName(12);
 
 // monthName(1);
 
-console.log("--------Exercise-------");
+console.log("--------Exercise Ocurrences -------");
 // Try to do it by yourself and don't look in yesterday solution. I trust you :)
 // Count Occurrences.
 // Create a function that accepts two arguments: a string and a letter. The function should count the number of occurrences of that letter in the string.
@@ -138,7 +139,23 @@ console.log("--------Exercise-------");
 
 // countOccurrences("this is a string", "i") ➞ 3
 
-console.log("--------Exercise-------");
+const countOccurrences = (string, character) => {
+  let stringToArr = string.split("");
+  startCount = 0;
+  for (i = 0; i <= stringToArr.length; i++) {
+    if (stringToArr[i] == character) {
+      startCount++;
+    }
+  }
+  return startCount;
+};
+
+console.log(countOccurrences("this is a string", "i"));
+console.log(countOccurrences("This is a string and this is maddening.", "i"));
+
+//If frustrates me that I cannot use string.split("i").split("") to cut the pieces from split("i") further down
+
+console.log("--------Exercise shapes -------");
 /*  draw this shapes in your console
 First shape
 T
@@ -159,6 +176,11 @@ Third shape
 Bounce: Forth shape
 Be creative and show us your Artistic side
 */
+text = "";
+for (i = 1; i <= 5; i++) {
+  console.log(i);
+}
+console.log(text);
 
 console.log("--------Exercise-------");
 /*  Finish the following function so it outputs looks like this:
