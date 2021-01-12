@@ -1,4 +1,4 @@
-console.log("--------Exercise isLEQZero-------");
+console.log("--------Exercise isLEQZero -------");
 // Create a function that takes a number as its only argument and returns true if it's less than or equal to zero, otherwise return false.
 // Examples:
 
@@ -19,7 +19,7 @@ isLEQZero(0);
 isLEQZero(3);
 isLEQZero(-5);
 
-console.log("--------Exercise dog years-------");
+console.log("--------Exercise dog years -------");
 
 //  Dog Years. Create a function which calculates how old a dog is in dog years. The function should accept one argument that is the dog's age in human years.
 //PS:  calculate the dog's age in dog years based on the calculation of 1 human year = 7 dog years.
@@ -57,7 +57,7 @@ calcLifetimeSupply(30, 4);
 calcLifetimeSupply(25, 2);
 calcLifetimeSupply(40, 3);
 
-console.log("--------Exercise-------");
+console.log("--------Exercise months -------");
 //  Number to Month Name
 // Create a function that takes a number (from 1 to 12) and returns its corresponding month name as a string.
 // For example, if you're given 3 as input, your function should return "March", because March is the 3rd month.
@@ -65,10 +65,63 @@ console.log("--------Exercise-------");
 //   let months = [ "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December" ];
 
 // Examples:
-
 // monthName(3) ➞ "March"
 // monthName(12) ➞ "December"
 // monthName(6) ➞ "June"
+
+let months = [
+  "January",
+  "February",
+  "March",
+  "April",
+  "May",
+  "June",
+  "July",
+  "August",
+  "September",
+  "October",
+  "November",
+  "December",
+];
+const monthName = (month) => {
+  for (let i = 0; i <= months.length; i++) {
+    month = i + 1;
+  }
+  if ((month = 1)) {
+    console.log(months[0]);
+  } else {
+    if ((month = 2)) {
+      console.log(months[1]);
+    } else {
+      if ((month = 3)) {
+        console.log(months[2]);
+      } else {
+        if ((month = 4)) {
+          console.log(months[3]);
+        } else {
+          if ((month = 5)) {
+            console.log(months[4]);
+          } else {
+            if ((month = 6)) {
+              console.log(months[5]);
+            } else {
+              if ((month = 7)) {
+                console.log(months[6]);
+              } else {
+                if ((month = 8)) {
+                  console.log(months[8]);
+                } else {
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+};
+
+monthName(1);
 
 console.log("--------Exercise-------");
 // Try to do it by yourself and don't look in yesterday solution. I trust you :)
