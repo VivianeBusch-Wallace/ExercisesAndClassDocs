@@ -19,6 +19,13 @@ isLEQZero(0);
 isLEQZero(3);
 isLEQZero(-5);
 
+//Alternative:
+
+const isEQZero = (num) => {
+  return num <= 0;
+};
+console.log(isEQZero(3));
+
 console.log("--------Exercise dog years -------");
 
 //  Dog Years. Create a function which calculates how old a dog is in dog years. The function should accept one argument that is the dog's age in human years.
@@ -186,7 +193,7 @@ console.log(text.slice(0, 3));
 console.log(text.slice(0, 4));
 console.log(text);
 
-// orientation
+// orientation notes
 // text = "";
 // for (let i = 1; i <= 4; i++) {
 //   for (let j = 0; j < 3; j++) {
@@ -202,6 +209,7 @@ console.log("--------Exercise finish function-------");
 123
 1234
 12345
+
  const numbersCount = () => {
   for (let i = 0; i <= 5; i++) {
     // something
@@ -211,8 +219,27 @@ console.log("--------Exercise finish function-------");
       // something
   }
 };
-numbersCount();
-Bonus: create another function by doing some changes to the previous function in order to have the following outputs :
+numbersCount();*/
+
+//___________coment out answer below
+
+// const numbersCount = (digit) => {
+//   for (let i = 0; i <= 5; i++) {
+//     // something
+
+//     for (let j = 1; j <= i; j++) {
+//       // something
+
+//     }
+//     // something
+//     console.log(numbersCount(digit));
+//   }
+// };
+// numbersCount(1);
+
+//____________comment out answer above
+
+/*Bonus: create another function by doing some changes to the previous function in order to have the following outputs :
   12345
   1234
   123
@@ -229,15 +256,35 @@ let storeArr= ["milk", "eggs", "cheese", "butter"];
 inventoryCheck("cheese") returns true
 inventoryCheck( "ham") returns false 
 */
+let storeArr = ["milk", "eggs", "cheese", "butter"];
+const inventoryCheck = (str) => {
+  return storeArr.includes(str);
+};
+inventoryCheck("ham");
 
 console.log("--------Exercise password app-------");
 // Extra work :)
 // create a repo for this app. we are coming later to it :)
-// Create a program that generate a random password with the length of 30 character, every time you call the function should give you a different password
+// Create a program that generate a random password with the length of 30 character,
+// every time you call the function should give you a different password
 
 // Examples you will have other passwords for sure
 
 // passwordGen()  ➞ Y3mI9x7bvPY86T?oM§hIbgh!MLwA77N
 // passwordGen()  ➞ Oy$tkBGoo5fg§mO4AdV&Kh8XXZR4d7K
 // passwordGen()  ➞ v0ZwDrn@hfI€kOKWH§k6kqub6zfpuyP
+
+const passwordGen = () => {
+  let letterArr = ["a", "b", "c", "d", "e"];
+  let numbArr = [];
+
+  return;
+};
+//not finished yet
+//need to capitalize letters as well
+//length <= 30 characters
+//Math.Random || math.random index number?
+
 console.log("--------Exercise End-------");
+
+//need more time, I need to practice loops
