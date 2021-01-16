@@ -149,7 +149,8 @@ console.log("--------Exercise Ocurrences -------");
 const countOccurrences = (string, character) => {
   let stringToArr = string.split("");
   startCount = 0;
-  for (i = 0; i <= stringToArr.length; i++) {
+  for (i = 0; i < stringToArr.length; i++) {
+    //not <= .length because i should be smaller
     if (stringToArr[i] == character) {
       startCount++;
     }
@@ -168,30 +169,69 @@ First shape
 T
 TT
 TTT
-TTTT
-Second shape
-****
-***
-**
-*
-Third shape
-1
-12
-123
-1234
-12345
-Bounce: Forth shape
-Be creative and show us your Artistic side
-*/
+TTTT*/
+
 text = "";
-for (i = 1; i <= 5; i++) {
-  text += i + "";
+for (let i = 1; i <= 5; i++) {
+  text = text + "T";
+  console.log(text);
 }
-console.log(text.slice(0, 1));
-console.log(text.slice(0, 2));
-console.log(text.slice(0, 3));
-console.log(text.slice(0, 4));
-console.log(text);
+
+// Second shape
+// ****
+// ***
+// **
+// *
+
+let stars = "";
+for (let i = 5; i <= 5; i--) {
+  for (let j = 1; j <= i; j++) {
+    stars = stars + "*";
+  }
+}
+console.log(stars);
+
+// text = "";
+// for (let i = 5; i >= 1; i--) {
+//   text = text + i;
+//   console.log(text);
+// }
+
+// text = "";
+// for (let i = 5; i >= 1; i--) {
+
+//   for (let i = 1; i <= 5; i++) {
+//     text = text + "+";
+//     console.log(text);
+//   }
+//   console.log(text);
+// }
+
+// Third shape
+// 1
+// 12
+// 123
+// 1234
+// 12345
+
+// my bad first solution:
+// text = "";
+// for (i = 1; i <= 5; i++) {
+//   text += i + "";
+// }
+// console.log(text.slice(0, 1));
+// console.log(text.slice(0, 2));
+// console.log(text.slice(0, 3));
+// console.log(text.slice(0, 4));
+// console.log(text);
+
+//Alternative better solution:
+
+text = "";
+for (let i = 1; i <= 5; i++) {
+  text = text + i;
+  console.log(text);
+}
 
 // orientation notes
 // text = "";
@@ -201,6 +241,10 @@ console.log(text);
 //   }
 // }
 // console.log(text);
+
+/*Bounce: Forth shape
+Be creative and show us your Artistic side
+*/
 
 console.log("--------Exercise finish function-------");
 /*  Finish the following function so it outputs looks like this:
@@ -221,7 +265,7 @@ console.log("--------Exercise finish function-------");
 };
 numbersCount();*/
 
-//___________coment out answer below
+//___________coment out answer below, but not finished yet
 
 // const numbersCount = (digit) => {
 //   for (let i = 0; i <= 5; i++) {
@@ -277,14 +321,29 @@ console.log("--------Exercise password app-------");
 const passwordGen = () => {
   let letterArr = ["a", "b", "c", "d", "e"];
   let numbArr = [];
-
+  for (let i = 0; i <= 30; i++) {}
   return;
 };
+passwordGen();
+
 //not finished yet
-//need to capitalize letters as well
+//need to capitalize letters
+//add special characters
 //length <= 30 characters
 //Math.Random || math.random index number?
 
 console.log("--------Exercise End-------");
 
 //need more time, I need to practice loops
+
+// //Notes
+// const
+// let text;
+// for (let i = 5; i >= 0; i--) {
+// text = "";
+// for (let j; j <= i; j++) {
+//   text += j;
+
+// }
+// console.log(text);
+// }
