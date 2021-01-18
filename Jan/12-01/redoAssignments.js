@@ -114,6 +114,7 @@ console.log("--------Exercise drawing-------");
 // ***
 // **
 // *
+
 let loopy = "";
 for (let i = 1; i <= 4; i++) {
   // loopy = i;
