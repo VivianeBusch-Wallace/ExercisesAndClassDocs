@@ -78,17 +78,18 @@ console.log("-------Exercise Capitalize----------");
 // [“Cynthia”, “Karen”, “Jane”, “Carrie”] ➞ [“Cynthia”, “Karen”, “Jane”, “Carrie”]
 let names = ["matt", "sara", "lara"];
 let names2 = ["samuel", "MARIA", "luke", "mary"];
-//too lazy to add third example :D
+
 const capitalFirstLetter = (arr) => {
   for (let i = 0; i < arr.length; i++) {
     let change = arr[i][0].toUpperCase();
-    let change2 = change + arr[i].substring(1);
+    let change2 = change + arr[i].substring(1).toLowerCase();
     console.log(change2);
   }
   return;
 };
 capitalFirstLetter(names);
 capitalFirstLetter(names2);
+capitalFirstLetter(["Cynthia", "Karen", "Jane", "Carrie"]);
 
 // City Names.
 // Create an array of city names. Loop through the array and add the city names to a string. Examples:
@@ -97,9 +98,14 @@ capitalFirstLetter(names2);
 let city = ["Berlin", "Paris", "Prague", "Rome"];
 let output = "";
 for (i = 0; i < city.length; i++) {
-  output += city[i] + ", ";
+  if (city.length - 1) {
+    output = city[i] + ".";
+  } else {
+    output += city[i] + ", ";
+  }
 }
 console.log(output);
+//still have to fix the punctuation issue
 
 // Hello
 // Create an array filled with your friends’ or family’s names. Loop over the array and greet each friend.
@@ -107,9 +113,14 @@ console.log(output);
 // [Maria, Mike, Paul, Doven] ➞ expected output: “Hello Maria! Hello Mike! Hello Paul! Hello Doven!”
 let ffamily = ["Papa", "Mama", "sister", "grandma", "friend1", "friend2"];
 output = "";
+let output2 = "";
 for (i = 0; i < ffamily.length; i++) {
   output += `Hello ${ffamily[i]}! `;
-  let output2 += `${ffamily[i]} is at index ${i}, `;
+  if (ffamily.length - 1 == i) {
+    output2 += `${ffamily[i]} is at index ${i}.`;
+  } else {
+    output2 += `${ffamily[i]} is at index ${i}, `;
+  }
 }
 console.log(output);
 // Bonus [Susan, Rezvane, Mark] ➞ expected bonus output: “Susan is at index 0 of my friends and family array,
@@ -124,13 +135,11 @@ let num = [3, 5, 2, 4];
 output = "";
 for (i = 0; i < num.length; i++) {
   output = "";
+
   if (num[i] % 2 == 0) {
-    let exitNum = num[i] - 1;
-    console.log(exitNum);
-  } else if (num[i] % 3 == 0 || num[i] == 0) {
-    exitNum2 = num[i] + 1;
-    console.log(exitNum2);
+    num[i] = num[i] - 1;
+  } else {
+    num[i] = num[i] + 1;
   }
-  output = exitNum + exitNum2;
-  console.log(output);
 }
+console.log(num);
