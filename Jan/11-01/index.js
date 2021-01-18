@@ -11,7 +11,7 @@ const display = (str) => {
 //short form of ES6 style, but it only works for a function with one formula:
 //const display = str => console.log(str);
 
-//there is only one specific thing where we need the old style function
+//there is only one specific thing where we need the old style function (later)
 print("Hi");
 display("cool");
 console.log(typeof print);
@@ -132,29 +132,77 @@ if ((a == b && c != a) || c == a) {
 // For each iteration, it will check if the current number is even or odd,
 // and report that to the screen (e.g. “2 is even”).
 
-for (let numb = 0; numb <= 20; numb++) {
-  console.log(numb);
-  return numb;
+let text = "";
+for (let i = 100; i <= 1000; i += 100) {
+  // console.log(i);
+  text += i + " ";
 }
 
-// function oddOrEven(numbers) {
-//     numbers % 2 = 0;
+// Write programs that produce the following outputs:
+// 100 200 300 400 500 600 700 800 900 1000
+// 0 2 4 6 8 10
+text = "";
+for (let i = 0; i <= 10; i++) {
+  if (i % 2 == 0) {
+    //console.log(i);
+    text += i + " ";
+    // this is the same as: text + i + " ";
+  }
+}
+console.log("________________");
+// 3 6 9 12 15
+for (let i = 0; i <= 15; i++) {
+  if (i % 3 == 0) {
+    console.log(i);
+  }
+}
+// 9 8 7 6 5 4 3 2 1 0
+for (let i = 9; i > 0; i--) {
+  text += i + " ";
+}
+// 1 1 1 2 2 2 3 3 3 4 4 4
+text = "";
+for (let i = 1; i <= 4; i++) {
+  for (let j = 0; j < 3; j++) {
+    // console.log(i);
+    text += i + " ";
+  }
+}
+console.log(text);
+
+console.log("below this_________");
+
+//without a nested loop:
+
+// text = "";
+// let countNum = 0;
+// for (let i = 1; i <= 4; i++) {
+//   if (countNum != 0 && countNum % 3 == 0) {
+//     i = 0;
+//     countNum = 0;
+//   }
+//   countNum++;
 // }
-let oddOrEven = numb % 2;
+//how is this endless???
 
-if (oddOrEven == 0) {
-  console.log("The number is even");
-} else {
-  console.log("The number is not even.");
+// 1 1 1 1 2 2 2 2 3 3 3 3 4 4 4 4
+
+for (let i = 1; i <= 4; i++) {
+  //console.log(i.repeat(3)); --> Why does this not work?
 }
 
-for (let numero = 0; numero <= 10; numero++) {
-  console.log(numero * 100);
-}
+console.log("above this___________");
 
-//more arrays
-let fruit = ["apples", "oranges", "bananas", "strawberries"];
-console.log(fruit);
-console.log(fruit.shift());
-console.log(fruit.pop());
-console.log("nodemon works.");
+// 0 1 2 3 4 0 1 2 3 4 0 1 2 3 4
+text = "";
+for (let i = 1; i <= 4; i++) {
+  for (let j = 0; j < 3; j++) {
+    // console.log(i);
+    text += j + " ";
+  }
+}
+console.log(text);
+
+//change the last one until correct
+
+// an if without the true part is wrong/unprofessional. you can have if without false, but not without true

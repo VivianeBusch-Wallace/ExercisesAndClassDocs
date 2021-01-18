@@ -152,6 +152,7 @@ console.log(stars);
 // let subStr = str.substring(0, 5);
 // console.log(subStr);
 
+// From Roman (to understand what is happening)
 // console.log("Second shape");
 
 // let picture2 = "";
@@ -262,7 +263,7 @@ console.log("------------Password generator--------------");
 
 //Alternative version:
 const passwordGen = () => {
-  let numb = [0, 1, 2, 3, 4, 5, 6, 6, 7, 8, 9];
+  // let numb = [0, 1, 2, 3, 4, 5, 6, 6, 7, 8, 9];
   let alphaLc = [
     "a",
     "b",
@@ -292,48 +293,122 @@ const passwordGen = () => {
   ];
   let specialCharacters = ["!", "§", "$", "%", "&", "?", "@", "€"];
   let password = "";
-  let spChr =
-    specialCharacters[Math.floor(Math.random() * specialCharacters.length)];
-  let alpha = alphaLc[Math.floor(Math.random() * alphaLc.length)];
-  let alphaUpper = alpha.toUpperCase();
-  for (let i = 0; i < 30; i++) {
-    password += "";
-  }
-  return password;
-};
 
+  for (let i = 0; i < 30; i++) {
+    let spChr =
+      specialCharacters[Math.floor(Math.random() * specialCharacters.length)];
+    let alpha = alphaLc[Math.floor(Math.random() * alphaLc.length)];
+    let alphaUpper = alpha.toUpperCase();
+    let randomNumber = Math.floor(Math.random() * 10) + 1;
+
+    if (randomNumber % 2 == 0) {
+      password += alpha;
+    }
+    if (randomNumber % 3 == 0) {
+      password += Math.floor(Math.random() * 10);
+    }
+    if (randomNumber % 5 == 0) {
+      password += alphaUpper;
+    } else {
+      password += spChr;
+    }
+  }
+  return password.substring(0, 30);
+};
 console.log(passwordGen());
 
-let alphaUc = [
-  ,
-  "A",
-  "B",
-  "C",
-  "D",
-  "E",
-  "F",
-  "G",
-  "H",
-  "I",
-  "K",
-  "L",
-  "M",
-  "N",
-  "O",
-  "P",
-  "Q",
-  "R",
-  "S",
-  "T",
-  "U",
-  "V",
-  "W",
-  "X",
-  "Y",
-  "Z",
-];
+//Tests below
 
-//to check how many characters the loop outputs:
+console.log(Math.floor(Math.random() * 3) + 1);
+
+// let randomNumber = "";
+// for (let i = 0; i <= 5; i++) {
+//   randomNumber += Math.floor(Math.random() * 100);
+//   console.log(randomNumber);
+// }
+
+// console.log(randomNumber);
+
+// let alphaUc = [
+//   ,
+//   "A",
+//   "B",
+//   "C",
+//   "D",
+//   "E",
+//   "F",
+//   "G",
+//   "H",
+//   "I",
+//   "K",
+//   "L",
+//   "M",
+//   "N",
+//   "O",
+//   "P",
+//   "Q",
+//   "R",
+//   "S",
+//   "T",
+//   "U",
+//   "V",
+//   "W",
+//   "X",
+//   "Y",
+//   "Z",
+// ];
+
+// let numbers = [0, 1, 2, 3, 4, 5, 6, 6, 7, 8, 9];
+// let alpha = [
+//   "a",
+//   "b",
+//   "c",
+//   "d",
+//   "e",
+//   "f",
+//   "g",
+//   "h",
+//   "i",
+//   "k",
+//   "l",
+//   "m",
+//   "n",
+//   "o",
+//   "p",
+//   "q",
+//   "r",
+//   "s",
+//   "t",
+//   "u",
+//   "v",
+//   "w",
+//   "x",
+//   "y",
+//   "z",
+// ];
+// let charactersSp = ["!", "§", "$", "%", "&", "?", "@", "€"];
+// const passGen = () => {
+//   let result = "";
+//   const randomNumGetter = (arr) => {
+//     return Math.floor(Math.random() * arr.length);
+//   };
+//   for (let i = 0; i <= 17; i++) {
+//     if ((Math.floor(Math.random()) * 100) % 2 == 0) {
+//       result += numbers[randomNumGetter(numbers)];
+//     } else if ((Math.floor(Math.random()) * 100) % 3 == 0) {
+//       result += alpha[randomNumGetter(alpha)].toUpperCase();
+//     } else if {
+//       result += alpha[randomNumGetter(alpha)];
+//     } else if ((Math.floor(Math.random()) * 100) % 5 == 0) {
+//       result += charactersSp[randomNumGetter(charactersSp)];
+//     }
+//   }
+//   return result;
+// };
+
+// console.log(passGen());
+
+// // to check how many characters the loop outputs:
 // let strPw = "!DyGHoh513i@2bvL8Arx6§B98bCtx@";
 // console.log(strPw.length);
 
