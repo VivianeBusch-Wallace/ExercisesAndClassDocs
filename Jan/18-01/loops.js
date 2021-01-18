@@ -17,3 +17,5 @@ for (let i = 0; i < 5; i++) {
   }
   console.log(text);
 }
+
+// the repeat method only belongs to console.log
