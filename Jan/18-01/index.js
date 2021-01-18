@@ -69,3 +69,68 @@ if (mark > john) {
 // If the person’s age is equal to and more than 20 and less than 30,
 // then print “firstName is a young adult”. If none of these conditions apply,
 // print “firstName is a adult”.
+
+console.log("-------Exercise Capitalize----------");
+// Capitalize.
+// Create a program that capitalizes the first letter of each element in an array of names. Examples:
+// [“matt”, “sara”, “lara”] ➞ [“Matt”, “Sara”, “Lara”]
+// [“samuel”, “MARIA”, “luke”, “mary”] ➞ [“Samuel”, “Maria”, “Luke”, “Mary”]
+// [“Cynthia”, “Karen”, “Jane”, “Carrie”] ➞ [“Cynthia”, “Karen”, “Jane”, “Carrie”]
+let names = ["matt", "sara", "lara"];
+let names2 = ["samuel", "MARIA", "luke", "mary"];
+//too lazy to add third example :D
+const capitalFirstLetter = (arr) => {
+  for (let i = 0; i < arr.length; i++) {
+    let change = arr[i][0].toUpperCase();
+    let change2 = change + arr[i].substring(1);
+    console.log(change2);
+  }
+  return;
+};
+capitalFirstLetter(names);
+capitalFirstLetter(names2);
+
+// City Names.
+// Create an array of city names. Loop through the array and add the city names to a string. Examples:
+// [Berlin, Paris, Prague, Rome] ➞ expected output: “Berlin, Paris, Prague, Rome”.
+
+let city = ["Berlin", "Paris", "Prague", "Rome"];
+let output = "";
+for (i = 0; i < city.length; i++) {
+  output += city[i] + ", ";
+}
+console.log(output);
+
+// Hello
+// Create an array filled with your friends’ or family’s names. Loop over the array and greet each friend.
+// Bonus: Print the indexes of each item in the array. Examples:
+// [Maria, Mike, Paul, Doven] ➞ expected output: “Hello Maria! Hello Mike! Hello Paul! Hello Doven!”
+let ffamily = ["Papa", "Mama", "sister", "grandma", "friend1", "friend2"];
+output = "";
+for (i = 0; i < ffamily.length; i++) {
+  output += `Hello ${ffamily[i]}! `;
+  let output2 += `${ffamily[i]} is at index ${i}, `;
+}
+console.log(output);
+// Bonus [Susan, Rezvane, Mark] ➞ expected bonus output: “Susan is at index 0 of my friends and family array,
+// Rezvane is at index 1 of my friends and family array, Mark is at index 2 of my friends and family array”.
+// Odds and Evens.
+console.log(output2);
+// Create a program that changes a given array by adding 1 to each odd integer and subtracting 1 from each even integer. Examples:
+// [3, 5, 2, 4] ➞ expected output: [4, 6, 1, 3]
+// [6, 9, 10, 20] ➞ expected output: [5, 10, 9, 19]
+
+let num = [3, 5, 2, 4];
+output = "";
+for (i = 0; i < num.length; i++) {
+  output = "";
+  if (num[i] % 2 == 0) {
+    let exitNum = num[i] - 1;
+    console.log(exitNum);
+  } else if (num[i] % 3 == 0 || num[i] == 0) {
+    exitNum2 = num[i] + 1;
+    console.log(exitNum2);
+  }
+  output = exitNum + exitNum2;
+  console.log(output);
+}
