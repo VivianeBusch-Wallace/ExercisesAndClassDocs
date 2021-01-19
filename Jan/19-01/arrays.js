@@ -171,7 +171,7 @@ console.log("---------vowel exercise-----------");
 // console.log(findVow(["a", "b", "c", "d", "e", "f"]));
 
 const findVowel = (str) => {
-  let arr = str.split("");
+  let arr = str.toLowerCase().split("");
   let counter = "";
   for (let i = 0; i < arr.length; i++) {
     switch (arr[i]) {
@@ -189,6 +189,8 @@ const findVowel = (str) => {
   return counter;
 };
 console.log(findVowel("abcdefghi"));
+console.log(findVowel("This is crazy."));
+console.log(findVowel("But here's my number..."));
 
 //want to try a version with .include
 console.log("---------duplicates exercise-----------");
@@ -215,12 +217,25 @@ console.log("---------duplicates exercise-----------");
 // console.log(noDuplicates([1, 4, 4, 7, 7, 7]))
 
 //experiment:
-let arraya = [1, 6, 6, 9, 9];
-for (let i = 0; i < arraya.length; i++) {
-  let indeces = arraya.indexOf(arraya[i]);
-  if (i == indeces) {
-    console.log("there is a duplicate");
-  }
-}
+// let arraya = [1, 6, 6, 9, 9];
+// for (let i = 0; i < arraya.length; i++) {
+//   let indeces = arraya.indexOf(arraya[i]);
+//   if (i == indeces) {
+//     console.log("there is a duplicate");
+//   }
+// }
 // console.log(arraya.indexOf(6));
 // if value[i] == value[another i] then remove until only one
+//another idea:
+// if loop1 = loop2
+
+let arraya = [1, 6, 6, 9, 9];
+let matches;
+for (let i = 0; i < arraya.length; i++) {
+  for (let j = 0; j < arraya.length; j++) {
+    if (arraya[i] == arraya[j]) {
+      matches++;
+    }
+    console.log(matches);
+  }
+}
