@@ -174,7 +174,7 @@ const findVowel = (str) => {
   let arr = str.split("");
   let counter = "";
   for (let i = 0; i < arr.length; i++) {
-    switch (arr) {
+    switch (arr[i]) {
       case "a":
       case "e":
       case "i":
@@ -185,7 +185,7 @@ const findVowel = (str) => {
       default:
     }
   }
-  console.log(counter);
+  console.log("Number of vowels in your sentence:");
   return counter;
 };
 console.log(findVowel("abcdefghi"));
