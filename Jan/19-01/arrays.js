@@ -192,6 +192,12 @@ console.log(findVowel("abcdefghi"));
 console.log(findVowel("This is crazy."));
 console.log(findVowel("But here's my number..."));
 
+//Alternative to vowel exercise
+
+const findMeVowel = (stringy) => {
+  let vowelArr = ["a", "e", "i", "o", "u"];
+};
+
 //want to try a version with .include
 console.log("---------duplicates exercise-----------");
 // No Duplicates!
@@ -229,13 +235,41 @@ console.log("---------duplicates exercise-----------");
 //another idea:
 // if loop1 = loop2
 
-let arraya = [1, 6, 6, 9, 9];
-let matches;
-for (let i = 0; i < arraya.length; i++) {
-  for (let j = 0; j < arraya.length; j++) {
-    if (arraya[i] == arraya[j]) {
-      matches++;
+// let arraya = [1, 6, 6, 9, 9];
+// let unique;
+// for (let i = 0; i < arraya.length; i++) {
+//   for (let j = 0; j < arraya.length; j++) {
+//     if (arraya[i] !== arraya[j]) {
+//       unique = [];
+//       let newArr = unique.push(arraya[i]);
+//       console.log(newArr);
+//     }
+//   }
+// }
+// doesn't do what I want, scratch this idea
+
+// Dictionary. (take your time on this pls )
+// also as tip you can use .includes()
+// Create a function that takes an initial string and
+// an array of words, and returns a filtered array of the words
+// that start with the same letters as the initial string.
+// Notes:
+// If none of the words match, return an empty array.
+// Keep the filtered array in the same relative order as the original
+// array of words.
+// Examples:
+// dictionary(“bu”, [“button”, “breakfast”, “border”]) ➞ [“button”]
+// dictionary(“tri”, [“triplet”, “tries”, “trip”, “piano”, “tree”]) ➞ [“triplet”, “tries”, trip”]
+// dictionary(“beau”, [“pastry”, “delicious”, “name”, “boring”]) ➞ []
+
+const dictionary = (str, arr) => {
+  let newArr = [];
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i].includes(str)) {
+      newArr.push(arr[i]);
     }
-    console.log(matches);
   }
-}
+
+  return newArr;
+};
+console.log(dictionary("bu", ["button", "breakfast", "border"]));
