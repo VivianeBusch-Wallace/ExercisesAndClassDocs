@@ -12,8 +12,8 @@ let text = "";
 for (let i = 0; i < 5; i++) {
   text = "";
   for (let j = 0; j < i; j++) {
-    text += j;
-    console.log(text);
+    // text += j;
+    // console.log(text);
   }
   console.log(text);
 }
