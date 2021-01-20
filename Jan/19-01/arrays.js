@@ -198,6 +198,22 @@ const findMeVowel = (stringy) => {
   let vowelArr = ["a", "e", "i", "o", "u"];
 };
 
+//Alternative Hadi Vowels
+
+const whereVowel = (str2) => {
+  let counter = 0;
+  let vowelArr = ["a", "e", "i", "o", "u"];
+  for (let i = 0; i < str.length; i++) {
+    for (let j = 0; j < vowelArr; j++) {
+      if (str[i].includes(vowelArr[j])) {
+        counter++;
+      }
+    }
+  }
+  return counter;
+};
+console.log(whereVowel("Hi this is nice party, will be"));
+
 //want to try a version with .include
 console.log("---------duplicates exercise-----------");
 // No Duplicates!
@@ -209,6 +225,18 @@ console.log("---------duplicates exercise-----------");
 // [1, 6, 6, 9, 9] ➞ [1, 6, 9]
 // [2, 2, 2, 2, 2, 2] ➞ [2]
 // [5, 10, 15, 20, 25] ➞ [5, 10, 15, 20, 25]
+
+// Alternative Hadi Duplicates
+const cleanUp = (arr) => {
+  let result = []; //check do I have it in my new array? No, then add, yes, then don't add
+  for (let i = 0; i < arr.length; i++) {
+    if (!result.includes(arr[i])) {
+      result.push(arr[i]);
+    }
+  }
+  return result;
+};
+console.log(cleanUp([5, 10, 15, 20, 25]));
 
 // const noDuplicates = (arrNum) => {
 // for (let i=0; i<arrNum.length; i++) {
