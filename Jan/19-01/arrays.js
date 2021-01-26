@@ -42,10 +42,10 @@ for (let i = 1; i < cityName.length; i++) {
 }
 // prints out cityName according to i starting from i = 1
 
-// alt + d = change all words that are the same???
+// strg + d = change all words that are the same, but watch out for what is together with methods
 
 let copy = cityName; // this is just a reference
-let shallowCopy = cityName.slice(); // creates a shallow copy if you chance this it does not affect the original
+let shallowCopy = cityName.slice(); // creates a shallow copy if you change this it does not affect the original
 // .slice(index,cut before index) for example: .slice(1,3) will give elements from index 1 and 2
 
 // .slice(4,-2) ??? what will happen?
