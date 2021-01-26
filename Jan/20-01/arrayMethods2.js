@@ -60,6 +60,11 @@ console.log(newArr5);
 console.log(arr5.fill("a", 0, 1));
 console.log(arr5.fill(crazyWords, 0, 4)); //can also replace with an array
 
+const arrA = new Array(20).fill(5);
+console.log(arrA);
+// const arrB = new Array(20).fill().map(()); // not finished
+// console.log(arrB);
+
 // console.log(stringy.fill("HAHAHA", 5, 11)); // does not work
 
 //LOOPS
@@ -68,7 +73,7 @@ console.log("---do loop---");
 // it will first do do and then look at the condition
 let counter = 0;
 do {
-  console.log(counter);
+  console.log(counter); // Remember: the output changes according to where you put console.log!!!
   counter++;
 } while (counter <= 10);
 
@@ -93,3 +98,13 @@ for (let i = 0; i < 5; i++) {
   counter2++;
   console.log(counter2);
 }
+
+//loop practice:
+let numbs = 0;
+do {
+  numbs++;
+  console.log("The numbers being added by 1 are:");
+  console.log(numbs);
+} while (numbs <= 10);
+console.log("The sum of numbs is");
+console.log(numbs); //just prints last output from loop
