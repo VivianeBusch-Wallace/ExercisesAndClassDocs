@@ -19,3 +19,22 @@ for (let i = 0; i < 5; i++) {
 }
 
 // the repeat method only belongs to console.log
+
+//weird thing from angelos:
+// he is trying to find the longest word
+// test test
+const longestWord = (mrstring) => {
+  let thatword;
+  let makeitalist = mrstring.split(" ");
+  //console.log(makeitalist.length);
+  for (let i = 0; i < makeitalist.length; i++) {
+    if (makeitalist[i++].length < makeitalist[i].length) {
+      thatword = makeitalist[i++];
+      // console.log(makeitalist[i]);
+      return thatword;
+    } else {
+      return "sorry, I hate you";
+    }
+  }
+};
+console.log(longestWord("this issssssssssss aaaaaaa web development course"));
