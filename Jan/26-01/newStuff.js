@@ -94,7 +94,7 @@ console.log(resultArr);
 // you can use any math between the accumulator and currentValue
 
 // .filter
-// - Getting an array with items that aline with your condition:
+// - Getting an array with items that align with your condition:
 // `Array.prototype.filter(<function>)`
 const names = ["Zain", "Nancy", "Olga", "Leonard"];
 const filteredArr = names.filter((name) => name.length > 4);
