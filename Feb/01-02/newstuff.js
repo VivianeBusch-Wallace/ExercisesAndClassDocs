@@ -58,7 +58,7 @@ console.log("----------Self-invoked Function----------");
 //
 //self-invoked function
 const add = (() => {
-  let counter = 0;
+  let counter = 0; //does not reset counter to 0
   return () => {
     //returns a new function, an anonymous function
     counter++;
@@ -68,15 +68,16 @@ const add = (() => {
 console.log(add());
 console.log(add());
 console.log(add());
-// always use () around function and then () after to execute that function
+// always use () around function to make it an expression and then () after to invoke/call that function immediately
 // this way what is inside is secured
-
 // const add2 = (() => {
 //   let counter = 0;
 //   return counter++;
 // })();
 // console.log(add2()); //WRONG!
-//SIAF does not work without another function inside return
+//SIF does not work without another function inside return
+
+console.log("----------Self-Invoked Anonymous Function----------");
 
 // SIAF = self-invoked anonymous function
 var all = 3;
@@ -126,3 +127,36 @@ function multiplier(num) {
 }
 const times = multiplier(2)(5);
 console.log(times);
+
+// trim()
+let str = "     hi    ";
+console.log(str.trim());
+// trimEnd()
+console.log(str.trimEnd());
+// trimStart()
+console.log(str.trimStart());
+
+//startsWith()
+let text = "Hej, it's ME.";
+console.log(text.startsWith("we"));
+console.log(text.startsWith("Hej"));
+
+// let array = ["Hadi", "olga", "Julian"];
+// console.log(array.startsWith("Hadi"));
+
+// endsWith()
+console.log(text.endsWith("."));
+console.log(text.endsWith("ME"));
+
+// charAt()
+let char = "hadi";
+console.log(char.charAt(2)); //is the same as:
+console.log(char[2]);
+// arr[i][2] - Hadi prefers this method to charAt()
+const arr = ["Hadi", "Olga"];
+console.log(arr[0][0] + arr[0][3]);
+// charCodeAt()
+//  will return integer between 0 and 65535 that replaces the UTF-16 code
+// common character codes UTF-16  UTF-8  ASCII   A 00001111
+char = "Ü";
+console.log(char.charCodeAt(0));
