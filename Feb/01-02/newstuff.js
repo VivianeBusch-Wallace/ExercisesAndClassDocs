@@ -68,7 +68,8 @@ const add = (() => {
 console.log(add());
 console.log(add());
 console.log(add());
-// always use () around function to make it an expression and then () after to invoke/call that function immediately
+// always use () around the function to make it an expression and
+// then () after to invoke/call that function immediately
 // this way what is inside is secured
 // const add2 = (() => {
 //   let counter = 0;
@@ -76,6 +77,8 @@ console.log(add());
 // })();
 // console.log(add2()); //WRONG!
 //SIF does not work without another function inside return
+// Using self-invoking functions we will perform the initialization work only once
+// because after the execution we’ll loose the reference to the function.
 
 console.log("----------Self-Invoked Anonymous Function----------");
 

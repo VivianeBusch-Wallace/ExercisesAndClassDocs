@@ -108,3 +108,12 @@ const monthCheck = (str) => {
 };
 console.log(monthCheck("I love April"));
 console.log(monthCheck("We need Kartoffel"));
+
+let months = [
+  ["december", "january", "february"],
+  ["march", "april", "may"],
+  ["june", "july", "august"],
+  ["september", "october", "november"],
+];
+
+console.log(months[0][0]);
