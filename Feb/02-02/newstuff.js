@@ -1,3 +1,5 @@
+console.log("-------------Objects--------------");
+
 //Objects
 //can hold all kinds of information
 // const <namespace> = { <key 1>: <value 1>, <key 2>: <value 2>, ... } </namespace>
@@ -25,6 +27,8 @@ console.log(typeof userObj);
 console.log(typeof console);
 console.log(userObj.activities[1]);
 
+console.log("-------------Accessing Properties--------------");
+
 // Accessing properties
 // 1- with bracket notation
 console.log(userObj["name"]); //key names have to be in quotes
@@ -33,6 +37,8 @@ console.log(userObj["activities"][2]);
 console.log(userObj.name);
 console.log(userObj.activities);
 console.log(userObj.activities[0]);
+
+console.log("-------------Declare A New Object--------------");
 
 //declare a new object
 const obj2 = {};
@@ -53,11 +59,25 @@ console.log(save);
 const arr = new Array(); //classes start with a capital letter
 console.log(arr);
 
+console.log("-------------Loop An Object--------------");
+
 // cool for - loop properties
 for (let property in userObj) {
   //property is just a name
   console.log(`userObj.${property} : ${userObj[property]}`);
 }
+//this logs:                 key              value
+
+//here write an array with [[key, value], [key, value]]
+let arr2 = [
+  [key1, value1],
+  [key2, value2],
+];
+for (let [a, b] of arr2) {
+  console.log(`key: ${a}, value: ${b}`);
+}
+
+console.log("-------------Console Log--------------");
 
 // Tell me more about you
 const person = {
@@ -72,6 +92,7 @@ const person = {
   print: function () {
     console.log(`I am ${person.name}, I am ${person.age} years old, ...`);
   },
+
   //   print: function () {
   //     console.log(`I am ${this.name}, I am ${this.age}...`); // we can also use <this>
   //   },
@@ -91,12 +112,18 @@ console.log(Object.keys(person));
 // Object.values
 console.log(Object.values(person));
 
+console.log("-------------Assign New Properties--------------");
+
 //Object.assign
 const objectOne = { kids: 2, salary: 5000, cars: 3 };
 const objectTwo = { colors: ["white", "grey", "black"], pets: "fish" };
 
 const totalObjects = Object.assign({ name: "Hadi" }, objectOne, objectTwo);
 console.log(totalObjects);
+// assign will only change what's different
+// will take the last value of the key, if the objects have same keyname, it will add value of the last object
+// the order of the keys is chronological even if the value changes in the end
+// assign creates a copy
 
 //Object.defineProperty()
 const newPerson = {};
@@ -108,7 +135,6 @@ Object.defineProperty(newPerson, "bike", {
 console.log(newPerson.bike);
 
 //Object.defineProperties()
-
 Object.defineProperties(newPerson, {
   p1: {
     value: "Ducati",
@@ -116,7 +142,7 @@ Object.defineProperties(newPerson, {
   },
   p2: {
     value: "mood",
-    writable: true, //if you leave out writable then its defualt is true
+    writable: true, //if you leave out writable then its default is true
   },
   p3: {
     value: "Ducati",
@@ -125,6 +151,8 @@ Object.defineProperties(newPerson, {
 }); //(nameOfObject, keyName/propertyName, fillerOfKey/values)
 console.log(newPerson);
 
+console.log("-------------Practice--------------");
+// console.log("---------------------------");
 //-------------Practice:-------------
 // Object yourPersonObj. Create an object named person2.
 // Loop through the object and print both the property and value of the object.
@@ -218,22 +246,26 @@ const functLog3 = () => {
 functLog3();
 //-------------Practice End------------
 
+console.log("-------------Combine Keys and Values Into An Array--------------");
+
 // combining keys and values in an array:
 const objectToArray = {
   cats: 1,
   dogs: 2,
   turtles: 4,
 };
-const arr1 = [
-  ["cats", 1],
-  ["dogs", 2],
-  ["turtles", 4],
-];
+// const arr1 = [
+//   ["cats", 1],
+//   ["dogs", 2],
+//   ["turtles", 4],
+// ];
 
 function getKeysAndValues(obj) {
   return Object.entries(obj);
 }
 console.log(getKeysAndValues(objectToArray));
+
+console.log("-------------Delete Keys--------------");
 
 // delete
 // deletes the whole property
