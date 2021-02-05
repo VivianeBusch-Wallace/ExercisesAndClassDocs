@@ -2,8 +2,8 @@ console.log("-------------Objects--------------");
 
 //Objects
 //can hold all kinds of information
-// const <namespace> = { <key 1>: <value 1>, <key 2>: <value 2>, ... } </namespace>
-// keys : values
+// const <namespace> = { <key 1>: <value 1>, <key 2>: <value 2>, ... }
+// properties = keys : values
 // properties are both the key and the value
 // Object literal
 const obj = {
@@ -26,17 +26,40 @@ console.log(userObj.name);
 console.log(typeof userObj);
 console.log(typeof console);
 console.log(userObj.activities[1]);
+// you cannot have values without keys inside an object!
 
 console.log("-------------Accessing Properties--------------");
 
 // Accessing properties
 // 1- with bracket notation
-console.log(userObj["name"]); //key names have to be in quotes
-console.log(userObj["activities"][2]);
+//key names have to be in quotes
+console.log(userObj["name"]); //prints values of the key "name"
+console.log(userObj["activities"][2]); //prints 3rd value from value array of key "activities"
+// if the key name has a space you HAVE to use bracket notation!
+
+// If the property of the object you are trying to access has a space in its name, you will need to use bracket notation.
+
 // 2- with dot notation
-console.log(userObj.name);
-console.log(userObj.activities);
-console.log(userObj.activities[0]);
+console.log(userObj.name); //prints value
+console.log(userObj.activities); //prints value
+console.log(userObj.activities[0]); //prints first value
+
+//If instead of the key you write a variable, then dot notation does not work, have to use bracket notation???
+//Example:
+// Here checkProp is just a parameter
+// function checkObj(obj, checkProp) {
+//   if (obj.hasOwnProperty(checkProp)) {
+//     return obj[checkProp]; // obj.checkProp does not work here!!! Because it is not the real name of the key
+//   } else {
+//     return "Not Found";
+//   }
+// }
+// checkObj({gift: "pony", pet: "kitten", bed: "sleigh"}, "gift") // should return "pony".
+
+// Object.keys
+// console.log(Object.keys(person)); //prints all keys in an array?
+// Object.values
+// console.log(Object.values(person)); //prints all values in an array?
 
 console.log("-------------Declare A New Object--------------");
 
@@ -44,6 +67,7 @@ console.log("-------------Declare A New Object--------------");
 const obj2 = {};
 console.log(typeof obj2);
 //add new keys and properties to that object
+// bracket notation cannot be used to add new properties
 obj2.name = "Hadi";
 obj2.lastName = "Nsreeny";
 
@@ -68,17 +92,24 @@ for (let property in userObj) {
 }
 //this logs:                 key              value
 
+for (let values of obj) {
+  //obj cannot be iterated!!! WHY?
+  console.log(Object.values(obj));
+}
+
 //here write an array with [[key, value], [key, value]]
 let arr2 = [
-  [key1, value1],
-  [key2, value2],
+  ["key1", "value1"],
+  ["key2", "value2"],
 ];
 for (let [a, b] of arr2) {
   console.log(`key: ${a}, value: ${b}`);
 }
 
-console.log("-------------Console Log--------------");
+//for of loop vs for in loop!?!?!?!? Difference!?!?!?
 
+console.log("-------------Object Method - Console Log vs Return--------------");
+// a function inside an object is called an object method!
 // Tell me more about you
 const person = {
   name: "Vivi",
@@ -90,7 +121,7 @@ const person = {
   activities: ["draw", "sleep", "eat"],
   german: true,
   print: function () {
-    console.log(`I am ${person.name}, I am ${person.age} years old, ...`);
+    console.log(`I am ${person.name}, I am ${this.age} years old, ...`);
   },
 
   //   print: function () {
@@ -106,11 +137,14 @@ const person = {
 };
 
 person.print();
-console.log(person.old());
+console.log(person.old()); //the execution brackets are necessary!!!
+
+//--> below is also in Accessing Objects
 // Object.keys
 console.log(Object.keys(person));
 // Object.values
 console.log(Object.values(person));
+// <-- above is also in Accessing Objects
 
 console.log("-------------Assign New Properties--------------");
 
@@ -271,3 +305,26 @@ console.log("-------------Delete Keys--------------");
 // deletes the whole property
 delete objectToArray.cats;
 console.log(objectToArray);
+
+console.log("-------------.hasOwnProperty--------------");
+
+const pets = {
+  cats: 1,
+  dogs: 2,
+  turtles: 4,
+};
+console.log(pets.hasOwnProperty("cats"));
+// can I use variable of a key for this?
+// cannot look for values
+// only looks for property names/keys
+// can also take variables we assigned the key to (Hadi)
+// I meant parameters with that
+
+console.log("-------------.seal--------------");
+// Object.seal()
+// protects your object from being added more
+Object.seal(pets);
+pets.add = "Berlin";
+console.log(pets);
+
+console.log("-------------.freeze--------------");
