@@ -320,7 +320,7 @@ console.log(pets.hasOwnProperty("cats"));
 
 console.log("-------------.seal--------------");
 // Object.seal()
-// protects your object from being added more
+// protects your object from being added to or changed
 Object.seal(pets);
 pets.add = "Berlin";
 console.log(pets);
