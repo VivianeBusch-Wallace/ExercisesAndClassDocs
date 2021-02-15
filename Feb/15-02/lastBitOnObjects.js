@@ -36,7 +36,7 @@ console.log(zain);
 //GMT Greenwich Mean Time
 //More about that: www.24timezones.com/#/map
 let time = new Date();
-console.log(time);
+console.log(time); //gives me weird output, 1 hour late time
 time = new Date().getFullYear();
 console.log(time);
 time = new Date().getMonth() + 1; //add 1 because otherwise shows month according to index
@@ -49,3 +49,12 @@ time = new Date().getMilliseconds();
 console.log(time);
 
 //extends (example with date): https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes/extends
+
+//Hadi's answer to weird time issue: "I just checked about the time issue, your Machine has no problem it’s only
+//the UTC time issue so when you cancel log the object date it will give you the UTC time but when you
+//console.log Date().getHour() will tell you the right hour"
+
+console.log(new Date().getHours());
+console.log(new Date().getUTCDate());
+console.log(new Date().getHours());
+console.log(new Date().getUTCHours()); //1 hour behind local time!
