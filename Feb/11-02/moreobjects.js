@@ -1,17 +1,113 @@
 // Hadi's: https://github.com/Fbw-48/live-coding/blob/main/feb/11-09/index.js
 
+console.log("------------Destructuring-------------");
 //destructuring objects as function parameters
 //destructing my object inside my parameters
 function fun(num, { name = "defaultName" }) {
   //heed: here the default value is written with = !!! not with colon!
   console.log(num);
-  let firstName = { name };
+  let firstName = { name }; //because no name specified default goes in place
   console.log(firstName);
 }
 fun(2, { age: 22 });
 
+//destructuring is easier now than before
+//destructuring = take values from arrays or properties from objects and
+//set them as local variables
+//destructuring objects:
+//old way:
+const deconstructObj = {
+  monday: "rainy",
+  tuesday: "snowing",
+  wednesday: "sunny",
+};
+console.log(deconstructObj.wednesday);
+const weatherMon = deconstructObj.monday;
+const weatherTue = deconstructObj.tuesday;
+let weatherWed = deconstructObj.wednesday;
+console.log(weatherWed);
+weatherWed = "superDay";
+console.log("variable: " + weatherWed);
+console.log("originial: " + deconstructObj.wednesday);
+
+//new way:
+const { monWeather, tueWeather, wedWeather } = deconstructObj;
+const { monday = "weather unavailable" } = deconstructObj; //default value with equal sign!
+//rename property:
+//in case of name collisions
+const { monday: firstDayOfWeek } = deconstructObj;
+//access nested properties:
+const family = { parent: { child: "object child" } };
+const {
+  parent: { child },
+} = family;
+
+//destructuring arrays:
+//old way:
+const array = [1, 2, 3];
+const one = array[0];
+const two = array[1];
+const three = array[2];
+//new way:
+const [first, second, third] = [1, 2, 3]; //this is also used in react
+console.log(first, second, third);
+//so the variable gets assigned according to the order of the index
+
+const foods = [
+  "pizza",
+  "french fries",
+  "hamburgers",
+  "pie",
+  "brownies",
+  "pudding",
+];
+//if you wanna skip a value: emit the variable by just adding a comma:
+//and use ... to assign several values to one variable:
+const [, , meal, ...dessert] = foods;
+console.log(foods);
+console.log(meal); //hamburgers
+console.log(dessert); //["pie", "brownies", "pudding"]
+
+console.log("------------Get And Set-------------");
 //getter method and setter method:
 //getter and setter should use the same function name
+
+// The get syntax binds an object property to a function that will be called
+// when that property is looked up.
+const objMDN = {
+  log: ["a", "b", "c"],
+  get latest() {
+    if (this.log.length === 0) {
+      return undefined;
+    }
+    return this.log[this.log.length - 1];
+  },
+};
+
+console.log(objMDN.latest);
+// expected output: "c"
+
+// The set syntax binds an object property to a function to be called
+// when there is an attempt to set that property.
+// Setters are most often used in conjunction with getters to create a type of
+// pseudo-property. It is not possible to simultaneously have a setter on a property
+// that holds an actual value.
+const language = {
+  set current(name) {
+    this.log.push(name);
+  },
+  log: [],
+};
+
+language.current = "EN";
+language.current = "FA";
+
+console.log(language.log);
+// expected output: Array ["EN", "FA"]
+
+//to delete a setter:
+// delete language.current;
+
 const userData = {
   firstName: "Steel",
   lastName: "Man",
@@ -43,6 +139,7 @@ userData.fullName; // getting object data
 userData.fullName = "Hadi Nsreeny 31 true"; // filling the object
 userData.fullName; // getting new data
 
+console.log("------------Constructor-------------");
 //constructor
 //this must be an old fashioned function!!! Cannot be ES6!
 //recruiter question: "can you build me a constructor function?"
@@ -68,6 +165,8 @@ olga.printOut();
 //isDivisble function explained
 //divisible works with integers (remainder), dividable means you can get decimals
 
+console.log("------------for ... in, for ... of, forEach()-------------");
+
 //for in object
 //if you want to loop the entire object
 //does this work for arrays???
@@ -75,23 +174,23 @@ for (let prop in zain) {
   console.log(`zain.${prop}:${zain[prop]}`);
 }
 
-let family = [
+let people = [
   ["Zain", 22, "teacher"],
   ["Olga", 40, "chef"],
 ];
-for (let i = 0; i < family.length; i++) {
-  for (let j = 0; j < family[i].length; j++) {
-    console.log(family[i][j]);
+for (let i = 0; i < people.length; i++) {
+  for (let j = 0; j < people[i].length; j++) {
+    console.log(people[i][j]);
   }
 }
-//what does a nested .map look like???
+//what does a nested .map look like?
 //for of needs an array
 //if you use for of with obj you get "obj is not iterable" error!
 
 //forEach with arrays
 //outputs the elements from each index
 //nested forEach:
-family.forEach((arr) => arr.forEach((element) => console.log(element)));
+people.forEach((arr) => arr.forEach((element) => console.log(element)));
 
 //for of arr
 for (let [key, val] of Object.entries(zain)) {
@@ -100,6 +199,7 @@ for (let [key, val] of Object.entries(zain)) {
 //because Object.entries(zain) gives you an array [key, value] [key, value] [key, value]
 //[key,val] from the loop are just references/parameters
 
+console.log("------------Class-------------");
 //class
 //always start with capital letter
 //there can be classes without a constructor
