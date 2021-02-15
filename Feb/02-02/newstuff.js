@@ -19,7 +19,7 @@ const userObj = {
   activities: ["draw", "sleep", "eat"],
   german: true,
 };
-//you can have multiple properties, you can't have keys without
+//you can have multiple properties, you can't have undefined keys
 //keys cannot be the same name
 //obj key name should be unique
 console.log(userObj.name);
@@ -49,17 +49,17 @@ console.log(userObj.activities[0]); //prints first value
 // Here checkProp is just a parameter
 // function checkObj(obj, checkProp) {
 //   if (obj.hasOwnProperty(checkProp)) {
-//     return obj[checkProp]; // obj.checkProp does not work here!!! Because it is not the real name of the key
+//     return obj[checkProp]; //obj.checkProp as dot notation does not work here!!! Because it is not the real name of the key
 //   } else {
 //     return "Not Found";
 //   }
 // }
-// checkObj({gift: "pony", pet: "kitten", bed: "sleigh"}, "gift") // should return "pony".
+// checkObj({gift: "pony", pet: "kitten", bed: "sleigh"}, "gift") //returns "pony".
 
-// Object.keys
-// console.log(Object.keys(person)); //prints all keys in an array?
-// Object.values
-// console.log(Object.values(person)); //prints all values in an array?
+Object.keys;
+console.log(Object.keys(person)); //prints all keys in an array
+Object.values;
+console.log(Object.values(person)); //prints all values in an array
 
 console.log("-------------Declare A New Object--------------");
 
@@ -75,8 +75,6 @@ obj2["age"] = 31; //here age is not an array
 console.log(obj2);
 obj2.age = 33; //this overwrites the older property
 console.log(obj2);
-// obj2.lastName = "Nsreeny";
-// console.log(obj2);
 
 const save = new Object(); //here Object is a class
 console.log(save);
@@ -155,9 +153,9 @@ const objectTwo = { colors: ["white", "grey", "black"], pets: "fish" };
 const totalObjects = Object.assign({ name: "Hadi" }, objectOne, objectTwo);
 console.log(totalObjects);
 // assign will only change what's different
-// will take the last value of the key, if the objects have same keyname, it will add value of the last object
-// the order of the keys is chronological even if the value changes in the end
-// assign creates a copy
+// if the objects have same keyname, it will add the value only of the last object for that key
+// the order of the keys is chronological to the first object, even if the value changes come from another object where the key is in a different position
+// assign creates a copy not a reference
 
 //Object.defineProperty()
 const newPerson = {};
