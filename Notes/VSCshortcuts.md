@@ -20,6 +20,7 @@ select:
 select letter by letter from cursor --> put cursor where needed, hold: shift while: arrow left/arrow right
 select whole word --> double click word OR strg + d (once)
 select current line --> put cursor, strg + l
+select line by line from current cursor position --> shift + arrow up/down
 
 Brackets:
 squared brackets --> select, alt gr + 8/(/[
