@@ -58,3 +58,37 @@ open next editor/move between opened editors --> strg + tab
 open previous editor/move between opened editors --> strg + shift + tab
 
 Other tricks:
+
+HTML shortcuts:
+
+comment (does not work inside text tags or as attribute)--> c + enter
+
+HTML abbreviations
+Sometimes you can spend longer learning to type out shortcuts than if you just manually typed the code. I personally don't find Emmet abbreviations a time saver for writing CSS, but some of the HTML abbreviations I find useful include:
+
+Nested elements
+The shortcut nav>ul>li creates:
+
+<nav>
+  <ul>
+    <li></li>
+  </ul>
+</nav>
+Multiple elements
+The shortcut li*5 creates:
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+Tags with text
+The shortcut a{Click Me} creates:
+<a href="">Click Me</a>
+Elements with multiple classes
+The shortcut div.first-class.second-class creates:
+<div class="first-class second-class"></div>
+Elements with IDs
+The shortcut div#main creates:
+<div id="main"></div>
+
+Other useful stuff: https://dev.to/hannahgooding/vs-code-shortcuts-and-tricks-that-i-wish-i-knew-sooner-3mcj
