@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- comment just type c + enter -->
+    <meta charset="UTF-8" />
+    <!-- you can use UTF-16 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style></style>
+    <!-- style information-->
+    <!-- Don't style into the HTML tag! Not good because cannot be changed for different devices -->
+    <link rel="stylesheet" href="#something" />
+    <script></script>
+  </head>
+  <body>
+    <nav>
+      <a href="./home.html">Go to homepage</a>
+      <a href="#">About</a>
+      <!-- put in a hashtag to show that this link does not lead anywhere so ppl are not confused -->
+    </nav>
+
+    <h1 id="top">Heading 1</h1>
+    <h2>Heading 2</h2>
+    <h3>Heading 3</h3>
+    <h6>Heading 6</h6>
+    <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum possimus,
+      numquam provident similique iure eligendi dolore temporibus quae corporis
+      unde repudiandae iusto earum tenetur magni placeat ex eaque consequatur?
+      Assumenda!
+    </p>
+    <img src="./tree.jpg" alt="tree in woods" width="300px" height="200px" />
+    <!-- ./ will show all files local of your folder, use it to find your images and other files -->
+    <a href="https://www.google.de" target="_blank">Google it</a>
+    <!-- inside tags you can click strg + spacebar to see options of attributes to add -->
+    <!-- italcs and emphasize are visually the same but it is different for SEOs -->
+    <p title="text format changes">
+      <em>Lorem ipsum</em> <b>dolor sit amet</b>,
+      <i>consectetur adipisicing elit</i>. <strong>Sunt commodi ut</strong>,
+      <mark>veritatis</mark> <small>reprehenderit</small>
+      <sub>expedita sequi harum</sub>, <sup>rem sint quia similique</sup>
+      <del>repellat incidunt minima</del> cumque voluptatum excepturi totam non,
+      est accusamus provident perspiciatis magni officia? Facere laborum nulla
+      laudantium, error dicta placeat. Libero in consequatur accusantium
+      voluptatum, blanditiis facere aspernatur molestias id? Commodi sunt
+      exercitationem ducimus. Exercitationem repellat libero expedita itaque.
+    </p>
+    <a href="#top">Got back to top</a>
+
+    <table>
+      <caption>
+        People
+      </caption>
+      <tr>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Age</th>
+      </tr>
+      <tr>
+        <td>Nancy</td>
+        <td>Drew</td>
+        <td>34</td>
+      </tr>
+      <tr>
+        <td>Susan</td>
+        <td>Packer</td>
+        <td>32</td>
+      </tr>
+      <!-- Don't put anything strange into lists, it will cause a problem in the output -->
+      <ol type="I">
+        <li>bananas</li>
+        <li>apples</li>
+        <li>oranges</li>
+      </ol>
+      <ol type="i">
+        <li>bananas</li>
+        <li>apples</li>
+        <li>oranges</li>
+      </ol>
+      <ol type="A">
+        <li>bananas</li>
+        <li>apples</li>
+        <li>oranges</li>
+      </ol>
+      <ol type="a">
+        <li>bananas</li>
+        <li>apples</li>
+        <li>oranges</li>
+      </ol>
+      <ol type="1">
+        <li>bananas</li>
+        <li>apples</li>
+        <li>oranges</li>
+      </ol>
+      <ul>
+        <li>milk</li>
+        <li>bread</li>
+        <li>eggs</li>
+      </ul>
+    </table>
+
+    <form action="something">
+      <label for="fn">First Name</label> <br />
+      <input
+        type="text"
+        name="firstname"
+        id="fn"
+        placeholder="Please write your first name here"
+      />
+      <br />
+      <!-- name is a variable that your index will receive. -->
+      <input type="radio" name="gender" value="male" id="male" checked />
+      <label for="male">male</label> <br />
+      <input type="radio" name="gender" value="female" id="female" unchecked />
+      <label for="female">female</label> <br />
+      <input type="checkbox" name="cool" id="cool" value="cool" /> cool <br />
+      <input
+        type="button"
+        name=""
+        id=""
+        value="click me"
+        onclick="console.log('Hi')"
+      />
+      <input type="submit" value="Submit your info" />
+      <input type="reset" value="Clear everything" />
+      <input type="button" value="button" /> <br />
+      <br />
+      <input
+        type="number"
+        name="phonenumber"
+        id="phonenumber"
+        placeholder="Only give us your phonenumber here, please"
+      />
+    </form>
+    <br />
+    <br />
+    <iframe
+      width="560"
+      height="315"
+      src="https://www.youtube.com/embed/GB5hN2nHYAo"
+      frameborder="2"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+      allowfullscreen
+    ></iframe>
+
+    <p>This is where I used to live:</p>
+    <iframe
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d24107.437804968955!2d121.34939812909258!3d31.151241917425114!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x35b2615869bcdcf3%3A0x394c18b1557a3fb2!2sQibao%20Old%20Street!5e0!3m2!1sen!2sde!4v1614000031919!5m2!1sen!2sde"
+      width="600"
+      height="450"
+      style="border: 0"
+      allowfullscreen=""
+      loading="lazy"
+    ></iframe>
+    <p>
+      DCI Website: <br />
+      <iframe
+        src="https://digitalcareerinstitute.org/"
+        height="400"
+        width="700"
+        name="DCI"
+        style="border: none"
+      ></iframe>
+    </p>
+  </body>
+  <!-- great devs use form elements -->
+</html>
