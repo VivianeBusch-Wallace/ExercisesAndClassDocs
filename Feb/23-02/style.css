@@ -1,0 +1,52 @@
+/*inline styles are superior to external stylesheets*/
+/*Do not use px for anything because screens are different sizes*/
+/* vw = view width, best measure unit for parent elements
+em = emphemeral unit, for font size, will calculate from parent font size
+rem = root emphemeral unit, will calculate from root (HTML) font size
+em and rem standard is 16px
+(num)rem = 16px * num = ??px
+(num)em = parent * num = ??px
+position: static --> where HTML put it and parent element
+position: relative --> relative to where HTML put it and parent element?
+position: absolute --> relative to the root/whole page
+*/
+a:visited {
+  color: seagreen;
+}
+body {
+  /*background-image: url(./images/beach.jpg)*/
+  background-size: cover;
+}
+body section nav {
+  font-size: large;
+  font-weight: bold;
+  text-align: end;
+  padding-top: 5px;
+}
+body section nav ul li {
+  background-color: palegreen;
+  padding: 5px;
+  text-decoration: none;
+}
+body header {
+  /*background-image: url(./images/calm-sea.jpg);*/
+  background-size: contain;
+  height: 30em;
+}
+body header h1 {
+  text-align: center;
+  letter-spacing: 5px;
+}
+body article {
+  background-color: rgb(8, 18, 158);
+  border: black 5px;
+  width: 50vw;
+}
+#seaInText {
+  float: right;
+  height: 30%;
+  width: 50%;
+}
+body footer {
+  background-color: darkgray;
+}
