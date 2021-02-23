@@ -1,5 +1,3 @@
-// ********
-
 let names = ["Hadi", "Susi", "Lotty"];
 
 console.log(Math.floor(Math.random() * names.length));

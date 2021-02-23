@@ -14,28 +14,34 @@ a:visited {
   color: seagreen;
 }
 body {
-  /*background-image: url(./images/beach.jpg)*/
-  background-size: cover;
+  background-image: url(./images/beach.jpg);
+  background-blend-mode: multiply;
 }
 body section nav {
   font-size: large;
   font-weight: bold;
   text-align: end;
   padding-top: 5px;
+  border: rgb(8, 18, 158) 5px solid;
 }
 body section nav ul li {
   background-color: palegreen;
   padding: 5px;
   text-decoration: none;
+  list-style-type: none;
 }
 body header {
-  /*background-image: url(./images/calm-sea.jpg);*/
+  background-image: url(./images/calm-sea.jpg);
   background-size: contain;
+  background-repeat: no-repeat;
   height: 30em;
+  width: auto;
+  position: relative;
 }
-body header h1 {
-  text-align: center;
+#title {
   letter-spacing: 5px;
+  top: 300px;
+  position: absolute;
 }
 body article {
   background-color: rgb(8, 18, 158);

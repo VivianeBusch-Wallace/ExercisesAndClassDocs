@@ -255,8 +255,30 @@ console.log(binaryConverter2(44));
 
 console.log(binaryConverter2(-10));
 
-//striking idea
+//striking idea for Chinese zodiac:
 console.log(1900 % 12);
 console.log(1901 % 12);
 console.log(1912 % 12);
 console.log(1911 % 12);
+console.log(1908 % 12);
+
+//Objects:
+
+//https://edabit.com/challenge/7hrjegxToTSF4zAoM
+function sayWhat(obj) {
+  // return `${Object.values(obj).join(" ")} ${obj[2]}`;
+
+  // return Object.values(obj).join(" ").concat(` ${obj[2]}`);
+
+  let a = Object.values(obj);
+  a.push(a[1]);
+  return a.join(" ");
+}
+const sayWhat2 = (obj) => [1, 2, 3, 2].map((i) => obj[i]).join(" "); //pretty cool
+
+const sayWhat3 = (obj) => {
+  let arr = Object.values(obj);
+  return [...arr, arr[1]].join(" ");
+};
+
+console.log(sayWhat3({ 1: "Mommy", 2: "please", 3: "help" }));
