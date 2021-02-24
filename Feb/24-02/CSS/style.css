@@ -1,0 +1,75 @@
+/*fonts*/
+@font-face {
+  font-family: "Dot Gothic";
+  src: url("../fonts/DotGothic16-Regular.ttf");
+}
+/*it is better practice to put the url into quotes, it works without but*/
+@font-face {
+  font-family: "Roboto Mono Medium";
+  src: url("../fonts/RobotoMono-Medium.ttf");
+}
+@font-face {
+  font-family: "Roboto Mono Bold";
+  src: url("../fonts/RobotoMono-Bold.ttf");
+}
+
+/*header*/
+section header h1 {
+  font-family: "Dot Gothic";
+}
+
+/*main text*/
+section article h2 {
+  font-family: "Roboto Mono Bold";
+}
+.text {
+  background-color: darkgray;
+  width: 3rem;
+  height: 3rem;
+  border: black 2px solid;
+  border-radius: 1em;
+  /*border radius can have px, rem, em, etc.*/
+}
+/*shapes*/
+#shapes div {
+  display: inline-block;
+}
+.rectangle {
+  background-color: green;
+  height: 7em;
+  width: 4em;
+}
+.square {
+  background-color: red;
+  height: 5em;
+  width: 5em;
+}
+.circle {
+  background-color: springgreen;
+  height: 7em;
+  width: 7em;
+  border-radius: 50%;
+}
+.triangle {
+  height: 0;
+  width: 0;
+  border-bottom: 15em solid turquoise;
+  border-right: 9em solid transparent;
+  border-left: 5em solid transparent;
+  outline: 2px violet solid;
+  filter: drop-shadow(20px 20px 20px blue);
+}
+
+/*form*/
+input {
+  border: none;
+  outline: none;
+  background-color: gainsboro;
+  border-radius: 3px;
+  box-shadow: royalblue 4px 4px 5px;
+}
+input:hover {
+  background-color: aliceblue;
+}
+input[type="password"] {
+}
