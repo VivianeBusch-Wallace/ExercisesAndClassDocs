@@ -1,0 +1,25 @@
+/* fonts */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  width: 100vw;
+}
+
+/* form */
+form {
+  margin: 25% auto;
+  border: 2px red dashed;
+  height: 50%;
+  width: 50%;
+}
+
+/* fancy checkbox */
+
+/* Hide the ugly html checkbox */
+
+/* The switch */
