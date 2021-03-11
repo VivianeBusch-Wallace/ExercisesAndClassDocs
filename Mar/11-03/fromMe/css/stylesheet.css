@@ -1,3 +1,4 @@
+/* All */
 * {
   box-sizing: border-box;
   margin: 0;
@@ -17,21 +18,14 @@ p {
   word-spacing: normal;
   word-break: keep-all;
 }
+/* navigation bar */
 .nav {
   width: 100vw;
   background-color: cornflowerblue;
-  color: whitesmoke;
 }
-nav {
+.nav ul {
   display: flex;
-  justify-content: flex-end;
-  align-items: center;
 }
-nav ul {
-  list-style: none;
-  font-size: larger;
-  height: 5vh;
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
+nav li a {
+  text-decoration: none;
 }
