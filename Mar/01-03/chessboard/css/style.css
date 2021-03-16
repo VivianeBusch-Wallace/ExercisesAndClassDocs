@@ -1,0 +1,21 @@
+/* main table setup */
+table {
+  border: darkblue solid 2px;
+  height: 80vw;
+  width: 80vw;
+  background-color: blanchedalmond;
+}
+td {
+  border: darkblue solid 2px;
+}
+/* individual chessboard fields */
+tr:nth-child(even) td:nth-child(odd),
+tr:nth-child(odd) td:nth-child(even) {
+  background-color: darkblue;
+}
+/* tr:nth-child(even) td:nth-child(even) {
+  background-color: blanchedalmond;
+} */
+/* tr:nth-child(odd) td:nth-child(odd) {
+  background-color: blanchedalmond;
+} */

@@ -1,0 +1,103 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+/* variables */
+/* declaration of variables are always at the top of the css page */
+:root {
+  --my-color: orange;
+  --my-font-size: 5rem;
+  --other-color: rgba(200, 100, 38, 0.5);
+}
+/* you can also declare variables inside a certain selector, then you are limited to using the variable only inside that selector */
+
+/* body {
+    background-color: red;
+  } */
+/* pseudo elements VS  pseudo classes */
+
+/* pseudo-class is a keyword added to a selector that specifies a special state of the selected element(s). */
+/* more pseudo classes
+  :valid
+  :hover */
+
+/* pseudo-element is a keyword added to a selector that lets you style a specific part of the selected element(s) */
+
+/* ::before  Vs :before */
+/*   
+    :before css2 and ::before is css3
+  */
+
+div[class="main-text"]::after {
+  content: "😎";
+}
+
+div[class="main-text"]::before {
+  content: "💪🏻";
+}
+/* ::placeholder  */
+[type="text"]::placeholder {
+  color: var(--my-color);
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+
+/* ::first-letter (:first-letter) */
+.text::first-letter {
+  color: var(--other-color);
+  font-weight: bold;
+  font-size: var(--my-font-size);
+}
+
+/* display:none vs opacity: 0 */
+.tree {
+  width: 15vw;
+  height: 15vw;
+  box-shadow: 3px 3px 3px rgba(150, 40, 4, 0.5);
+  opacity: 0;
+  filter: grayscale(50);
+  /* display: none; */
+}
+.tree:hover {
+  transition: 2s ease-in-out;
+  opacity: 1;
+  filter: grayscale(0);
+  width: 20vw;
+  height: 20vh;
+}
+/* vh & vw */
+
+.menu {
+  width: 100vw;
+  height: 15vh;
+  background-color: burlywood;
+}
+
+ul li {
+  display: inline-block;
+  margin-right: 4vw;
+}
+
+/* visual content like img */
+/*  % , border-radius */
+
+.last-img {
+  width: 50vw;
+  height: 50vh;
+  overflow: hidden;
+}
+/* if you want to use % for size make sure that the parent element has an adaptive size */
+.last-img img {
+  width: 100%;
+  height: 50%;
+}
+
+a:visited,
+a {
+  color: var(--my-color);
+}
+
+div:hover h1 {
+  background-color: palegoldenrod;
+}

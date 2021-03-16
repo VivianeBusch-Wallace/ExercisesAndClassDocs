@@ -11,6 +11,7 @@ body {
   font: normal bold 1rem Georgia;
   /* font-family: Verdana, Geneva, Tahoma, sans-serif; */
   /* font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; */
+  padding-bottom: 100vh;
 }
 /* text */
 p {

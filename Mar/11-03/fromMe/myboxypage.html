@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/stylesheet.css" />
+    <title>Floating Cubes</title>
+  </head>
+  <body>
+    <section class="nav">
+      <nav>
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Product</a></li>
+          <li><a href="#">About us</a></li>
+        </ul>
+      </nav>
+    </section>
+    <section class="main">
+      <section class="maintext">
+        <div class="background-cube"></div>
+        <h2>This is a text</h2>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui repellat
+          omnis quisquam tempore nemo libero reiciendis quibusdam quasi debitis
+          consequuntur, quas magnam, facilis sit consectetur quo, corrupti
+          dolore voluptate architecto eaque unde sed! Sapiente nostrum illum
+          fugit iure perferendis cupiditate officiis incidunt impedit inventore,
+          consectetur et vitae, tempore consequuntur ipsa placeat quia?
+          Exercitationem sunt nulla, reprehenderit asperiores molestiae est. Id
+          ex reiciendis placeat sint et officiis perferendis. Qui, quo nihil.
+        </p>
+        <h2>This is a random number</h2>
+        <p class="random-number"></p>
+      </section>
+      <section class="foxy">
+        <div class="gradient"></div>
+        <img src="./cute-foxy.png" alt="cute fox cartoonstyle" />
+      </section>
+      <section class="freecodecamp">
+        for freecodecamp exercises:
+        <p>
+          Radio buttons are a type of input. Each of your radio buttons can be
+          nested within its own label element. By wrapping an input element
+          inside of a label element it will automatically associate the radio
+          button input with the label element surrounding it. All related radio
+          buttons should have the same name attribute to create a radio button
+          group. By creating a radio group, selecting any single radio button
+          will automatically deselect the other buttons within the same group
+          ensuring only one answer is provided by the user. It is considered
+          best practice to set a for attribute on the label element, with a
+          value that matches the value of the id attribute of the input element.
+          This allows assistive technologies to create a linked relationship
+          between the label and the child input element. For example:
+        </p>
+        <label for="indoor">
+          <input id="indoor" type="radio" name="indoor-outdoor" />Indoor
+        </label>
+        <label for="outdoor">
+          <input id="outdoor" type="radio" name="indoor-outdoor" />Outdoor
+        </label>
+      </section>
+    </section>
+    <footer>
+      <h5>Made with ❤️ By Vivi</h5>
+      <h6>All copyrights reserved ® <span class="year"></span></h6>
+    </footer>
+    <script>
+      let year = new Date().getFullYear();
+      document.querySelector(".year").innerHTML = year;
+    </script>
+  </body>
+</html>

@@ -6,6 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Forms</title>
     <link rel="stylesheet" href="./css/stylesheet.css" />
+    <link rel="icon" href="./img/random-icon.png" />
+    <link
+      rel="stylesheet"
+      href="./css/fontawesome-free-5.15.2-web/css/all.css"
+    />
   </head>
   <body>
     <form action="index.js" method="GET">
@@ -32,9 +37,13 @@
       </fieldset>
       <section class="toggle">
         <label for="info" class="toggle-lable"> Want more info? </label>
-        <input type="checkbox" name="moreInfo" />
-        <span class="slider"></span>
+        <label class="switch">
+          <!-- for needs to be removed here -->
+          <input type="checkbox" name="moreInfo" />
+          <span class="slider"></span>
+        </label>
       </section>
+      <i class="fas fa-random"></i>
       <input type="submit" value="Send" />
     </form>
   </body>

@@ -1,0 +1,47 @@
+/* CSS3 syntax --> ::first-line*/
+/* CSS2 syntax --> :first-line */
+
+p {
+  background-color: darkseagreen;
+  font-size: 1rem;
+}
+p::first-line,
+span::first-line {
+  background-color: seagreen;
+}
+/* only works on blocklevel elements, in this example it will not
+work on <span> because span is an inline element*/
+
+div::first-line {
+  color: salmon;
+  background-color: yellow;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-style: italic;
+  font-weight: bolder;
+  word-spacing: 2rem;
+  text-transform: capitalize;
+  text-decoration-line: line-through;
+}
+
+/* the length of the first line depends on many factors,
+including the width of the element,
+the width of the document
+the font size of the text. */
+
+/* Allowed properties:
+- all font related properties
+- all background related properties
+- the color property
+- word-spacing
+- letter-spacing
+- text-decoration
+- text-transform
+- line-height
+- text-shadow
+- text-decoration
+- text-decoration-color
+- text-decoration-line
+- text-decoration-style
+- vertical-align.
+
+*/
