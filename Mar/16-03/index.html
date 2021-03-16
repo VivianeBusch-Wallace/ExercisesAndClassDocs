@@ -40,7 +40,14 @@
   <!-- npm init -yes || npm init -y -->
   <!-- npm i live-server -->
   <!-- Second step: add script into package.json -->
-  <!-- "start":"liver-server index.html" -->
+  <!-- like here:
+"scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "liver-server index.html"
+     },
+ -->
+ <!-- create .gitignore -->
+  <!-- before you push add node_modules to gitignore!!! -->
 
   <script>
       let clicked = false;
@@ -54,6 +61,8 @@
           }
          
       })
+    //   explanation: what happens after document.querySelector('.side-menu').style.cssText is like inline styling of the html element
+    //   whenever the user clicks the value of clicked will change to the opposite of what it was before the user clicked
   </script>
   </body>
 </html>
