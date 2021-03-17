@@ -3,9 +3,13 @@
   margin: 0;
   padding: 0;
 }
+:root {
+  font-size: 16px;
+}
 body {
   height: 100vh;
 }
+/* shared flex properties */
 body,
 .menus-container,
 .menu {
@@ -14,20 +18,61 @@ body,
   align-items: center;
   flex-wrap: wrap;
 }
+/* hamburger menus */
 .menus-container {
   width: 31vw;
   height: 30vw;
   border: brown solid 3px;
+  /* position: absolute; */
 }
 .menu {
   width: 10rem;
   height: 10rem;
   background-color: aquamarine;
   padding: 1rem;
+  /* position: relative; */
 }
+/* moving box always needs position:absolute */
+
 .bars {
   width: 8rem;
   height: 1rem;
   background-color: rgb(56, 53, 53);
   border-radius: 0.5rem;
+}
+
+/* animations */
+/* 
+for shorthand in this order?:
+animation-name: none
+animation-duration: 0s
+animation-timing-function: ease
+animation-delay: 0s
+animation-iteration-count: 1
+animation-direction: normal
+animation-fill-mode: none
+animation-play-state: running 
+*/
+
+/* first menu */
+.menu-first {
+  position: absolute;
+  background-color: coral;
+  animation-name: drop-down;
+  animation-duration: 3s;
+  animation-timing-function: ease;
+  animation-delay: 0s;
+  animation-iteration-count: 1;
+  animation-direction: normal;
+  animation-fill-mode: none;
+  animation-play-state: running;
+}
+@keyframes drop-down {
+  from {
+    top: 0;
+  }
+  to {
+    /* position: relative; */
+    top: 500px;
+  }
 }
