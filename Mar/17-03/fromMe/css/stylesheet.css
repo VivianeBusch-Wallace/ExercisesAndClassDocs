@@ -25,7 +25,8 @@ body,
   border: brown solid 3px;
   /* position: absolute; */
 }
-.menu {
+.menu,
+.menu-third::before {
   width: 10rem;
   height: 10rem;
   background-color: skyblue;
@@ -33,7 +34,6 @@ body,
   /* position: relative; */
 }
 /* moving box always needs position:absolute ?????*/
-
 .bars {
   width: 8rem;
   height: 1rem;
@@ -41,9 +41,8 @@ body,
   border-radius: 0.5rem;
   z-index: 3;
 }
-
 /* animations */
-/* 
+/*
 for shorthand in this order?:
 animation-name: none
 animation-duration: 0s
@@ -52,9 +51,8 @@ animation-delay: 0s
 animation-iteration-count: 1
 animation-direction: normal
 animation-fill-mode: none
-animation-play-state: running 
+animation-play-state: running
 */
-
 /* first menu */
 .menu-first {
   position: relative;
@@ -65,7 +63,7 @@ animation-play-state: running
   animation-iteration-count: 1;
   animation-direction: reverse;
   animation-fill-mode: none;
-  animation-play-state: paused;
+  /*animation-play-state: paused;*/
 }
 @keyframes drop-down {
   from {
@@ -76,7 +74,6 @@ animation-play-state: running
     background-color: coral;
   }
 }
-
 /* second menu */
 .menu-second {
   position: relative;
@@ -87,7 +84,7 @@ animation-play-state: running
   animation-iteration-count: 1;
   animation-direction: reverse;
   animation-fill-mode: none;
-  animation-play-state: paused;
+  /*animation-play-state: paused;*/
   transform: rotate(-180deg);
   transition-duration: 2s;
 }
@@ -102,52 +99,52 @@ animation-play-state: running
     background-color: green;
   }
 }
-
 /* third menu */
 .menu-third {
   position: relative;
-  z-index: 2;
   background-color: teal;
+  z-index: 2;
   animation-name: from-right;
-  animation-duration: 2.3s;
-  animation-timing-function: linear;
-  animation-delay: 0s;
-  animation-iteration-count: 1;
-  animation-direction: normal;
-  animation-fill-mode: none;
-  animation-play-state: running;
-}
-@keyframes from-right {
-  from {
-    left: 0;
-  }
-  to {
-    left: 45vw;
-    background-color: yellow;
-  }
-}
-
-.menu-third::before {
-  content: "";
-  background-color: violet;
-  position: absolute;
-  transform: translateY(-1%);
-  z-index: 1;
-  /* animation-name: from-right-before;
   animation-duration: 2.3s;
   animation-timing-function: linear;
   animation-delay: 0s;
   animation-iteration-count: 1;
   animation-direction: reverse;
   animation-fill-mode: none;
-  animation-play-state: running; */
+  animation-play-state: running;
 }
-/* @keyframes from-right-before {
+@keyframes from-right {
   from {
-    top: 0;
+    bottom: 0;
   }
   to {
-    top: 45vw;
+    bottom: 45vw;
+    background-color: yellow;
+  }
+}
+.menu-third::before {
+  content: "";
+  /* background-color: violet; */
+  position: absolute;
+  width: 8rem;
+  height: 8rem;
+  /* transform: translateY(-1%); */
+  z-index: 1;
+  animation-name: from-right-before;
+  animation-duration: 2s;
+  animation-timing-function: linear;
+  animation-delay: 0s;
+  animation-iteration-count: 1;
+  animation-direction: reverse;
+  animation-fill-mode: none;
+  animation-play-state: running;
+}
+@keyframes from-right-before {
+  from {
+    left: 0;
+  }
+  to {
+    left: 45vw;
     background-color: orange;
   }
-} */
+}
