@@ -15,23 +15,15 @@ body,
   flex-wrap: wrap;
 }
 .menus-container {
-  width: 35vw;
-  /* height: 60%; */
+  width: 31vw;
+  height: 30vw;
   border: brown solid 3px;
 }
-/* .menu {
-  display: flex;
-  margin: 1rem;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-  align-content: center;
-} */
 .menu {
   width: 10rem;
   height: 10rem;
   background-color: aquamarine;
-  margin: 1rem;
+  padding: 1rem;
 }
 .bars {
   width: 8rem;
