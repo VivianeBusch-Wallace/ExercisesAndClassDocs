@@ -148,3 +148,12 @@ animation-play-state: running
     background-color: orange;
   }
 }
+
+button {
+  background-color: #1c1c1c;
+  color: white;
+}
+button:hover {
+  background-color: red;
+  cursor: pointer;
+}
