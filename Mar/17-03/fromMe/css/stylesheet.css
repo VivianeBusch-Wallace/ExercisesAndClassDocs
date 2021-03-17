@@ -32,13 +32,14 @@ body,
   padding: 1rem;
   /* position: relative; */
 }
-/* moving box always needs position:absolute */
+/* moving box always needs position:absolute ?????*/
 
 .bars {
   width: 8rem;
   height: 1rem;
   background-color: rgb(56, 53, 53);
   border-radius: 0.5rem;
+  z-index: 3;
 }
 
 /* animations */
@@ -57,22 +58,20 @@ animation-play-state: running
 /* first menu */
 .menu-first {
   position: relative;
-  /* background-color: coral; */
   animation-name: drop-down;
-  animation-duration: 2s;
+  animation-duration: 2.4s;
   animation-timing-function: linear;
   animation-delay: 0s;
   animation-iteration-count: 1;
   animation-direction: reverse;
   animation-fill-mode: none;
-  animation-play-state: running;
+  animation-play-state: paused;
 }
 @keyframes drop-down {
   from {
     bottom: 0;
   }
   to {
-    /* position: relative; */
     bottom: 40vh;
     background-color: coral;
   }
@@ -81,15 +80,14 @@ animation-play-state: running
 /* second menu */
 .menu-second {
   position: relative;
-  /* background-color: coral; */
   animation-name: diagonal;
-  animation-duration: 2s;
+  animation-duration: 2.1s;
   animation-timing-function: linear;
   animation-delay: 0s;
   animation-iteration-count: 1;
   animation-direction: reverse;
   animation-fill-mode: none;
-  animation-play-state: running;
+  animation-play-state: paused;
   transform: rotate(-180deg);
   transition-duration: 2s;
 }
@@ -99,9 +97,57 @@ animation-play-state: running
     left: 0;
   }
   to {
-    /* position: relative; */
     bottom: 40vh;
     left: 10vw;
     background-color: green;
   }
 }
+
+/* third menu */
+.menu-third {
+  position: relative;
+  z-index: 2;
+  background-color: teal;
+  animation-name: from-right;
+  animation-duration: 2.3s;
+  animation-timing-function: linear;
+  animation-delay: 0s;
+  animation-iteration-count: 1;
+  animation-direction: normal;
+  animation-fill-mode: none;
+  animation-play-state: running;
+}
+@keyframes from-right {
+  from {
+    left: 0;
+  }
+  to {
+    left: 45vw;
+    background-color: yellow;
+  }
+}
+
+.menu-third::before {
+  content: "";
+  background-color: violet;
+  position: absolute;
+  transform: translateY(-1%);
+  z-index: 1;
+  /* animation-name: from-right-before;
+  animation-duration: 2.3s;
+  animation-timing-function: linear;
+  animation-delay: 0s;
+  animation-iteration-count: 1;
+  animation-direction: reverse;
+  animation-fill-mode: none;
+  animation-play-state: running; */
+}
+/* @keyframes from-right-before {
+  from {
+    top: 0;
+  }
+  to {
+    top: 45vw;
+    background-color: orange;
+  }
+} */
