@@ -28,7 +28,7 @@ body,
 .menu {
   width: 10rem;
   height: 10rem;
-  background-color: aquamarine;
+  background-color: skyblue;
   padding: 1rem;
   /* position: relative; */
 }
@@ -56,23 +56,52 @@ animation-play-state: running
 
 /* first menu */
 .menu-first {
-  position: absolute;
-  background-color: coral;
+  position: relative;
+  /* background-color: coral; */
   animation-name: drop-down;
-  animation-duration: 3s;
-  animation-timing-function: ease;
+  animation-duration: 2s;
+  animation-timing-function: linear;
   animation-delay: 0s;
   animation-iteration-count: 1;
-  animation-direction: normal;
+  animation-direction: reverse;
   animation-fill-mode: none;
   animation-play-state: running;
 }
 @keyframes drop-down {
   from {
-    top: 0;
+    bottom: 0;
   }
   to {
     /* position: relative; */
-    top: 500px;
+    bottom: 40vh;
+    background-color: coral;
+  }
+}
+
+/* second menu */
+.menu-second {
+  position: relative;
+  /* background-color: coral; */
+  animation-name: diagonal;
+  animation-duration: 2s;
+  animation-timing-function: linear;
+  animation-delay: 0s;
+  animation-iteration-count: 1;
+  animation-direction: reverse;
+  animation-fill-mode: none;
+  animation-play-state: running;
+  transform: rotate(-180deg);
+  transition-duration: 2s;
+}
+@keyframes diagonal {
+  from {
+    bottom: 0;
+    left: 0;
+  }
+  to {
+    /* position: relative; */
+    bottom: 40vh;
+    left: 10vw;
+    background-color: green;
   }
 }
