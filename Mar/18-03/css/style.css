@@ -1,0 +1,107 @@
+/* copied from hadi */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+:root {
+  font-size: 16px;
+  --ani-move: all 0.4s ease-in;
+}
+body {
+  height: 100vh;
+  font-family: Tahoma, sans-serif;
+}
+.navbar {
+  background-color: lightgray;
+  display: flex;
+  justify-content: flex-start;
+  flex-flow: row;
+  font-family: Tahoma, sans-serif;
+  position: relative;
+  width: 100vw;
+  height: 5vh;
+}
+
+/* fancy menu */
+
+/* style items */
+a {
+  text-decoration: none;
+  color: white;
+}
+.list-item {
+  list-style: none;
+  font-size: 1.5rem;
+  color: white;
+  padding: 1rem;
+  background-color: orange;
+  z-index: 1;
+}
+
+/* style button */
+.subnavbtn {
+  border: none;
+  background-color: inherit;
+  font-size: 1.2rem;
+  font-family: Tahoma, sans-serif;
+  padding: 0.75rem;
+  color: white;
+}
+
+/* style drop down menu */
+/* container */
+.subnav-content {
+  display: none;
+  position: absolute;
+  left: 0;
+  width: 100%;
+}
+/* hover */
+/* + is necessary here because siblings */
+.subnavbtn:hover + .subnav-content {
+  display: block;
+  transition: var(--ani-move);
+}
+.list-item:hover {
+  background-color: whitesmoke;
+  color: orange;
+  transition: var(--ani-move);
+}
+
+.navbar::before {
+  content: "";
+  display: block;
+  position: absolute;
+  border-radius: 40%;
+  width: 100%;
+  height: 120%;
+  background-color: lightgray;
+  left: 30%;
+  top: 20%;
+}
+
+/* footer */
+footer {
+  position: fixed;
+  bottom: 0;
+  width: 100vw;
+  background-color: orange;
+}
+footer::after {
+  content: "";
+  display: block;
+  position: absolute;
+  border-radius: 40%;
+  width: 70%;
+  height: 100%;
+  background-color: orange;
+  right: 30%;
+  bottom: 35%;
+  z-index: -1;
+}
+footer ul {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}

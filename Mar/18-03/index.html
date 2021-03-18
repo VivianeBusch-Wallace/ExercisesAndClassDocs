@@ -1,0 +1,64 @@
+<!-- copied from hadi  -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fancy menu</title>
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+  <body>
+    <nav class="navbar">
+      <nav class="subnav">
+        <button class="subnavbtn">About ▼</button>
+        <ul class="subnav-content">
+          <li class="list-item"><a href="#">call 1</a></li>
+          <li class="list-item"><a href="#">call 2</a></li>
+          <li class="list-item"><a href="#">call 3</a></li>
+        </ul>
+      </nav>
+      <nav class="subnav">
+        <button class="subnavbtn">Help ▼</button>
+        <ul class="subnav-content">
+          <li class="list-item">option 1</li>
+          <li class="list-item">option 2</li>
+          <li class="list-item">option 3</li>
+        </ul>
+      </nav>
+      <nav class="subnav">
+        <button class="subnavbtn">More ▼</button>
+        <ul class="subnav-content">
+          <li class="list-item">item 1</li>
+          <li class="list-item">item 2</li>
+          <li class="list-item">item 3</li>
+        </ul>
+      </nav>
+    </nav>
+    <footer>
+      <ul class="footer-menu">
+        <li class="list-item">item 1</li>
+        <li class="list-item">item 2</li>
+        <li class="list-item">item 3</li>
+      </ul>
+    </footer>
+
+    <script>
+      let clicked = false;
+      const yourClick = (item) => {
+        let string = "";
+        clicked = !clicked;
+        if (clicked) {
+          string = "block";
+        } else {
+          string = "none";
+        }
+        document.querySelector(
+          ".subnav-content"
+        ).style.cssText = `display: ${string}; transition: var(--ani-move)`;
+      };
+      document.querySelector(".subnavbtn").addEventListener("click", yourClick);
+      //   we need a loop here
+    </script>
+  </body>
+</html>
