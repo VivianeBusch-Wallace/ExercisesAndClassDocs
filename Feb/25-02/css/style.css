@@ -1,0 +1,179 @@
+/* 
+things you might want to pay more attention to
+  z-index: 99; Not good idea
+  images are broken
+  no index.html on the root directory
+  more DRY css files
+  If you are using Mac you need .gitignore for .DB_Store
+  add GH pages link to about section for that repo
+  SORT files and directories
+*/
+
+/* Attribute SelectorsThe attribute selector is used to select elements with a specified attribute (value).input[type="text"]{ ... } selects all input fields in a form with the type attribute „text".a[target]{ ... } selects all links which have a target attribute.a[target="_blank"]{ ... } selects all links with a target attribute set to „_blank".[title="flower"]{ ... } selects all elements with the title attribute „flower". */
+
+/* * selects everything*/
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* CSS selectors */
+
+/* Element selector */
+html {
+  background-color: orange;
+}
+
+/* #ID selector */
+#cool {
+  background-color: orangered;
+}
+/* .class selector */
+.box {
+  background-color: orchid;
+}
+
+/* element,element Selector
+    element AND element 
+    */
+table,
+div {
+  background-color: paleturquoise;
+}
+
+/* element element Selector
+    aka element inside element 
+    */
+div p {
+  font-size: smaller;
+}
+
+/* element>element	 Selector  
+    element parent element 
+    */
+
+div > p {
+  font-family: "Times New Roman", Times, serif;
+  color: purple;
+}
+/* element+element  Selector
+    element immediately after element */
+div + span {
+  background-color: rosybrown;
+}
+
+/* element1~element2 Selector 
+    element preceded element */
+span ~ p {
+  background-color: royalblue;
+}
+
+/* [attribute] Selector */
+[id] {
+  background-color: seagreen;
+}
+
+/* [attribute=value] Selector  */
+[type="submit"] {
+  border: none;
+  background-color: pink;
+}
+
+/* [attribute~=value] Selector
+    containing the value */
+
+[alt~="sun"] {
+  border: 3px solid black;
+}
+/* [attribute^=value] Selector
+    starts with the value */
+[class^="te"] {
+  /* border: 3px solid hotpink; */
+  color: hotpink;
+}
+
+/* [attribute$=value] Selector
+    value ends with  */
+
+[class$="box"] {
+  /* border: 3px solid hotpink; */
+  width: 14rem;
+}
+/* [attribute*=value] Selector
+    contains the substring */
+
+[class*="long"] {
+  /* border: 3px solid hotpink; */
+  height: 3rem;
+}
+/* Difference between ~ and *: 
+  using * finds -> longTrip long
+  using ~ finds -> long
+  */
+
+/* pseudo class  */
+/* specifies a special state for that element */
+/* pseudo class is what the user does */
+/* :hover */
+table:hover {
+  background-color: lightcoral;
+}
+
+/* :visited */
+a:visited {
+  color: green;
+}
+
+/* :focus */
+/* when you click and write */
+input[type="text"]:focus {
+  outline: none;
+  border: 2px solid red;
+  box-shadow: 3px 3px 3px;
+}
+
+/* :active */
+a:active {
+  background-color: blue;
+}
+
+/* :checked */
+[type="checkbox"]:checked {
+  width: 5rem;
+}
+
+/* :target */
+
+/* :nth-child() */
+tr:nth-child(2n) {
+  background-color: grey;
+}
+tr:nth-child(3) {
+  background-color: greenyellow;
+}
+td:nth-child(2n) {
+  background-color: cadetblue;
+}
+tr:nth-last-child(2) {
+  background-color: blueviolet;
+}
+tr:nth-child(2n + 1) {
+  border: solid 3px green; /*????*/
+}
+tr:nth-child(1) td:nth-child(2) {
+  background-color: crimson;
+}
+
+tr:nth-child(1) :nth-child(n + 3):nth-child(-n + 5) {
+  border: 2px solid black;
+}
+
+/* pseudo elements  */
+/* ::after  
+    :after css2 and ::after is css3*/
+
+/* ::before  
+      :before css2 and ::before is css3*/
+
+/* here we will */
