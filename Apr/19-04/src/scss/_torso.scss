@@ -5,7 +5,8 @@
 }
 
 .container {
-  height: 4rem;
-  width: 4rem;
+  @include size-for-div;
   background-color: aqua;
+  @include rotate-flip(5s, 2);
+  left: 5rem;
 }
