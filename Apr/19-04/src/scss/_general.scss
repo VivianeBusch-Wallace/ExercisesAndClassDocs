@@ -6,3 +6,6 @@
 body {
   @include center(column);
 }
+hr {
+  width: 100%;
+}
