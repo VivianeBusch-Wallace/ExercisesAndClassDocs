@@ -92,3 +92,11 @@ $font-sizing: (
     @error "#{$size} this is not defined, Use #{font-sizing}";
   }
 }
+
+//background colors map
+$background-colors: (
+  dark-grey: darkslategrey,
+  blue: steelblue,
+  red: crimson,
+  yellow: rgb(255, 217, 0),
+);
