@@ -1,5 +1,15 @@
+// Mixins for all
 @import "./mixins";
 //mixins need to be in the top because otherwise undefined!
+
+// Setup for several or all sections
+@import "./general";
+
+// header
 @import "./header";
+
+// body middle
 @import "./torso";
+
+// animations
 @import "./animations";

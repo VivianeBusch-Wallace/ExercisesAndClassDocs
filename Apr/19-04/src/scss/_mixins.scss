@@ -30,7 +30,7 @@
 }
 @mixin fade-in($time) {
   animation-name: fade-in;
-  animation-duration: #{$time};
+  animation-duration: $time;
   animation-iteration-count: infinite;
   animation-direction: alternate;
 }

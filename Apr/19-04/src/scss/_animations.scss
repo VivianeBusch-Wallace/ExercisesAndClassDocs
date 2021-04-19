@@ -1,9 +1,3 @@
-.box {
-  @include fade-in(3s);
-  @include size-for-div;
-  background-color: purple;
-}
-
 @keyframes fade-in {
   0% {
     @include hide;

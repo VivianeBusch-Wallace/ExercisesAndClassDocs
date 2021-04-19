@@ -1,0 +1,5 @@
+.box {
+  @include fade-in(3s);
+  @include size-for-div;
+  background-color: purple;
+}
