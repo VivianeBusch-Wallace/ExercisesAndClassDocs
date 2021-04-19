@@ -7,6 +7,6 @@
 .container {
   @include size-for-div;
   background-color: aqua;
-  @include rotate-flip(5s, 2);
+  @include swing(3s, 3);
   left: 5rem;
 }

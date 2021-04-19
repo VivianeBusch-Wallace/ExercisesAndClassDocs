@@ -35,9 +35,10 @@
   animation-direction: alternate;
 }
 
-@mixin rotate-flip($time, $iteration) {
-  animation-name: rotate-flip;
+@mixin swing($time, $iteration) {
+  animation-name: swing;
   animation-duration: #{$time};
   animation-iteration-count: #{$iteration};
-  animation-direction: alternate;
+  animation-direction: alternate-reverse;
+  animation-fill-mode: forwards;
 }

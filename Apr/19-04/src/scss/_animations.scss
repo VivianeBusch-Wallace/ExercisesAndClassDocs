@@ -12,11 +12,12 @@
   }
 }
 
-@keyframes rotate-flip {
-  0% {
+@keyframes swing {
+  0%,
+  100% {
     transform: rotate(0deg) translateX(10rem);
   }
-  100% {
-    transform: rotate(180deg) translateX(26rem);
+  50% {
+    transform: rotate(105deg) translateX(26rem);
   }
 }
