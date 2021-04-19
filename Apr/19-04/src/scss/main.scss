@@ -1,3 +1,5 @@
 @import "./mixins";
-//mixins need to be in the top because otherwise undefined
+//mixins need to be in the top because otherwise undefined!
+@import "./header";
 @import "./torso";
+@import "./animations";
