@@ -1,4 +1,4 @@
-.triangle {
+.triangles {
   &::before,
   &::after {
     display: block;
@@ -20,6 +20,9 @@
 }
 .text-m {
   @include font-size(m);
+}
+.text-l {
+  @include font-size(l);
 }
 .text-xl {
   @include font-size(xl);

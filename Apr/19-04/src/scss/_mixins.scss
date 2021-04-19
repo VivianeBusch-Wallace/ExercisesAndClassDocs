@@ -34,7 +34,7 @@
   animation-iteration-count: infinite;
   animation-direction: alternate;
 }
-
+// hammer movement
 @mixin swing($time, $iteration) {
   animation-name: swing;
   animation-duration: #{$time};
@@ -44,7 +44,6 @@
 }
 
 // if else
-
 @mixin triangle($direction, $color: black) {
   width: 0;
   height: 0;
@@ -70,14 +69,13 @@
 }
 
 // map - map is for rules
-
 $font-sizing: (
   xs: 12px,
   s: 14px,
   m: 16px,
   l: 20px,
-  xl: 40px,
-  xxl: 60px,
+  xl: 30px,
+  xxl: 50px,
 );
 @mixin font-size($size) {
   @if map-has-key($map: $font-sizing, $key: $size) {
