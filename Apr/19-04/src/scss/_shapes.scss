@@ -14,9 +14,11 @@
 }
 .text-xs {
   @include font-size(xs);
+  @include background-color(dark-grey);
 }
 .text-s {
   @include font-size(s);
+  @include background-color(blue);
 }
 .text-m {
   @include font-size(m);

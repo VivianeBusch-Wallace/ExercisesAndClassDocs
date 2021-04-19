@@ -104,9 +104,9 @@ $background-colors: (
   yellow: rgb(255, 217, 0),
 );
 
-@mixin background-color($background-colors) {
+@mixin background-color($bg-color) {
   @if map-has-key($map: $background-colors, $key: $bg-color) {
-    background-color: map-get($map: background-colors, $key: $bg-color);
+    background-color: map-get($map: $background-colors, $key: $bg-color);
   } @else {
     @error "The color you chose is not available. Choose from #{$background-colors}";
   }
