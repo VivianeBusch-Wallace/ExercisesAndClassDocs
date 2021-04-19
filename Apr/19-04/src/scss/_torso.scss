@@ -15,7 +15,8 @@
     background-color: rgb(84, 106, 124);
     @include swing(3s, 2);
     // animation-play-state: paused;
-    border-radius: 0.3rem;
+    border-radius: 25%;
+
     // hammer handle
     &::before {
       display: block;
