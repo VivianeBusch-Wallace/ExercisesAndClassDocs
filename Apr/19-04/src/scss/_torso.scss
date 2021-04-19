@@ -1,26 +1,33 @@
+// torso is the main part of the page
 .torso {
-  @include center;
-  flex-direction: column;
-}
-.box {
-  @include fade-in(3s);
-  @include size-for-div;
-  background-color: purple;
-}
+  @include center(column);
+  //   flex-direction: column;
 
-.container {
-  @include size-for-div;
-  background-color: aqua;
-  @include swing(3s, 3);
-  left: 5rem;
-}
-.list {
-  background-color: darkslateblue;
-  width: 50vw;
-  height: 14vh;
-  @include center;
-  ul {
-    @include list-none;
-    background-color: darkorange;
+  .box {
+    @include fade-in(3s);
+    @include size-for-div;
+    background-color: purple;
+  }
+
+  .container {
+    @include size-for-div;
+    background-color: aqua;
+    @include swing(3s, 3);
+    border-radius: 0.3rem;
+  }
+  .list {
+    background-color: darkslateblue;
+    width: 50vw;
+    height: 14vh;
+    @include center(row);
+    ul {
+      @include size-for-div;
+      @include reset-list;
+      @include center(column);
+      background-color: darkorange;
+    }
+    li {
+      font-size: 0.7rem;
+    }
   }
 }

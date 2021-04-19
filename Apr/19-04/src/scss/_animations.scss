@@ -15,9 +15,9 @@
 @keyframes swing {
   0%,
   100% {
-    transform: rotate(0deg) translateX(10rem);
+    transform: rotate(0deg) translateX(0rem);
   }
   50% {
-    transform: rotate(360deg) translateX(26rem);
+    transform: rotate(360deg) translateX(20rem);
   }
 }

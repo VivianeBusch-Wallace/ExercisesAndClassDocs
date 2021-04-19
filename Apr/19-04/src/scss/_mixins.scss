@@ -4,19 +4,17 @@
   padding: 0;
   list-style: none;
 }
-@mixin list-none {
-  list-style: none;
-}
 // Center content
-@mixin center {
+@mixin center($direction) {
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: #{$direction};
 }
 // Size for box
 @mixin size-for-div {
-  width: 4rem;
-  height: 4rem;
+  width: 5rem;
+  height: 5rem;
 }
 
 // Hide element
@@ -43,4 +41,56 @@
   animation-iteration-count: #{$iteration};
   animation-direction: alternate-reverse;
   animation-fill-mode: forwards;
+}
+
+// if else
+
+@mixin triangle($direction, $color: black) {
+  width: 0;
+  height: 0;
+  @if $direction == up {
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-bottom: 5px solid $color;
+  } @else if $direction == right {
+    border-left: 5px solid $color;
+    border-top: 5px solid transparent;
+    border-bottom: 5px solid transparent;
+  } @else if $direction == down {
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 5px solid $color;
+  } @else if $direction == left {
+    border-top: 5px solid transparent;
+    border-right: 5px solid $color;
+    border-bottom: 5px solid transparent;
+  } @else {
+    @error "Unkown direction #{$direction}";
+  }
+}
+
+// map - map is for rules
+
+$font-sizing: (
+  xs: 12px,
+  s: 14px,
+  m: 16px,
+  l: 20px,
+  xl: 40px,
+  xxl: 60px,
+);
+@mixin font-size($size) {
+  @if map-has-key($map: $font-sizing, $key: $size) {
+    font-size: map-get($map: $font-sizing, $key: $size);
+  } @else {
+    @error "#{$size} your size is not available, use #{$font-sizing}";
+  }
+}
+// function
+@function font-size($size) {
+  @if map-has-key($font-sizing, $size) {
+    @return map-get($font-sizing, $size);
+  } @else {
+    @error "#{$size} this is not defined, Use #{font-sizing}";
+  }
 }

@@ -1,5 +1,5 @@
 .header {
-  @include center;
+  @include center(row);
   @include size-for-div;
   background-color: orange;
 }
