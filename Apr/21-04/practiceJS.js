@@ -63,14 +63,42 @@ findUniques([1, 4, 0, 7, 3, 9]);
 // ------------------------------------
 console.log("----camel case----");
 // toCamelCase("hello_world") ➞ "helloWorld"
-// toCamelCase("java_script_is_fun") ➞ "javascriptIsFun"
+// toCamelCase("java_script_is_fun") ➞ "javaScriptIsFun"
+
+// second solution:
 camelCase = (str) => {
   let arrOfStr = str.split("_");
   let newArr = [];
-  for (let i = 1; i < arrOfStr.length; i++) {}
-  return console.log(str.split("_").join(""));
+  let total = "";
+  for (let i = 0; i < arrOfStr.length; i++) {
+    i === 0
+      ? (total += arrOfStr[i])
+      : (total += arrOfStr[i][0].toUpperCase() + arrOfStr[i].substring(1));
+    // arrOfStr[i] = arrOfStr[i][0].toUpperCase() + arrOfStr[i].substring(1);
+    // newArr.push(arrOfStr[i]);
+  }
+  newArr.unshift(arrOfStr[0]);
+  let cc = newArr.join("");
+  // return console.log(cc);
+  return console.log(total);
 };
 camelCase("hello_world");
+camelCase("java_script_is_fun");
+
+// first solution:
+camelCase2 = (str) => {
+  let arrOfStr = str.split("_");
+  let newArr = [];
+  for (let i = 1; i < arrOfStr.length; i++) {
+    arrOfStr[i] = arrOfStr[i][0].toUpperCase() + arrOfStr[i].substring(1);
+    newArr.push(arrOfStr[i]);
+  }
+  newArr.unshift(arrOfStr[0]);
+  let cc = newArr.join("");
+  return console.log(cc);
+};
+camelCase2("hello_world");
+camelCase2("java_script_is_fun");
 // ------------------------------------
 console.log("----average----");
 // Bonus: Write a function which accepts any amount of numbers and returns the average.
