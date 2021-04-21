@@ -7,5 +7,81 @@
     <link rel="stylesheet" href="./styles/main.css" />
     <title>DOM Stuff</title>
   </head>
-  <body></body>
+  <body>
+    <!-- Your elements goes here -->
+
+    <script>
+      console.log("Can you see me in the concole?");
+    </script>
+    <div>
+      <p id="main">This is the main paragraph 🤓</p>
+      <input
+        type="button"
+        value="Click here to execute JS function"
+        onclick="change()"
+      />
+    </div>
+    <hr />
+    <h2>Calculate 1 2 3s with your selected number</h2>
+    <select name="number" id="num" class="select-num">
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+      <option value="5">5</option>
+      <option value="6">6</option>
+      <option value="7">7</option>
+      <option value="8">8</option>
+      <option value="9">9</option>
+      <option value="10">10</option>
+    </select>
+    <button onclick="multiply()">Calculate your 1 2 3s</button>
+    <p>(will multiply by index number)</p>
+    <div class="result"></div>
+    <h2>Calculate * 10</h2>
+    <select name="number" id="tens" class="select-num select-times">
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+      <option value="5">5</option>
+      <option value="6">6</option>
+      <option value="7">7</option>
+      <option value="8">8</option>
+      <option value="9">9</option>
+      <option value="10">10</option>
+    </select>
+    <h2>Calculate any number between 0 and 10</h2>
+    <select name="number" id="any-num-1">
+      <option value="0">0</option>
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+      <option value="5">5</option>
+      <option value="6">6</option>
+      <option value="7">7</option>
+      <option value="8">8</option>
+      <option value="9">9</option>
+      <option value="10">10</option>
+    </select>
+    <span> * </span>
+    <select name="number" id="any-num-2">
+      <option value="0">0</option>
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+      <option value="5">5</option>
+      <option value="6">6</option>
+      <option value="7">7</option>
+      <option value="8">8</option>
+      <option value="9">9</option>
+      <option value="10">10</option>
+    </select>
+    <!-- Custom scripts, edit below this line -->
+
+    <!-- Custom scripts, edit above this line -->
+    <script src="./scripts/index.js"></script>
+  </body>
 </html>
