@@ -27,3 +27,12 @@
 // -Native object-
 // are standard built-in objects provided by Javascript.
 // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects
+
+//Alert Popup Window
+// window.alert("This is an alert message for the user.");
+//Prompt Popup Window
+// let username = window.prompt(
+//   "Please enter your username",
+//   "your username here"
+// );
+//these are old! Do not use because annoying and too old method
