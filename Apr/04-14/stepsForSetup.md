@@ -8,7 +8,7 @@ Step 2:
 open your directory that you want to work with (main directory) in your IDE (for example VSC)
 open first terminal
 make sure you have npm installed or install it now ("npm install")
-make sure the terminal opened the main directory
+make sure the terminal opened the main directory and in the right branch (?)
 
 Step 3:
 run npm from first terminal by typing "npm init" and click enter OR "npm init -y" + enter and skip the next step
@@ -16,6 +16,7 @@ run npm from first terminal by typing "npm init" and click enter OR "npm init -y
 for all questions it is asking your now click enter (you can change these later in json file)
 this created a package json file in your directory
 
+Step 4:
 open "package.json" file and enter all your scripts:
 ""start": "run-p watch watch:styles",
     "build": "run-s clean clean:styles build:styles copy",
@@ -30,40 +31,50 @@ open "package.json" file and enter all your scripts:
 into the script object
 delete the test script object ""test": "echo \"Error: no test specified\" && exit 1"", make any other changes as needed, save, close
 
+Step 5:
 install packages from terminal 1: "npm i --save-dev gh-pages sass npm-run-all live-server" ("npm i --save-dev" or "npm install --save-dev" + package names, dev stands for development)
 package-lock.json and node modules have been created inside your main directory
 
+Step 6:
 in your main directory create a ".gitignore" file and put in your "node_modules" (so that when you push your github the node modules won't be shared)
 here you might as well prematurely add "dist" and "src/styles" into the ".gitignore" file to save two extra steps, always make sure the spelling is the same and save
 
+Step 7:
 inside your main directory create a directory called "src", make sure the spelling is the same and correct!
 
+Step 8:
 inside it create your "index.html" (don't name this something else!)
 
+Step 9:
 and also create a new directory "scss" inside your main directory, make sure spelling is correct (not capitalized!) and has the same name (if the names are not the same it won't work)
 
+Step 10:
 inside "scss" create file "main.scss", make sure spelling is correct has to be same name!
 
 git add . && git commit -m "......commit message......"
 
+Step 11:
 terminal 1: "npm start" (this runs the start script in your json file and starts your client server? node modules)
 "styles" directory is automatically created with "main.css" and "main.css.map" in it
 if you make any changes in your "main.scss" and save, you can see them in your "main.css" (but do not change anything inside your CSS file! From now on only work from scss in your src/scss directory)
 
-link up your "index.html" with your "styles/main.css" from your scss/styles folder (Not from dist folder! And not the scss file!)
-
 after "npm start" don't change anything in the first terminal, this one is for the client server (???), except for when you change files or directorynames etc., installing and updating packages, you need to restart the liveserver
 
+Step 12:
+link up your "index.html" with your "styles/main.css" from your scss/styles folder (Not from dist folder! And not the scss file!)
 
+Step 13:
 open a new terminal, but don't close your first one! (first terminal watches all the changes)
 terminal 2: "npm run build"
 "dist" folder is created inside your main directory (dist stands for distributable, not distribution. It is the directory that once everything has been compiled, gulped, transpiled, assembled and produced from all the other sources and files and trinkets etc.. this is what you want to distribute or indicate to others that it is the distributable!)
 inside the "dist" directory is a copy of your stuff, don't change/touch!
 any style changes you make now in your html file will be visible in your browser live, see how the info in your terminal 1 changes?
 
+Step 14:
 terminal 2: "npm run deploy", this automatically creates a second branch "gh-pages" in your git hub repo
 
-everytime you change sth run "npm run build" (updates/creates dist directory) and then "npm run deploy" (updates/creates gh-pages on github)
+Steps from now on:
+everytime you change sth, like after every few pushs or at least at the end of the day run "npm run build" (updates/creates dist directory) and then "npm run deploy" (updates/creates gh-pages on github) to update gh-pages
 
 also ignore dist directory in gitignore and src/styles
 

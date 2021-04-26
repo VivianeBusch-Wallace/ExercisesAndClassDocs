@@ -22,13 +22,17 @@
 }
 .text-m {
   @include font-size(m);
+  @include background-color(yellow);
 }
 .text-l {
   @include font-size(l);
+  @include background-color(red);
 }
 .text-xl {
   @include font-size(xl);
+  @include background-color(purple);
 }
 .text-xxl {
   @include font-size(xxl);
+  @include background-color();
 }

@@ -68,18 +68,12 @@ console.log("----camel case----");
 // second solution:
 camelCase = (str) => {
   let arrOfStr = str.split("_");
-  let newArr = [];
   let total = "";
   for (let i = 0; i < arrOfStr.length; i++) {
     i === 0
       ? (total += arrOfStr[i])
       : (total += arrOfStr[i][0].toUpperCase() + arrOfStr[i].substring(1));
-    // arrOfStr[i] = arrOfStr[i][0].toUpperCase() + arrOfStr[i].substring(1);
-    // newArr.push(arrOfStr[i]);
   }
-  newArr.unshift(arrOfStr[0]);
-  let cc = newArr.join("");
-  // return console.log(cc);
   return console.log(total);
 };
 camelCase("hello_world");
@@ -107,6 +101,18 @@ console.log("----average----");
 // console.log(average(1, 2)) ---> 1.5
 // console.log(average(1, 3, 6, 10)) ---> 5
 // console.log(average(12, 14, 16)) ---> 14
+
+// comment: The examples above are supposed to be arrays, right???
+average = (arr) => {
+  let sum = 0;
+  for (let i = 0; i < arr.length; i++) {
+    sum += arr[i];
+  }
+  return console.log(sum / arr.length);
+};
+average([1, 2, 3]);
+average([4, 2, 2, 8]);
+average([99, 200, 311, 8, 2]);
 
 // -----------------------------------
 console.log("----scrabble----");

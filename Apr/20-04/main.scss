@@ -1,0 +1,4 @@
+// Loops
+@for $i from 1 through $items-count {
+  .item: nth-child(#{$i});
+}
