@@ -47,7 +47,7 @@ console.log(`This is innerHTML: ${paragraph.innerHTML}`);
 // https://developer.mozilla.org/en-US/docs/Web/API/Node/nodeType
 
 // more on parentNode
-//https://developer.mozilla.org/en-US/docs/Web/API/ParentNode
+// https://developer.mozilla.org/en-US/docs/Web/API/ParentNode
 // nodeName, nodeType, id, innerText
 
 // closest
@@ -59,25 +59,49 @@ console.log(`This is innerHTML: ${paragraph.innerHTML}`);
 let text = document.querySelector(".nested-p");
 let closestEle = text.closest(".cool");
 console.log(`The closest ".cool" element of ".nested-p" is ${closestEle}`);
-
+// This will return null
 let text2 = document.querySelector(".nested-p");
 let closestEle2 = text2.closest("p");
 console.log(`The closest "p" element of ".nested-p" is ${closestEle2}`);
-
+// This will return .nested-p itself
 console.log({ closestEle2 });
 console.log(closestEle2);
-// matches
+// matches method
 let names = document.querySelectorAll("li");
 names.forEach((name) => {
   console.log(name.nodeType); //will return the value of our nodeType, here it is 1
   if (name.matches(".teacher"))
     console.log(`${name.textContent} is a teacher for FBW 48-1`);
 });
-// querySelector
+// children method
 const allChildren = document.querySelector("body").children;
 console.log(allChildren);
+console.log("<< these are children");
 let menuList = document.getElementById("menu");
 console.log(menuList.firstElementChild);
 console.log(menuList.lastElementChild);
 
 // all comments in your html page should be printed in console
+// console.log(document.querySelectorAll("body").COMMENT_NODE);
+
+// let body = document.querySelector("body").children;
+
+// // if (body.nodeType === Node.COMMENT_NODE)
+// console.log(Node.COMMENT_NODE);
+
+let allEle = document.querySelectorAll("*");
+
+console.log(allEle);
+// allEle.forEach((el) => console.log(el.childNodes));
+allEle.forEach((el) =>
+  el.childNodes.forEach((node) => {
+    if (node.nodeName == "#comment") {
+      // << instead you can also use: node.nodeType === 8
+      console.log(node);
+    }
+  })
+);
+
+// CSS
+// * for box sizing, font family
+// :root for ?
