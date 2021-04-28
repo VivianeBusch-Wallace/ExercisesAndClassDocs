@@ -76,7 +76,7 @@ names.forEach((name) => {
 // children method
 const allChildren = document.querySelector("body").children;
 console.log(allChildren);
-console.log("<< these are children");
+console.log("<< these are children in form of an HTMLCollection");
 let menuList = document.getElementById("menu");
 console.log(menuList.firstElementChild);
 console.log(menuList.lastElementChild);
@@ -84,17 +84,23 @@ console.log(menuList.lastElementChild);
 // all comments in your html page should be printed in console
 
 let allEle = document.querySelectorAll("*");
-
-console.log(allEle);
+console.log("This is a NodeList/array of all elements inside the document >>");
+console.log(allEle); // these are all elements inside html incl. head
+console.log("childNodes start >>");
 allEle.forEach((el) => console.log(el.childNodes));
+console.log(
+  " << childNodes end. These are all childNodes from the html nodelist"
+);
 allEle.forEach((el) =>
   el.childNodes.forEach((node) => {
+    // console.log("iterating through all childNodes");
     if (node.nodeName == "#comment") {
       // << instead you can also use: node.nodeType === 8
       console.log(node);
     }
   })
 );
+// all comments are ordered in parent to children order, parents first, then children, then children's children
 
 // CSS
 // * for box sizing, font family
