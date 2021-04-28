@@ -1,5 +1,13 @@
 // Traversing
-//  Node vs Element Nodes
+// Node vs Element Nodes
+// Short summary
+// childElementCount will tell you how many child elements this element has
+// firstChild , lastChild
+// firstElementChild , lastElementChild
+// nextSibling , previousSibling
+// nextElementSibling , previousElementSibling
+// innerHTML ,  innerText , textContent
+
 const prevElement = document.querySelector("#second").previousElementSibling;
 console.log(prevElement);
 const prevSibling = document.querySelector("body").previousSibling;
@@ -41,15 +49,27 @@ console.log(`This is innerHTML: ${paragraph.innerHTML}`);
 // more on parentNode
 //https://developer.mozilla.org/en-US/docs/Web/API/ParentNode
 // nodeName, nodeType, id, innerText
+
 // closest
-let text = document.querySelector("span");
+// check: https://developer.mozilla.org/en-US/docs/Web/API/Element/closest
+// The closest() method traverses the Element and its parents (heading toward the document root)
+// until it finds a node that matches the provided selector string.
+// Will return itself or the matching ancestor.
+// If no such element exists, it returns null.
+let text = document.querySelector(".nested-p");
 let closestEle = text.closest(".cool");
-console.log(`This is the closest ".cool" Element of span ${closestEle}`);
-console.log({ closestEle });
+console.log(`The closest ".cool" element of ".nested-p" is ${closestEle}`);
+
+let text2 = document.querySelector(".nested-p");
+let closestEle2 = text2.closest("p");
+console.log(`The closest "p" element of ".nested-p" is ${closestEle2}`);
+
+console.log({ closestEle2 });
+console.log(closestEle2);
 // matches
 let names = document.querySelectorAll("li");
 names.forEach((name) => {
-  console.log(name.nodeType);
+  console.log(name.nodeType); //will return the value of our nodeType, here it is 1
   if (name.matches(".teacher"))
     console.log(`${name.textContent} is a teacher for FBW 48-1`);
 });
