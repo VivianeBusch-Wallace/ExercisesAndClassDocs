@@ -82,17 +82,11 @@ console.log(menuList.firstElementChild);
 console.log(menuList.lastElementChild);
 
 // all comments in your html page should be printed in console
-// console.log(document.querySelectorAll("body").COMMENT_NODE);
-
-// let body = document.querySelector("body").children;
-
-// // if (body.nodeType === Node.COMMENT_NODE)
-// console.log(Node.COMMENT_NODE);
 
 let allEle = document.querySelectorAll("*");
 
 console.log(allEle);
-// allEle.forEach((el) => console.log(el.childNodes));
+allEle.forEach((el) => console.log(el.childNodes));
 allEle.forEach((el) =>
   el.childNodes.forEach((node) => {
     if (node.nodeName == "#comment") {
