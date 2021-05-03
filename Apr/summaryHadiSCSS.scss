@@ -1,0 +1,623 @@
+// HOW TO USE THIS FILE >>>
+// This is a summary of all of Hadi's SCSS and CSS code from our class (unedited, BUT no files from dist or style in here!)
+// (This document includes regular CSS)
+// You can find the date and the reference web address of each summarized file at the beginning of each part
+// Use Ctrl + F to search by keyword
+// For example if you want to remember how to write a mixin type "mixin" and
+// use the arrows of the search popup to navigate through each find to get to the example you were looking for.
+// If you want to search by date use this format "day-month-year" in numbers; like "21-04-21".
+// Disclaimer: These files are unedited which means that it is most likely not possible to find good results if you search something like "how to write a mixin" (this is not google).
+// It's also no use run the whole file because there might be a lot of conflicts between the code from each day.
+// This file might not be updated if there has been changes after the end of this summary's month! If you know that there had been changes then you are better off checking the github files.
+
+// =======================================================================
+// Bigger topics from April 2021:
+// Bootstrap, SASS, DOM, DOM manipulation, DOM Traversing
+// Small simple game
+// =======================================================================
+
+// =======================================================================
+// 12-04-21
+// https://github.com/Fbw-48/live-coding/blob/main/apr/12-04/css/style.css
+// -----------------------------------------------------------------------
+/*  Why? */
+/* Twitter Bootstrap */
+/* What is it?  */
+/* Twitter made it easy fix for us. more mobile first Focused and web app */
+/* Is there ary other options? */
+/* Foundation, Pure, Bulma and many more almost 20 or so */
+/* What is better to use? */
+
+/* How to use it? */
+
+.my-gray {
+  background-color: chocolate;
+}
+
+// =======================================================================
+// 13-04-21
+// (Check bootstrap files here: https://github.com/Fbw-48/live-coding/tree/main/apr/13-04/css/bootstrap-5.0.0-beta3-dist
+// https://github.com/Fbw-48/live-coding/blob/main/apr/13-04/css/style.css
+// -----------------------------------------------------------------------
+
+// =======================================================================
+// 14-04-21
+// (For dist files check here: https://github.com/Fbw-48/live-coding/tree/main/apr/14-04/dist
+// for deployed css file check here: https://github.com/Fbw-48/live-coding/tree/main/apr/14-04/src/styles)
+// https://github.com/Fbw-48/live-coding/blob/main/apr/14-04/src/scss/main.scss
+// -----------------------------------------------------------------------
+body {
+  background-color: orange;
+}
+
+// =======================================================================
+// 15-04-21
+// _fo.scss
+// https://github.com/Fbw-48/live-coding/blob/main/apr/15-04/src/scss/footer/_fo.scss
+// -----------------------------------------------------------------------
+
+// -----------------------------------------------------------------------
+// 15-04-21
+// _footer.scss
+// https://github.com/Fbw-48/live-coding/blob/main/apr/15-04/src/scss/footer/_footer.scss
+// -----------------------------------------------------------------------
+@import "./fo";
+div {
+  background-color: $my-color;
+}
+
+// -----------------------------------------------------------------------
+// 15-04-21
+// _var-color.scss
+// https://github.com/Fbw-48/live-coding/blob/main/apr/15-04/src/scss/var/_var-color.scss
+// -----------------------------------------------------------------------
+
+// -----------------------------------------------------------------------
+// 15-04-21
+// _variables.scss
+// https://github.com/Fbw-48/live-coding/blob/main/apr/15-04/src/scss/var/_variables.scss
+// -----------------------------------------------------------------------
+@import "./var-color";
+$your-size: 50vw;
+$a-color: white;
+$li-margin: 3rem;
+$my-color: orange;
+
+// -----------------------------------------------------------------------
+// 15-04-21
+// _footer.scss
+// https://github.com/Fbw-48/live-coding/blob/main/apr/15-04/src/scss/_footer.scss
+// -----------------------------------------------------------------------
+// $li-margin: 6rem;
+
+// -----------------------------------------------------------------------
+// 15-04-21
+// _nav.scss
+// https://github.com/Fbw-48/live-coding/blob/main/apr/15-04/src/scss/_nav.scss
+// -----------------------------------------------------------------------
+nav {
+  ul {
+    list-style: none;
+    width: $your-size;
+  }
+  li {
+    display: inline-block;
+    margin: $li-margin;
+  }
+  a {
+    text-decoration: none;
+    color: $a-color;
+    &:hover {
+      background-color: palegoldenrod;
+    }
+  }
+}
+
+// -----------------------------------------------------------------------
+// 15-04-21
+// _sections.scss
+// https://github.com/Fbw-48/live-coding/blob/main/apr/15-04/src/scss/_sections.scss
+// -----------------------------------------------------------------------
+body {
+  background-color: $my-color;
+}
+
+// -----------------------------------------------------------------------
+// 15-04-21
+// main.scss
+// https://github.com/Fbw-48/live-coding/blob/main/apr/15-04/src/scss/main.scss
+// -----------------------------------------------------------------------
+@import "./var/variables";
+
+@import "./sections";
+@import "./nav";
+@import "./footer/footer";
+
+// =======================================================================
+// 19-04-21
+// _ani.scss
+// https://github.com/Fbw-48/live-coding/blob/main/apr/19-04/src/scss/_ani.scss
+// -----------------------------------------------------------------------
+.box {
+  @include fade-in(3s);
+  @include size-for-div;
+  background-color: purple;
+}
+
+@keyframes fade-in {
+  0% {
+    @include hide;
+    width: 5rem;
+    transform: scale(0) rotate(0deg);
+  }
+
+  100% {
+    @include reveal;
+    width: 3rem;
+    transform: scale(1) rotate(90deg);
+  }
+}
+
+ul {
+  @include normalize;
+}
+
+// -----------------------------------------------------------------------
+// 19-04-21
+// _header.scss
+// https://github.com/Fbw-48/live-coding/blob/main/apr/19-04/src/scss/_header.scss
+// -----------------------------------------------------------------------
+.header {
+  @include center;
+  @include size-for-div;
+  background-color: orange;
+}
+
+// -----------------------------------------------------------------------
+// 19-04-21
+// _mixins.scss
+// https://github.com/Fbw-48/live-coding/blob/main/apr/19-04/src/scss/_mixins.scss
+// -----------------------------------------------------------------------
+// Reset list style
+@mixin reset-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+// Center content
+@mixin center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+// Size for box
+@mixin size-for-div {
+  width: 4rem;
+  height: 4rem;
+}
+
+// Hide element
+@mixin hide {
+  opacity: 0;
+  visibility: hidden;
+}
+
+// Fade
+@mixin reveal {
+  opacity: 1;
+  visibility: visible;
+}
+@mixin fade-in($time) {
+  animation-name: fade-in;
+  animation-duration: #{$time};
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+@mixin normalize {
+  li {
+    list-style: none;
+  }
+  a {
+    text-decoration: none;
+  }
+}
+// creating a map
+
+// Maps in Sass hold pairs of keys and values, and make it easy to look up a value by its corresponding key. They’re written
+
+// if else in sass
+// Drawing triangle
+@mixin triangle($direction, $color: #000) {
+  width: 0;
+  height: 0;
+  @if $direction == up {
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-bottom: 5px solid $color;
+  } @else if $direction == right {
+    border-top: 5px solid transparent;
+    border-bottom: 5px solid transparent;
+    border-left: 5px solid $color;
+  } @else if $direction == left {
+    border-top: 5px solid transparent;
+    border-bottom: 5px solid transparent;
+    border-right: 5px solid $color;
+  } @else if $direction == down {
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 5px solid $color;
+  } @else {
+    @error "Unknown direction #{$direction} ";
+  }
+}
+
+// map
+
+$font-sizes: (
+  xs: 12px,
+  sm: 14px,
+  m: 16px,
+  l: 32px,
+  xl: 48px,
+  xxl: 61px,
+);
+$orange-colors: (
+  light: rgb(214, 107, 25),
+  dark: rgb(214, 107, 14),
+  super: rgb(214, 107, 20),
+);
+
+@mixin font-size($size) {
+  @if map-has-key($font-sizing, $size) {
+    font-size: map-get($font-sizing, $size);
+  } @else {
+    @error "#{$size} this is not defined, Use #{font-sizing}";
+  }
+}
+// functions in sass
+@function font-size($size) {
+  @if map-has-key($font-sizing, $size) {
+    @return map-get($font-sizing, $size);
+  } @else {
+    @error "#{$size} this is not defined, Use #{font-sizing}";
+  }
+}
+
+// -----------------------------------------------------------------------
+// 19-04-21
+// _shaps.scss
+// https://github.com/Fbw-48/live-coding/blob/main/apr/19-04/src/scss/_shaps.scss
+// -----------------------------------------------------------------------
+.triangle {
+  &::before,
+  &::after {
+    display: block;
+    content: "";
+    margin: 1rem;
+  }
+  &::before {
+    @include triangle(right, blue);
+  }
+  &::after {
+    @include triangle(left, orange);
+  }
+}
+.text-xs {
+  @include font-size(xs);
+}
+.text-s {
+  @include font-size(s);
+}
+.text-m {
+  @include font-size(m);
+}
+.text-xl {
+  @include font-size(xl);
+}
+.text-xxl {
+  @include font-size(xxl);
+}
+
+// -----------------------------------------------------------------------
+// 19-04-21
+// main.scss
+// https://github.com/Fbw-48/live-coding/blob/main/apr/19-04/src/scss/main.scss
+// -----------------------------------------------------------------------
+@import "./mixins";
+@import "./header";
+@import "./ani";
+@import "./shaps";
+
+// =======================================================================
+// 20-04-21
+// https://github.com/Fbw-48/live-coding/blob/main/apr/20-04/src/scss/main.scss
+// -----------------------------------------------------------------------
+// @import "../../node_modules/bootstrap/scss/bootstrap.scss";
+
+$items-count: 30; // corresponds to the number of divs in your HTML
+
+// Define animation
+@keyframes move {
+  0% {
+    transform: scaleY(1);
+  }
+
+  100% {
+    transform: scaleY(1.4);
+  }
+}
+
+// Mixin to use animation
+@mixin add-move-animation($duration) {
+  animation-name: move;
+  animation-duration: $duration;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-timing-function: linear;
+}
+
+body {
+  background-color: black;
+  margin: 0;
+}
+
+.items-container {
+  display: grid;
+  grid-template-columns: repeat($items-count, 1fr);
+  grid-template-rows: 1fr;
+  height: 100vh;
+}
+
+// For loop to randomize values for each div bar
+@for $i from 1 through $items-count {
+  .item:nth-child(#{$i}) {
+    background: linear-gradient(
+      to bottom right,
+      lighten(orange, random(40)),
+      rgba(darken(orange, random(10)), 1)
+    );
+    // random() will return a number between 1-100 with no argument being passed to it, or when you pass in a single integer parameter to define the upper limit. random(20) will return a number between 1-20.
+    height: random(60) + 10 + vh;
+    border-radius: 0 0 ((random(50) + 10 + px)) ((random(50) + 10 + px));
+    transform-origin: 0 0;
+
+    @if (($i % 2) != 0) {
+      border-radius: ((random(50) + 10 + px)) ((random(20) + 10 + px)) 0 0;
+      background: linear-gradient(
+        to top right,
+        lighten(gray, random(40)),
+        rgba(darken(gray, random(10)), 1)
+      );
+    }
+    // The lighten() function increases lightness by a fixed amount.
+    // The darken() function decreases lightness by a fixed amount.
+    @include add-move-animation(random(5) + 1 + s);
+  }
+}
+.item:nth-child(#{random($items-count)}) {
+  border: 3px solid red;
+}
+.item:nth-child(odd) {
+  align-self: end;
+  transform-origin: 0 100%;
+}
+
+// =======================================================================
+// 21-04-21
+// SCSS directory structure
+// https://github.com/Fbw-48/live-coding/tree/main/apr/21-04/src/scss
+// -----------------------------------------------------------------------
+
+// -----------------------------------------------------------------------
+// 21-04-21
+// __abstracts-dir.scss
+// https://github.com/Fbw-48/live-coding/blob/main/apr/21-04/src/scss/abstracts/__abstracts-dir.scss
+// -----------------------------------------------------------------------
+//Import Abstracts files
+@import "./variables";
+@import "./mixins";
+@import "./fonts";
+
+// -----------------------------------------------------------------------
+// 21-04-21
+// _fonts.scss
+// https://github.com/Fbw-48/live-coding/blob/main/apr/21-04/src/scss/abstracts/_fonts.scss
+// -----------------------------------------------------------------------
+//Font Imports
+//@include font-face("font name", "../fonts/font-dir-name", 300, $file-formats: ttf);
+
+// -----------------------------------------------------------------------
+// 21-04-21
+// _mixins.scss
+// https://github.com/Fbw-48/live-coding/blob/main/apr/21-04/src/scss/abstracts/_mixins.scss
+// -----------------------------------------------------------------------
+// Mixins
+
+// @mixin name {
+//   // your rules
+// }
+
+// -----------------------------------------------------------------------
+// 21-04-21
+// _variables.scss
+// https://github.com/Fbw-48/live-coding/blob/main/apr/21-04/src/scss/abstracts/_variables.scss
+// -----------------------------------------------------------------------
+//Variables
+
+// colors
+// $my-color: orange;
+// sizes
+
+// others
+
+// -----------------------------------------------------------------------
+// 21-04-21
+// __base-dir.scss
+// https://github.com/Fbw-48/live-coding/blob/main/apr/21-04/src/scss/base/__base-dir.scss
+// -----------------------------------------------------------------------
+//Import Base files
+
+// 21-04-21
+// __components-dir.scss
+// https://github.com/Fbw-48/live-coding/blob/main/apr/21-04/src/scss/components/__components-dir.scss
+// -----------------------------------------------------------------------
+//Import Component files
+
+// -----------------------------------------------------------------------
+// 21-04-21
+// __layouts-dir.scss
+// https://github.com/Fbw-48/live-coding/blob/main/apr/21-04/src/scss/layouts/__layouts-dir.scss
+// -----------------------------------------------------------------------
+//Import Layout files
+
+// -----------------------------------------------------------------------
+// 21-04-21
+// __vendor-dir.scss
+// https://github.com/Fbw-48/live-coding/blob/main/apr/21-04/src/scss/vendor/__vendor-dir.scss
+// -----------------------------------------------------------------------
+//Import Vendor files
+@import "./normalize";
+@import "./fontawesome";
+
+// -----------------------------------------------------------------------
+// 21-04-21
+// _fontawesome.scss
+// https://github.com/Fbw-48/live-coding/blob/main/apr/21-04/src/scss/vendor/_fontawesome.scss
+// -----------------------------------------------------------------------
+// Font Awesome
+
+// -----------------------------------------------------------------------
+// 21-04-21
+// _normalize.scss
+// https://github.com/Fbw-48/live-coding/blob/main/apr/21-04/src/scss/vendor/_normalize.scss
+// -----------------------------------------------------------------------
+// Normalize
+
+// -----------------------------------------------------------------------
+// 21-04-21
+// main.scss
+// https://github.com/Fbw-48/live-coding/blob/main/apr/21-04/src/scss/main.scss
+// -----------------------------------------------------------------------
+//Vendor
+@import "./vendor/_vendor-dir";
+
+//Abstracts
+@import "./abstracts/_abstracts-dir";
+
+//Base Styles
+@import "./base/_base-dir";
+
+//Components
+@import "./components/_components-dir";
+
+//Layout
+@import "./layouts/_layouts-dir";
+
+// =======================================================================
+// 22-04-21
+// https://github.com/Fbw-48/live-coding/blob/main/apr/22-04/style.css
+// -----------------------------------------------------------------------
+.small {
+  background-color: aqua;
+}
+.light {
+  background-color: white;
+  color: black;
+}
+.dark {
+  background-color: black;
+  color: white;
+}
+
+// =======================================================================
+// 26-04-21
+// https://github.com/Fbw-48/live-coding/blob/main/apr/26-04/style.css
+// -----------------------------------------------------------------------
+body {
+  display: flex;
+  align-items: center;
+  width: 100vh;
+  flex-direction: column;
+}
+form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50%;
+  height: 3rem;
+  background-color: orange;
+  width: 50%;
+}
+input[type="text"] {
+  border: none;
+}
+button {
+  width: 4rem;
+  height: 1.5rem;
+  border: none;
+  background-color: navajowhite;
+  font-family: Tahoma, Geneva, Verdana, sans-serif, cursive;
+  font-size: 1rem;
+}
+li {
+  width: 50vw;
+  height: 3rem;
+  max-width: 50vw;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  position: relative;
+}
+li div {
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+li div button {
+  width: 1rem;
+  height: 2rem;
+}
+.delete {
+  color: red;
+}
+.completed {
+  /* some fancy styles */
+  text-decoration: line-through;
+}
+.done {
+  /* something */
+}
+
+// =======================================================================
+// 29-04-21
+// Simple Game
+// https://github.com/Fbw-48/live-coding/blob/main/apr/29-04/simple-game/style.css
+// -----------------------------------------------------------------------
+* {
+  box-sizing: border-box;
+}
+body {
+  background-image: url(./bg.jpg);
+  background-position: center;
+  background-size: cover;
+  height: 100vh;
+  position: relative;
+}
+
+.mini {
+  position: absolute;
+  font-size: 2rem;
+  z-index: 1;
+}
+.final {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: wrap column;
+  top: 50%;
+  right: 5%;
+  width: 60px;
+  height: 60px;
+  background-color: white;
+}
