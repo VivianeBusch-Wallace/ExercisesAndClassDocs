@@ -1,4 +1,19 @@
-.done {
+.shift {
+  height: 1rem;
+  width: 1rem;
+  background-color: lightgreen;
+  animation: 1s linear 1s infinite alternate slidein;
+  animation-play-state: paused;
+}
+@keyframes slidein {
+  from {
+    margin-left: 0rem;
+  }
+  to {
+    margin-left: 10rem;
+  }
+}
+.show-message {
   position: relative;
   border: 2px dashed red;
   /* display: none; */
