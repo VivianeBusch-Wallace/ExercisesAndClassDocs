@@ -25,6 +25,8 @@ import { data } from "./data.js";
 
 let parsedData = JSON.parse(data);
 const section = document.querySelector("#bread");
+const ppl = document.querySelector(".people");
+console.log({ parsedData });
 console.log(parsedData);
 parsedData.forEach((obj) => {
   let { id, title, ingredients, image } = obj;
@@ -39,7 +41,36 @@ parsedData.forEach((obj) => {
 });
 
 // technique import first then stringify
-import { people, math } from "./data";
+import { people, math } from "./data.js";
 
 let stringifiedPeople = JSON.stringify(people);
 let stringifiedMath = JSON.stringify(math);
+
+console.log({ stringifiedPeople });
+console.log(stringifiedPeople);
+
+console.log({ stringifiedMath });
+console.log(stringifiedMath);
+
+// parse
+let parsedPeople = JSON.parse(stringifiedPeople);
+let parsedMath = JSON.parse(stringifiedMath);
+
+console.log({ parsedPeople });
+console.log(parsedPeople);
+
+console.log({ parsedMath });
+console.log(parsedMath);
+
+parsedPeople.forEach((obj) => {
+  let { name, age, married, occupation } = obj;
+  let profile = `
+      <div id=${name}>
+      <h2>${name}</h2>
+      <p>Age: ${age}</p>
+      <p>Occupation: ${occupation}</p>
+      <p>This person is married: ${married}</p>
+      </div>
+      `;
+  ppl.innerHTML += profile;
+});
