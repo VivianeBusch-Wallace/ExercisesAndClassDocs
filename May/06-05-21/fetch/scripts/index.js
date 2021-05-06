@@ -98,12 +98,20 @@ function fetchTodos() {
       let todos = "<h3>TO DO</h3>";
       data.forEach((task) => {
         let { title, completed } = task;
-        todos += `<div class="task"><p>The task: ${title}</p>
+        todos += `<div class="task" data-complete=${completed}><p>The task: ${title}</p>
           <p>is completed: ${completed}.</p></div>`;
         document.querySelector(".todos").innerHTML = todos;
-        completed
-          ? (document.querySelector(".task").style.backgroundColor = "green")
-          : (document.querySelector(".task").style.backgroundColor = "red");
+      });
+
+      //   completed
+      //     ? (document.querySelector(".task").style.backgroundColor = "green")
+      //     : (document.querySelector(".task").style.backgroundColor = "red");
+    })
+    .then(() => {
+      document.querySelectorAll(".task").forEach((taskItem) => {
+        if (taskItem.getAttribute("data-complete") == "true")
+          taskItem.style.backgroundColor = "lightgreen";
+        else taskItem.style.backgroundColor = "salmon";
       });
     })
     .catch((error) => {
