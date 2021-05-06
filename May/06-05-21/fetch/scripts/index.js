@@ -40,26 +40,27 @@ function fetchJsonFile() {
 
 // we will use
 // https://jsonplaceholder.typicode.com/photos
-function fetchApi() {
-  fetch("https://jsonplaceholder.typicode.com/photos")
-    .then((response) => response.json())
-    .then((data) => {
-      console.log(data);
-      let userCard = "<h2>Images API response </h2>";
-      data.forEach((img) => {
-        let { albumId, id, title, url, thumbnailUrl } = img;
-        userCard += `
-          <div id=${id}>
-          <img src=${thumbnailUrl} >
-          <h3>${title}</h3>
-          <img src=${url} alt=${title}>
-          </div>
-          `;
-      });
-      document.querySelector(".result").innerHTML = userCard;
-    })
-    .catch((err) => console.log(err));
-}
+// function fetchApi() {
+//   fetch("https://jsonplaceholder.typicode.com/photos")
+//     .then((response) => response.json())
+//     .then((data) => {
+//       console.log(data);
+//       let userCard = "<h2>Images API response </h2>";
+//       data.forEach((img) => {
+//         let { albumId, id, title, url, thumbnailUrl } = img;
+//         userCard += `
+//           <div id=${id}>
+//           <img src=${thumbnailUrl} >
+//           <h3>${title}</h3>
+//           <img src=${url} alt=${title}>
+//           </div>
+//           `;
+//       });
+//       document.querySelector(".result").innerHTML = userCard;
+//       //   userCard = document.querySelector(".result").innerHTML;
+//     })
+//     .catch((err) => console.log(err));
+// }
 
 // PRACTICE
 // API project time
@@ -68,11 +69,19 @@ function fetchApi() {
 // todos
 // and
 // comments
-function fetchComments() {
-  fetch("https://jsonplaceholder.typicode.com/comments")
+function fetchUsers() {
+  fetch("https://jsonplaceholder.typicode.com/users")
     .then((response) => response.json())
     .then((data) => {
       console.log(data);
+      data.forEach((user) => {
+        document.querySelector(".result").innerHTML += `<h2>${user.name}</h2>
+        <h3>${user.username}</h3>`;
+      });
     })
-    .catch((error) => console.log(`Something went wrong: ${error}`));
+    .catch((error) => {
+      console.log(`Something went wrong: ${error}`);
+      document.querySelector(".result").innerHTML =
+        "Something went wrong, try again.";
+    });
 }
