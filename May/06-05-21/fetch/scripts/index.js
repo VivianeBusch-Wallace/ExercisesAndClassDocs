@@ -14,6 +14,7 @@ function fetchTextFile() {
 function fetchJsonFile() {
   fetch("./data.json")
     .then((response) => response.json())
+    // .json() is a method!!!
     .then((data) => {
       console.log(data);
       let userCard = "<h2>All Users </h2>";
@@ -29,7 +30,9 @@ function fetchJsonFile() {
       document.querySelector(".result").innerHTML = userCard;
     })
     .catch((err) => console.log(err));
+  // if the source path is wrong then it won't even show the error message
 }
+
 // API
 //  Application Programming Interface
 
@@ -56,4 +59,20 @@ function fetchApi() {
       document.querySelector(".result").innerHTML = userCard;
     })
     .catch((err) => console.log(err));
+}
+
+// PRACTICE
+// API project time
+// please use https://jsonplaceholder.typicode.com/
+// to fetch
+// todos
+// and
+// comments
+function fetchComments() {
+  fetch("https://jsonplaceholder.typicode.com/comments")
+    .then((response) => response.json())
+    .then((data) => {
+      console.log(data);
+    })
+    .catch((error) => console.log(`Something went wrong: ${error}`));
 }
