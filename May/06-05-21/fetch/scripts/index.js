@@ -90,6 +90,26 @@ function fetchComments() {
     });
 }
 
+function fetchTodos() {
+  fetch("https://jsonplaceholder.typicode.com/todos/?_limit=10")
+    .then((response) => response.json())
+    .then((data) => {
+      console.log(data);
+      let todos = "<h3>TO DO</h3>";
+      data.forEach((task) => {
+        let { title, completed } = task;
+        todos += `<p>The task: ${title}</p>
+          <p>is completed: ${completed}.</p>`;
+        document.querySelector(".todos").innerHTML = todos;
+      });
+    })
+    .catch((error) => {
+      console.log(`Something went wrong: ${error}`);
+      document.querySelector(".todos").innerHTML =
+        "Something went wrong, try again.";
+    });
+}
+
 function fetchUsers() {
   fetch("https://jsonplaceholder.typicode.com/users")
     .then((response) => response.json())
