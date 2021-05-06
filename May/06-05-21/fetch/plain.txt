@@ -1,0 +1,2 @@
+This is a txt file.
+Add me into your website with the fetch method.
