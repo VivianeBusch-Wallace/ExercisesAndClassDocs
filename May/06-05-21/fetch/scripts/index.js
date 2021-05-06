@@ -14,7 +14,7 @@ function fetchTextFile() {
 function fetchJsonFile() {
   fetch("./data.json")
     .then((response) => response.json())
-    // .json() is a method!!!
+    // .json() is a method!!! which turns json into javascript
     .then((data) => {
       console.log(data);
       let userCard = "<h2>All Users </h2>";
@@ -69,6 +69,26 @@ function fetchApi() {
 // todos
 // and
 // comments
+
+function fetchComments() {
+  fetch("https://jsonplaceholder.typicode.com/comments/?_limit=10")
+    .then((response) => response.json())
+    .then((data) => {
+      console.log(data);
+      let comments = "<h3>COMMENTS</h3>";
+      data.forEach((comment) => {
+        let { name, email, body } = comment;
+        comments += `<p>${name} with the email address ${email} commented:</p>
+        <p>${body}</p>`;
+        document.querySelector(".comments").innerHTML = comments;
+      });
+    })
+    .catch((error) => {
+      console.log(`Something went wrong: ${error}`);
+      document.querySelector(".comments").innerHTML =
+        "Something went wrong, try again.";
+    });
+}
 
 function fetchUsers() {
   fetch("https://jsonplaceholder.typicode.com/users")
