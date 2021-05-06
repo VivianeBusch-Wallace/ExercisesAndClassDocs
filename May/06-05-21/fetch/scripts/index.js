@@ -40,27 +40,27 @@ function fetchJsonFile() {
 
 // we will use
 // https://jsonplaceholder.typicode.com/photos
-// function fetchApi() {
-//   fetch("https://jsonplaceholder.typicode.com/photos")
-//     .then((response) => response.json())
-//     .then((data) => {
-//       console.log(data);
-//       let userCard = "<h2>Images API response </h2>";
-//       data.forEach((img) => {
-//         let { albumId, id, title, url, thumbnailUrl } = img;
-//         userCard += `
-//           <div id=${id}>
-//           <img src=${thumbnailUrl} >
-//           <h3>${title}</h3>
-//           <img src=${url} alt=${title}>
-//           </div>
-//           `;
-//       });
-//       document.querySelector(".result").innerHTML = userCard;
-//       //   userCard = document.querySelector(".result").innerHTML;
-//     })
-//     .catch((err) => console.log(err));
-// }
+function fetchApi() {
+  fetch("https://jsonplaceholder.typicode.com/photos/?_limit=5") // "/?_limit=5" limits the data to 5 objects, BUT it is unique to this API provider
+    .then((response) => response.json())
+    .then((data) => {
+      console.log(data);
+      let userCard = "<h2>Images API response </h2>";
+      data.forEach((img) => {
+        let { albumId, id, title, url, thumbnailUrl } = img;
+        userCard += `
+          <div id=${id}>
+          <img src=${thumbnailUrl} >
+          <h3>${title}</h3>
+          <img src=${url} alt=${title}>
+          </div>
+          `;
+      });
+      document.querySelector(".result").innerHTML = userCard;
+      //   userCard = document.querySelector(".result").innerHTML;
+    })
+    .catch((err) => console.log(err));
+}
 
 // PRACTICE
 // API project time
@@ -69,6 +69,7 @@ function fetchJsonFile() {
 // todos
 // and
 // comments
+
 function fetchUsers() {
   fetch("https://jsonplaceholder.typicode.com/users")
     .then((response) => response.json())
