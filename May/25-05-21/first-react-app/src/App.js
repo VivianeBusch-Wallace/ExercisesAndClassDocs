@@ -5,7 +5,7 @@ function App() {
   }
   return (
     <div className="App">
-      <header className="App-header">
+      <header className="header">
         <p>This is a paragraph.</p>
         <a
           className="App-link"
