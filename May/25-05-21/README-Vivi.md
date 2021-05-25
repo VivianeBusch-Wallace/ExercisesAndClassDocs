@@ -92,3 +92,14 @@ Now a page with react inside is opened
 public is the folder for what the user will see
 
 src is what we are working with
+
+delete what you don't need, so that you only have what you are using: App.js, index.js, index.css
+
+the react js has to be named with a capitalized character first
+the function, too
+
+file ending jsx stands for a react file, but it is the same as js
+
+App.test.js is for testing your application
+
+! never use VSC live server, always use npm start VSC server will not help you
