@@ -103,3 +103,18 @@ file ending jsx stands for a react file, but it is the same as js
 App.test.js is for testing your application
 
 ! never use VSC live server, always use npm start VSC server will not help you
+
+---
+
+in index.js >>
+
+ReactDOM.render(
+<React.StrictMode>
+<App />
+</React.StrictMode>,
+(<< this is what you present; )
+
+document.getElementById("root")
+
+(<< this is where you present, see your div for root in html file)
+);

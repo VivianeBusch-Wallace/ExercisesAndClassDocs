@@ -1,3 +1,4 @@
+// all functions have to be capitalized for react to distinguish jsx components from non-react files
 function App() {
   return (
     <div className="App">
