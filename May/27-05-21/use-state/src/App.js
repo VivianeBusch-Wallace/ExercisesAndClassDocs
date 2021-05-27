@@ -1,8 +1,8 @@
-import { useState } from "react";
+import React, { useState } from "react";
 
 function App() {
   const [list, setList] = useState([]);
-  return <div className="App"></div>;
+  return <React.Fragment className="App"></React.Fragment>;
 }
 
 export default App;
