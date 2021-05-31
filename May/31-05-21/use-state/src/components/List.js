@@ -5,6 +5,7 @@ const List = (props) => {
     <div>
       {sub(44, 3)}
       <Item print={props.print} />
+      {/* props.print has no () because it is only passed to the child not executed here */}
     </div>
   );
 };
