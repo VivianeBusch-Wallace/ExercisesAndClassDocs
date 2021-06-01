@@ -1,0 +1,26 @@
+to deploy
+
+exit live server
+npm i gh-pages
+go into package json
+add above dependencies:
+'homepage': 'http://username.github.io/your-repo-name'
+this is NOT exactly like the HTTPS (NOT the SSH key!) on github and also without ".git" in the end!
+add scripts:
+"predeploy":"npm run build",
+"deploy":"gh-pages -d build",
+terminal: npm run build
+creates a folder called build with minified versions of everything from public
+anything in public is what the user sees
+make sure that gitignore has build in it because that is not shared (react normally adds it for you automatically)
+terminal: npm run deploy
+
+after any changes need to run build
+
+git remote add origin git@githubcom:username/project-name.git
+
+
+
+npm list
+gives you list of all packages
+
