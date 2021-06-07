@@ -25,6 +25,8 @@ function App() {
   return (
     <div className="App">
       <button onClick={addOne}>+</button>
+      <p>{count}</p>
+      <Subtract />
     </div>
   );
 }
