@@ -8,6 +8,10 @@ document.title = `You clicked ${count} times`;
 });
 When React renders our component, it will remember the effect we used, and then run our effect after updating the DOM. This happens for every render, including the first one.
 
+Only Call Hooks at the Top Level
+Don’t call Hooks inside loops, conditions, or nested functions.
+Always use Hooks at the top level of your React function, before any early returns. this way you ensure that Hooks are called in the same order each time a component renders. That’s what allows React to correctly preserve the state of Hooks between multiple useState and useEffect calls.
+
 useEffect triggers a function dependent on its dependency
 useEffect(() => {
 console.log(
@@ -71,6 +75,9 @@ an anonymous cleanup function would also work
 // but useState has to be imported every time we want to set a state on something
 
 React performs the cleanup when the component unmounts. React also cleans up effects from the previous render before running the effects next time.
+
+Only Call Hooks from React Functions
+Don’t call Hooks from regular JavaScript functions.
 
 .
 .
