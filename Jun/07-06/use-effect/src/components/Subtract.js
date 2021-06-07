@@ -1,9 +1,11 @@
-function Subtract({ setCount }) {
+function Subtract({ stateForSubtracting }) {
   return (
     <div>
-      <button onClick={() => setCount((prevState) => prevState - 1)}>-</button>
+      <button onClick={() => stateForSubtracting((prevState) => prevState - 1)}>
+        -
+      </button>
     </div>
   );
 }
 
-export default Substract;
+export default Subtract;

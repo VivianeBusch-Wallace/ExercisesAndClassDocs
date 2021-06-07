@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import Subtract from "./components/Subtract";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -26,7 +27,7 @@ function App() {
     <div className="App">
       <button onClick={addOne}>+</button>
       <p>{count}</p>
-      <Subtract />
+      <Subtract stateForSubtracting={setCount} />
     </div>
   );
 }
