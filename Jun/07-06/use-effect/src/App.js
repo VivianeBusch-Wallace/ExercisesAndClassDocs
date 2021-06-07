@@ -18,7 +18,15 @@ function App() {
     );
   }, []);
 
-  return <div className="App"></div>;
+  const addOne = () => {
+    setCount(count + 1);
+  };
+
+  return (
+    <div className="App">
+      <button onClick={addOne}>+</button>
+    </div>
+  );
 }
 
 export default App;
