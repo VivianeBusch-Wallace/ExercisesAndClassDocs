@@ -5,8 +5,6 @@ function App() {
   const [count, setCount] = useState(0);
   const [log, setLog] = useState(false);
 
-  console.log(setLog.value);
-
   // useEffect loads with every render >>
   // useEffect(() => {
   //   console.log(
@@ -22,11 +20,11 @@ function App() {
   // }, []);
 
   // trigger useEffect with every change of either states >>
-  useEffect(() => {
-    console.log(
-      "This is useEffect. It will get triggered with every change of the states count and log because dependency array has count and log."
-    );
-  }, [count, log]);
+  // useEffect(() => {
+  //   console.log(
+  //     "This is useEffect. It will get triggered with every change of the states count and log because dependency array has count and log."
+  //   );
+  // }, [count, log]);
 
   const addOne = () => {
     setCount(count + 1);
@@ -37,7 +35,12 @@ function App() {
       <button onClick={addOne}>+</button>
       <p>{count}</p>
       {/* Substract subtracts one from count and also handles log */}
-      <Subtract stateForSubtracting={setCount} setLog={setLog} log={log} />
+      <Subtract
+        stateForSubtracting={setCount}
+        setLog={setLog}
+        log={log}
+        count={count}
+      />
     </div>
   );
 }
