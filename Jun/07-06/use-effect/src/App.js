@@ -1,4 +1,8 @@
+import React, { useState, useEffect } from "react";
+
 function App() {
+  const [count, setCount] = useState(0);
+  const [log, setLog] = useState(false);
   return <div className="App"></div>;
 }
 
