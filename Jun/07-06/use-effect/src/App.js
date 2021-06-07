@@ -5,21 +5,21 @@ function App() {
   const [count, setCount] = useState(0);
   const [log, setLog] = useState(false);
 
-  // useEffect loads with every render >>
+  // useEffect runs with every render >>
   // useEffect(() => {
   //   console.log(
   //     "This is useEffect. It will get triggered with every render because no dependencies."
   //   );
   // });
 
-  // useEffect loads only once >>
+  // useEffect runs only once >>
   // useEffect(() => {
   //   console.log(
   //     "This is useEffect. It will get triggered only once after loading page because dependency array is empty."
   //   );
   // }, []);
 
-  // trigger useEffect with every change of either states >>
+  // useEffect runs with every change of either states count or log >>
   // useEffect(() => {
   //   console.log(
   //     "This is useEffect. It will get triggered with every change of the states count and log because dependency array has count and log."
@@ -49,10 +49,10 @@ export default App;
 
 // Exercises >>
 // UseEffect more practice, please do every step individually
-// Stop useEffect from running on every render
-// Only Run Once, on Mount
-// Run useEffect on State Change
-// Run useEffect When a Prop Changes
+// Stop useEffect from running on every render << use empty dependency array [] or define dependency [count] or [log] or [count, log]
+// Only Run Once, on Mount << empty dependency array []
+// Run useEffect on State Change << dependency is dependent on state [count] or [log] or [count, log]
+// Run useEffect When a Prop Changes << send a state from parent to child, in child receive prop and import useEffect and make useEffect dependent on those props
 
 // side note:
 // we don't need to import useState, if we send setState through the parent to our file
