@@ -5,6 +5,8 @@ function App() {
   const [count, setCount] = useState(0);
   const [log, setLog] = useState(false);
 
+  console.log(setLog.value);
+
   // useEffect loads with every render >>
   // useEffect(() => {
   //   console.log(
@@ -34,7 +36,8 @@ function App() {
     <div className="App">
       <button onClick={addOne}>+</button>
       <p>{count}</p>
-      <Subtract stateForSubtracting={setCount} />
+      {/* Substract subtracts one from count and also handles log */}
+      <Subtract stateForSubtracting={setCount} setLog={setLog} log={log} />
     </div>
   );
 }
