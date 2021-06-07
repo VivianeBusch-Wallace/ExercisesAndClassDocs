@@ -3,6 +3,11 @@ import React, { useState, useEffect } from "react";
 function App() {
   const [count, setCount] = useState(0);
   const [log, setLog] = useState(false);
+
+  useEffect(() => {
+    console.log("This is useEffect. It will get triggered with every render.");
+  });
+
   return <div className="App"></div>;
 }
 
