@@ -13,11 +13,18 @@ function App() {
   // });
 
   // useEffect loads only once >>
+  // useEffect(() => {
+  //   console.log(
+  //     "This is useEffect. It will get triggered only once after loading page because dependency array is empty."
+  //   );
+  // }, []);
+
+  // trigger useEffect with every change of either states >>
   useEffect(() => {
     console.log(
-      "This is useEffect. It will get triggered only once after loading page because dependency array is empty."
+      "This is useEffect. It will get triggered with every change of the states count and log because dependency array has count and log."
     );
-  }, []);
+  }, [count, log]);
 
   const addOne = () => {
     setCount(count + 1);
