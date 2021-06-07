@@ -1,4 +1,12 @@
-on useEffect >>
+on useEffect:
+
+Does useEffect run after every render? Yes! By default, it runs both after the first render and after every update.
+Instead of thinking in terms of “mounting” and “updating” like with using classes, you might find it easier to think that effects happen “after render”. React guarantees the DOM has been updated by the time it runs the effects.
+
+useEffect(() => {
+document.title = `You clicked ${count} times`;
+});
+When React renders our component, it will remember the effect we used, and then run our effect after updating the DOM. This happens for every render, including the first one.
 
 useEffect triggers a function dependent on its dependency
 useEffect(() => {
@@ -33,9 +41,41 @@ console.log(
 // Run useEffect on State Change << dependency is dependent on state [count] or [log] or [count, log]
 // Run useEffect When a Prop Changes << send a state from parent to child, in child receive prop and import useEffect and make useEffect dependent on those props
 
+Data fetching, setting up a subscription, and manually changing the DOM in React components are all examples of side effects.
+There are two common kinds of side effects in React components: those that don’t require cleanup, and those that do.
+
+Why is useEffect called inside a component? Placing useEffect inside the component lets us access the count state variable (or any props) right from the effect. We don’t need a special API to read it — it’s already in the function scope.
+
+Unlike componentDidMount or componentDidUpdate, effects scheduled with useEffect don’t block the browser from updating the screen. This makes your app feel more responsive.
+
+The majority of effects don’t need to happen synchronously.
+
+Some effects require a cleanup. For example, we might want to set up a subscription to some external data source. In that case, it is important to clean up so that we don’t introduce a memory leak!
+
+You might be thinking that we’d need a separate effect to perform the cleanup. But code for adding and removing a subscription is so tightly related that useEffect is designed to keep it together. If your effect returns a function, React will run it when it is time to clean up.
+useEffect(() => {
+function handleStatusChange(status) {
+setIsOnline(status.isOnline);
+}
+ChatAPI.subscribeToFriendStatus(props.friend.id, handleStatusChange);
+// Specify how to clean up after this effect:
+return function cleanup() {
+ChatAPI.unsubscribeFromFriendStatus(props.friend.id, handleStatusChange);
+};
+});
+Why did we return a function from our effect? This is the optional cleanup mechanism for effects. Every effect may return a function that cleans up after it. This lets us keep the logic for adding and removing subscriptions close to each other. They’re part of the same effect!
+an anonymous cleanup function would also work
+
 // from App.js:
 // we don't need to import useState, if we send setState through the parent to our file
 // but useState has to be imported every time we want to set a state on something
+
+React performs the cleanup when the component unmounts. React also cleans up effects from the previous render before running the effects next time.
+
+.
+.
+.
+.
 
 Check this >>
 

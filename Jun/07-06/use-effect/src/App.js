@@ -5,26 +5,31 @@ function App() {
   const [count, setCount] = useState(0);
   const [log, setLog] = useState(false);
 
-  // useEffect runs with every render >>
+  // useEffect runs after every render >>
   // useEffect(() => {
   //   console.log(
   //     "This is useEffect. It will get triggered with every render because no dependencies."
   //   );
   // });
 
-  // useEffect runs only once >>
+  // useEffect runs only once after the first render >>
   // useEffect(() => {
   //   console.log(
   //     "This is useEffect. It will get triggered only once after loading page because dependency array is empty."
   //   );
   // }, []);
 
-  // useEffect runs with every change of either states count or log >>
+  // useEffect runs after every change of either states count or log >>
   // useEffect(() => {
   //   console.log(
   //     "This is useEffect. It will get triggered with every change of the states count and log because dependency array has count and log."
   //   );
   // }, [count, log]);
+
+  useEffect(() => {
+    document.title = `Your current count is: ${count}`;
+  });
+  // << "When React renders our component, it will remember the effect we used, and then run our effect after updating the DOM."
 
   const addOne = () => {
     setCount(count + 1);
