@@ -4,9 +4,19 @@ function App() {
   const [count, setCount] = useState(0);
   const [log, setLog] = useState(false);
 
+  // useEffect loads with every render >>
+  // useEffect(() => {
+  //   console.log(
+  //     "This is useEffect. It will get triggered with every render because no dependencies."
+  //   );
+  // });
+
+  // useEffect loads only once >>
   useEffect(() => {
-    console.log("This is useEffect. It will get triggered with every render.");
-  });
+    console.log(
+      "This is useEffect. It will get triggered only once after loading page because dependency array is empty."
+    );
+  }, []);
 
   return <div className="App"></div>;
 }
