@@ -49,7 +49,7 @@ export default App;
 
 // Exercises >>
 // UseEffect more practice, please do every step individually
-// Stop useEffect from running on every render << use empty dependency array [] or define dependency [count] or [log] or [count, log]
+// Stop useEffect from running on every render << use empty dependency array [] or define dependency [count] or [log] or [count, log], (if dependency is defined useEffect will run whenever the dependency changes)
 // Only Run Once, on Mount << empty dependency array []
 // Run useEffect on State Change << dependency is dependent on state [count] or [log] or [count, log]
 // Run useEffect When a Prop Changes << send a state from parent to child, in child receive prop and import useEffect and make useEffect dependent on those props
