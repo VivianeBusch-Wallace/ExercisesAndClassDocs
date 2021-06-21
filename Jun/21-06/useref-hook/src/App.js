@@ -6,6 +6,10 @@ function App() {
   const inputRef = useRef();
   const prevName = useRef("");
 
+  // useEffect(() => {
+  //   renderCount.current = renderCount.current + 1;
+  // });
+
   useEffect(() => {
     // renderCount.current = renderCount.current + 1;
     prevName.current = name;
