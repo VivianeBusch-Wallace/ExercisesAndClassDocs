@@ -34,3 +34,12 @@ export default class App extends Component {
     );
   }
 }
+
+// Notes
+// source: https://djoech.medium.com/functional-vs-class-components-in-react-231e3fbd7108
+// the source is old, but it still gives interesting information >>
+// there are some benefits you get by using functional components in React:
+// Functional component are much easier to read and test because they are plain JavaScript functions without state or lifecycle-hooks
+// You end up with less code
+// They help you to use best practices. It will get easier to separate container and presentational components because you need to think more about your component’s state if you don’t have access to setState() in your component
+// The React team mentioned that there may be a performance boost for functional component in future React versions
