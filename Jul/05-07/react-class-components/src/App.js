@@ -30,7 +30,7 @@ class App extends React.Component {
     // console.log cannot be outside a method
     this.newUser = () => console.log("Hi I am inside render ");
 
-    this.newUser(); //what is this for?
+    this.newUser(); //calling the function
 
     return (
       <div>
