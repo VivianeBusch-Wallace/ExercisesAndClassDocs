@@ -1,7 +1,13 @@
 import React, { Fragment } from "react";
+import ParentComponent from "./components/ParentComponent";
 
 function App() {
-  return <div className="App"></div>;
+  return (
+    <Fragment>
+      <h1>Simple Redux App</h1>
+      <ParentComponent />
+    </Fragment>
+  );
 }
 
 export default App;

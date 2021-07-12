@@ -9,6 +9,7 @@ const decrement = () => {
     type: "DECREMENT",
   };
 };
+// if you have a value to receive then always add payload
 const changeName = (name) => {
   return {
     type: "CHANGE_NAME",

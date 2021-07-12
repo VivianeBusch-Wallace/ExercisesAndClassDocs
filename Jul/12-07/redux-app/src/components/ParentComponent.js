@@ -1,8 +1,10 @@
 import React, { Fragment } from "react";
-// step 6
+// step 6.1
 import { connect } from "react-redux";
 import { changeName } from "../actions";
 import ChildComponent from "./ChildComponent";
+
+// the following functions are a must and the order is important
 
 const ParentComponent = (props) => {
   const { store, changeName } = props;
@@ -16,7 +18,8 @@ const ParentComponent = (props) => {
       >
         Change Name
       </button>
-      <ChildComponent />
+      <ChildComponent store={store} />
+      {/* << here we pass store the old way just for demonstration purposes */}
     </Fragment>
   );
 };
@@ -27,7 +30,8 @@ const mapStateProps = (store) => {
   };
 };
 
-const mapDispatchToProps = { changeName };
+const mapDispatchToProps = { changeName }; // << any actions I want here
 
 // export default ParentComponent;
 export default connect(mapStateProps, mapDispatchToProps)(ParentComponent);
+// << instead of default ParentComponent we have connect, which connects
