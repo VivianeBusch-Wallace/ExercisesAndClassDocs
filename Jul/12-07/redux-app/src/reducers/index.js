@@ -1,4 +1,4 @@
-// you can have multiple reducers or just one
+// you can have multiple reducers or just one, but just one is recommended
 
 // step 2 - this is an all in one reducer function
 const allReducers = (state, action) => {

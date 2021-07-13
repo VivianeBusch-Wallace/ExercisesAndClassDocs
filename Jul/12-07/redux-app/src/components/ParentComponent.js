@@ -10,7 +10,8 @@ const ParentComponent = (props) => {
   const { store, changeName } = props;
   return (
     <Fragment>
-      <h1>ParentComponent</h1>
+      <h2>ParentComponent</h2>
+      {store.userName}
       <button
         onClick={() => {
           changeName("Zain");
@@ -24,6 +25,9 @@ const ParentComponent = (props) => {
   );
 };
 
+// mapStateProps will 99% of the time look like this >>
+// the following will always look the same in each component except for the different actions
+// in mapDispatchToProps and the component in the export >>
 const mapStateProps = (store) => {
   return {
     store,

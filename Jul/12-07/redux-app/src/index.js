@@ -9,13 +9,13 @@ import allReducers from "./reducers";
 
 // step 4
 const store = createStore(
-  allReducers, // << first argument
+  allReducers, // << first argument (not optional)
   {
-    // second argument: all the initial values (optional) >>
+    // second argument: all the initial values (not optional) (this part is like the useState hook, useState(initial value) for both counter and userName)>>
     counter: 0,
     userName: "Hadi",
   },
-  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__() // << this is the connection to the extension in chrome for redux, it has to be where you create the store
+  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__() // << this is the connection to the extension in chrome for redux, it has to be where you create the store, it is optional
 );
 
 // step 5
@@ -27,10 +27,14 @@ ReactDOM.render(
 );
 
 // npm i react-redux
-// to install redux, then create redux files: actions, reducers
+// << to install redux, then create redux files: actions, reducers
 // context is a child of redux
-// redux is a state management api
-// you can use it also in other languages (unlike context)
+// redux is a state management api/library for js apps
+// can be used with react, vue, angular, vanilla js
+// you can use it also in other languages (unlike usecontext)?
+// alternatives to redux are: flux (by facebook, redux was inspired by flux, but redux is easier), MobX
+// each component needs to use store
+//
 
 // old way:
 // import React from "react";
