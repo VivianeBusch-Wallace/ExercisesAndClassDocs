@@ -1,5 +1,33 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+
+  border: 2px solid;
+  border-color: blue;
+}
+
+.App {
+  position: relative;
+  padding: 0.5rem;
+}
+
 .App-header {
-  width: 100vw;
+  width: auto;
   height: 20vh;
   background-color: aqua;
+  padding: 0.5rem;
+}
+
+main {
+  width: auto;
+  height: auto;
+  padding: 0.5rem;
+  background-color: bisque;
+}
+
+nav {
+  background-color: goldenrod;
+  position: absolute;
+  padding: 0.5rem;
 }
