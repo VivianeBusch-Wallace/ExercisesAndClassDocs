@@ -1,9 +1,22 @@
-import React from "react";
+import React, { useState } from "react";
 // import "./App.css"; // do I need to import it here, too? I forgot
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSun } from "@fortawesome/free-solid-svg-icons";
 
 const Navigation = () => {
+  const [theme, setTheme] = useState("");
+
+  switch (icon) {
+    case sun:
+      setTheme("sunny-mode");
+      break;
+    case moon:
+      SetTheme("dark-mode");
+      break;
+    case sun - moon:
+      setTheme("regular");
+  }
+
   return (
     <nav>
       <ul>
