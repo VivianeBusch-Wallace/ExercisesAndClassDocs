@@ -30,9 +30,10 @@ for (var i = 2; i < process.argv.length; i++) {
 // loop starts with 2 because first two items in array are
 // not real arguments: process.argv = ['node', 'yourscript.js', ...]
 
-/*  */
 /* fs = file System built-in module in Node.js */
 const fs = require("fs");
+// << ES6 module of this: import { readFile, writeFile, readFileSync } from "fs";
+
 // const path = require("path/posix"); // what is this and where did it come from?
 // const { fileURLToPath } = require("url"); // what is this and where did it come from?
 
