@@ -36,6 +36,7 @@ console.log("Reading sync is done.");
 //   if (err) throw err;
 //   console.log("Rename is done.");
 // });
+// if the path of the new file is different it will move the file to that location (still got to test this out)
 
 // delete file
 // const filePathName = "./something.txt";
