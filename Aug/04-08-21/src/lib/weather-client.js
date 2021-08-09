@@ -4,7 +4,7 @@ const url = require("url");
 class OpenWeatherClient {
   constructor(apiKey) {
     this.apiKey = apiKey;
-    this.baseURL = "fromthewebsite";
+    this.baseURL = "http://api.openweathermap.org/data/2.5/";
   }
   get(endpoint) {
     const URL =
@@ -16,17 +16,20 @@ class OpenWeatherClient {
       .catch((err) => Promise.reject(err.response.data.message));
   }
   async getWeather(city, country) {
-    let endpoint = `weather?q=${city}`;
+    let endpoint = `weather?q=${city}`; // getting endpoint here, in this case city and if the user gives: country
     if (country) {
-      endpoint += `,${country}`;
+      endpoint += `,${country}`; // only if user gives country, then add it
     }
-    return await this.get(endpoint);
+    return await this.get(endpoint); // await operator is for promise must be used in async function
   }
 }
+// export class OpenWeatherClient
+module.exports = OpenWeatherClient;
 
-// if you want to use asynchronous then use async, for synchronous use await
+// if you want to use asynchronous then use async
 
 // endpoint is for example city and country of url
+// api url:
 // http://api.openweathermap.org/data/2.5/weather?q=${city},${country}&units=metric&appid=${this.apiKey}
 
 // little other thing: how to convert between F° and C°
