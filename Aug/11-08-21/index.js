@@ -97,6 +97,8 @@ function logger(req, res, next) {
 // you can run a specific middleware for a route, it will be executed after the middleware for all routes
 // normally we try to only have one or max two middleware functions because we don't want to delay the response from the server too much.
 // you can also terminate the connection between server and client by using res.status or res.end
+// "so normally when you have one middleware or more you need to secure your data otherwise you might risk losing them,
+// the best method for that is rebuilding the req object with your own properties" - Hadi
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
