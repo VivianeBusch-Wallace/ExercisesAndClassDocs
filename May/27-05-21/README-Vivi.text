@@ -1,0 +1,21 @@
+Hooks don’t work inside classes. But you can use them instead of writing classes.
+
+
+<React.Fragment className="App"></React.Fragment> is a good wrapper for react, it's no different from a div, "it's nothing", "it makes react happy",
+it will not be rendered into html, if you want to style it, then use a div!, it has no border or anything, it's practically theoretical.
+
+if you import it, then you can also just write Fragment:
+import React, { useState, Fragment } from "react";
+
+function App() {
+  const [list, setList] = useState([]);
+  return <Fragment className="App"></Fragment>;
+}
+export default App;
+
+This is the same thing, just two different methods of grabbing the wrapper
+
+with old React we need to render after every class component, but with functional components we only need to render once into index.js
+
+
+“Props” is a special keyword in React, which stands for properties and is being used for passing data from one component to another. But the important part here is that data with props are being passed in a uni-directional flow. ( one way from parent to child)

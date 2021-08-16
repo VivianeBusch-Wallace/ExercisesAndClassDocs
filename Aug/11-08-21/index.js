@@ -66,7 +66,7 @@ app.post("/login", (req, res) => {
   const userName = req.body.username;
   const pass = req.body.password;
   // checking if username and password are the ones we want >>
-  if (userName === "Judith" && pass === "password") {
+  if (userName === "Shakira" && pass === "password") {
     res.status(200).send(`Welcome ${userName}, you successfully logged in.`); // status 200 = Ok, everything is good
   } else {
     res.status(401).send(`Login not successful. Username or password invalid.`); // status 401 = unauthorized

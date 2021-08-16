@@ -10,6 +10,7 @@ function Form() {
   }
   function add(e) {
     e.preventDefault();
+    // setUserInput(e.target.value); MAYBE?
   }
   return (
     <div>
@@ -20,8 +21,10 @@ function Form() {
           onChange={changeHandel}
           placeholder="type something"
         />
-        <input type="submit" value="Add" />
+        <input type="submit" value="Save to list" />
       </form>
+      {userInput}
+      <p>{userInput}</p>
     </div>
   );
 }

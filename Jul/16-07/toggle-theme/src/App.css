@@ -1,21 +1,28 @@
+/* :root {
+} */
+
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
   border: 2px solid;
   border-color: blue;
-  --bg-dark: grey;
+  /* --bg-dark: grey;
   --bg-light: white;
+  --font-color: black; */
 }
 
 /* colors for dark mode */
 .dark-mode {
   --bg-dark: darkblue;
   --bg-light: blue;
+  --font-color: white;
 }
+.regular,
 .sunny-mode {
   --bg-dark: rgb(253, 253, 100);
   --bg-light: rgb(251, 251, 152);
+  --font-color: black;
 }
 
 /* outest container */
@@ -45,8 +52,8 @@ main {
 nav {
   /* width: 5vw; */
   height: 100vh;
-  background-color: goldenrod;
-  /* position: absolute; */
+  background-color: var(--bg-dark);
+  color: var(--font-color);
   top: 0;
   left: 0;
   padding: 0.5rem;
@@ -69,3 +76,8 @@ ul {
 li {
   list-style: none;
 }
+.nav-link {
+  display: block;
+}
+
+/* icons for theme mode */

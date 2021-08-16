@@ -1,12 +1,28 @@
+Contact information, Links
+
 # Name of Project
+
+=> View Project (link)
 
 ## Intro/About the Project
 
-## Technologies Used
+This project is .... I wanted to create an app that can ...
+
+## Developed With...
+
+### Languages
+
+This project is using the following languages and frameworks: React, Javascript, Sass, CSS, HTML.
+Libraries: React.
+
+
+### Tools Used
 
 ## Features
 
-## How To Use
+### Mentionable Code
+
+## How To Use/Usage
 
 ## Contribution and License
 

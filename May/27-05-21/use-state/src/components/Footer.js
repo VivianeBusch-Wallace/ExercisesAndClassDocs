@@ -1,7 +1,8 @@
 function Footer() {
+  let year = new Date().getFullYear();
   return (
     <div>
-      <h1>Hello, let's create some Todos!</h1>
+      <h4>Copyrights ®{year}</h4>
     </div>
   );
 }

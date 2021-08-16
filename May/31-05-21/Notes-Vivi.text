@@ -1,0 +1,33 @@
+helpers.js is a collection of functions that are shared among several components.
+it is not capitalized because it is just basic javascript, don't forget to export and import it and remember the directory levels
+
+anything exported in curly brackets also has to be imported in curly brackets
+
+keys have to be unique, you can use i or use the id of the repetitive pieces that need a key
+
+You never put () behind functions inside the "attribute" if you just want to pass them, only where you want to execute them they have ()
+
+each variable has to have its own {}
+
+data.json is a json file with infortmation
+import for data and json files:
+import Data from "./data.json";
+you create a variable called Data for the file which contains a json, capitalizing because it is common use. But it is not a must.
+you don't need to export it because json is naturally a data transfer file
+each json file can only have one array of data
+most of the time you only have one json to work with
+
+
+when you add new packages you have to close/cancel your server first!
+
+uuid (Universally Unique Identifiers)
+Universally Unique Identifiers, or UUIDS, are 128 bit numbers, composed of 16 octets and represented as 32 base-16 characters, that can be used to identify information across a computer system.
+
+npm install uuid
+v4 is a package name for uuid
+v4 gives you a random number
+import {v4 as uuidv4} from "uuid"; we change this name because it is clearer
+id:uuidv4()
+
+
+npm i node-sass uuid

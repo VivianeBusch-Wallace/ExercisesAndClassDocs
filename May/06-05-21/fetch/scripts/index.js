@@ -102,10 +102,6 @@ function fetchTodos() {
           <p>is completed: ${completed}.</p></div>`;
         document.querySelector(".todos").innerHTML = todos;
       });
-
-      //   completed
-      //     ? (document.querySelector(".task").style.backgroundColor = "green")
-      //     : (document.querySelector(".task").style.backgroundColor = "red");
     })
     .then(() => {
       document.querySelectorAll(".task").forEach((taskItem) => {
