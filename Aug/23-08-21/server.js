@@ -1,4 +1,5 @@
 /* 
+ALL THE STEPS >>
 To start new express project
  npm init -y
  echo "PORT=5000" > .env
@@ -18,7 +19,11 @@ To start new express project
 
 server.js >>
 require dotenv with config
+require http and the main file (app.js)
+set PORT failsafe
 establish connection to server in server.js/run the server (<< server.listen part)
+
+app.js >>
 
 
 

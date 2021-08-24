@@ -1,12 +1,29 @@
+/*
+Steps for this file (also check all full steps in server.js) >>
+
+require express
+initialize express router
+
+create model directory
+create employeesModel.js
+
+require model
+
+code http methods: router.get or router.post for each route and middlewares where needed
+
+*/
+
+
 // http:localhost:5000/employees
 // express setup
 // Express setup
 const express = require("express");
 const router = express.Router();
+
 // Model
 const EmployeesData = require("../model/employeesModel");
 
-//postman query: http://localhost:5000/employees
+// postman query: http://localhost:5000/employees
 // Get all employees
 router.get("/", async (req, res) => {
   try {
@@ -103,4 +120,12 @@ router.patch("/:name", getEmployee, async (req, res) => {
 module.exports = router;
 
 // Notes
-/* you don't need mongoDB to stay open to use the database */
+/* you don't need mongoDB to stay open to use the database 
+
+Questions:
+why need try and await
+
+
+
+
+*/

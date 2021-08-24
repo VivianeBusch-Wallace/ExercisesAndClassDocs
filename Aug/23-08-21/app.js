@@ -1,4 +1,4 @@
-/* Steps
+/* Steps (see all steps in Server.js)
 require express
 initialize express
 
@@ -6,6 +6,16 @@ require morgan
 use morgan
 
 use express.json()
+
+set up .env db URL
+
+require mongoose
+connect db url with mongoose, with then and catch
+
+create router directory
+create employees.js
+
+
 
 */
 
@@ -48,7 +58,18 @@ module.exports = app;
 don't put any spaces or empty lines into .env
 
 
+This is what a copied document from another test db on mongo looks like:
+{"_id":{"$oid":"611e24128b783cae9144a175"},"name":"Judy","age":29,"hobbies":["eat","sleep","eat more"]}
+but in actuallity inside mongo we see:
+_id: ObjectId("611e24128b783cae9144a175") instead of:
+"_id":{"$oid":"611e24128b783cae9144a175"}
+also also the array of hobbies is just:
+hobbies: Array
+0: "eat"
+1: "sleep"
+2: "eat more"
+
 Questions:
 Why do we not import express into server.js
-Why 
+Why do we use then and catch on mongoose instead of async await?
 */
