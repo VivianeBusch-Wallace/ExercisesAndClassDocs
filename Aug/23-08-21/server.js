@@ -5,21 +5,30 @@ To start new express project
  echo "PORT=5000" > .env
  echo "node_modules/" > .gitignore
  add .env to gitignore
+
  npm i express 
  npm i dotenv
  npm i morgan
  npm i mongoose
  npm i nodemon --save-dev
+
  touch server.js app.js
+
  mkdir router model
  touch router/employees.js
+
  touch model/employeesModel.js
+
  json script
  "start": "nodemon server.js"
 
 server.js >>
 require dotenv with config
-require http and the main file (app.js)
+require http as variable
+
+touch app.js
+require the main file (app.js)
+
 set PORT failsafe
 establish connection to server in server.js/run the server (<< server.listen part)
 

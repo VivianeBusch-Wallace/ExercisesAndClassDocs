@@ -1,4 +1,5 @@
 /*
+
 Steps for this file (also check all full steps in server.js) >>
 
 require express
@@ -10,6 +11,8 @@ create employeesModel.js
 require model
 
 code http methods: router.get or router.post for each route and middlewares where needed
+
+export router through modules
 
 */
 
