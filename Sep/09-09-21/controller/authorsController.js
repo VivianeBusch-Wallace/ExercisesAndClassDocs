@@ -16,44 +16,23 @@ authorsController.getAll = async (req, res) => {
   }
 };
 
-// {
-//   authorName: String,
-//     books[
-//       {
-//         title: String,
-//         issueYear: Number,
-//       }, {
-//         title: String,
-//         issueYear: Number,
-//       }, {
-//         title: String,
-//         issueYear: Number,
-//       }
-//     ];
-// }
-
 // POST one
 authorsController.addNewAuthor = async (req, res) => {
   //console.log(req.body);
-  // your post req will look like this:
-  /*
-{
-	"name":"Steel",
-	"books":[
-		{"title":"Summer","issueYear":2001},{"title":"Java","issueYear":1999},{"title":"Me & You","issueYear":2004}
-		]
-}
-*/
+
   const author = new AuthorModel({
-    authorName: req.body.name,
+    authorName: req.body.author,
   });
   req.body.books.map((book) => {
-    author.books.push({ title: book.title, issueYear: book.issueYear });
+    author.publishedBooks.push({
+      title: book.title,
+      publishingYear: book.publishingYear,
+    });
   });
   try {
     await author.save();
     res.status(201).json({
-      message: "This author been added",
+      message: "This author has been added: ",
       author,
     });
   } catch (err) {
@@ -79,7 +58,7 @@ authorsController.deleteOneByID = async (req, res) => {
   try {
     const author = await AuthorModel.findByIdAndDelete(req.params.id);
     //  const author = await AuthorModel.findOneAndDelete({_id:req.params.id})
-    res.status(200).json({ message: "This author been deleted", author });
+    res.status(200).json({ message: "This author has been deleted", author });
   } catch (err) {
     res.status(err.status).json({
       message: err.message,
