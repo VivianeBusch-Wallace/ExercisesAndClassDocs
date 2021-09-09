@@ -18,14 +18,20 @@ mongoose
     console.log(`There was an error: ${err.message}`);
   });
 
-const controller = require("./controller/authorsController");
+const authorsController = require("./controller/authorsController");
 
 // root route >>
 // get all authors and add new authors >>
-app.route("/").get().post();
+app
+  .route("/")
+  .get(authorsController.getAll)
+  .post(authorsController.addNewAuthor);
 
 // get specific author and delete a specific author >>
-app.route("/:id").get().delete();
+app
+  .route("/:id")
+  .get(authorsController.getOneByID)
+  .delete(authorsController.deleteOneByID);
 
 // update authors >>
 app.route("/update/:id").put().patch();
