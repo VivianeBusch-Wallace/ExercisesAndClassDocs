@@ -4,6 +4,8 @@ const app = express();
 const morgan = require("morgan");
 app.use(morgan("dev"));
 
+app.use(express.json());
+
 const mongoose = require("mongoose");
 
 mongoose
@@ -17,6 +19,8 @@ mongoose
   });
 
 const libraryController = require("./controllers/libraryController");
+
+// console.log(libraryController);
 
 // GET all authors
 // root route: http://localhost:5000/
