@@ -5,6 +5,7 @@ const mongoose = require("mongoose");
 const controllersAndMiddlewares = {};
 
 // Check author
+// GET http://localhost:5000/:id
 controllersAndMiddlewares.checkAuthor = async (req, res, next) => {
   //  const author = await Author.findOne({_id:req.params.id})
   const author = await AuthorModel.findById(req.params.id);
@@ -20,6 +21,7 @@ controllersAndMiddlewares.checkAuthor = async (req, res, next) => {
 };
 
 // GET all authors
+// GET http://localhost:5000/
 controllersAndMiddlewares.getAllAuthors = async (req, res) => {
   try {
     const authors = await AuthorModel.find();
@@ -30,6 +32,7 @@ controllersAndMiddlewares.getAllAuthors = async (req, res) => {
 };
 
 // GET all books
+// GET http://localhost:5000/book
 controllersAndMiddlewares.getAllBooks = async (req, res) => {
   try {
     const books = await BookModel.find();
@@ -40,12 +43,14 @@ controllersAndMiddlewares.getAllBooks = async (req, res) => {
 };
 
 // POST new author
-/*
+// POST http://localhost:5000/
+/* body > raw > json
   {
       "name":"Hadi"
   }
   */
 controllersAndMiddlewares.addAuthor = async (req, res) => {
+  console.log(req.body);
   const author = new AuthorModel({
     _id: new mongoose.Types.ObjectId(),
     authorName: req.body.name,
@@ -59,8 +64,8 @@ controllersAndMiddlewares.addAuthor = async (req, res) => {
 };
 
 // POST new book
-// localhost:5000/book/:id
-/*
+// POST http://localhost:5000/book/:id
+/* body > raw > json
   {
       "title":"Day"
   }
@@ -88,6 +93,8 @@ controllersAndMiddlewares.addNewBook = async (req, res) => {
 };
 
 // GET one author by id
+// GET http://localhost:5000/:id
+// Middlewares: checkAuthor
 controllersAndMiddlewares.getOneByID = async (req, res) => {
   try {
     const author = await AuthorModel.findById(req.params.id).populate("books");
@@ -102,6 +109,8 @@ controllersAndMiddlewares.getOneByID = async (req, res) => {
 };
 
 // DELETE one author by id
+// DELETE http://localhost:5000/:id
+// deletes whole author, but at the moment without deleting books also
 controllersAndMiddlewares.deleteById = async (req, res) => {
   try {
     const author = await AuthorModel.findByIdAndDelete(req.params.id);

@@ -1,20 +1,32 @@
 const mongoose = require("mongoose");
 
+const Schema = mongoose.Schema;
 const authorSchema = mongoose.Schema({
   // we do not add "new" in front of Schema here because we will add it later in the controller
-  _id: Schema.Types.ObjectId,
+  _id: mongoose.Schema.Types.ObjectId,
   authorName: String,
-  books: [{ type: Schema.Types.ObjectId, ref: "Book" }], // this is for population
+  books: [{ type: Schema.Types.ObjectId, ref: "BookCollection" }], // this is for population, referring to my collection
 });
 
 const bookSchema = mongoose.Schema({
-  _id: Schema.Types.ObjectId,
+  _id: mongoose.Schema.Types.ObjectId,
   bookTitle: String,
-  books: [{ type: Schema.Types.ObjectId, ref: "Author" }],
+  books: [{ type: Schema.Types.ObjectId, ref: "AuthorCollection" }],
 });
 
-const AuthorModel = mongoose.model("Author", authorSchema);
-const BookModel = mongoose.model("Book", bookSchema);
+// const AuthorModel = mongoose.model(
+//   "AuthorCollection",
+//   authorSchema,
+//   "AuthorCollection"
+// );
+// const BookModel = mongoose.model(
+//   "BookCollection",
+//   bookSchema,
+//   "BookCollection"
+// );
+
+const AuthorModel = mongoose.model("AuthorCollection", authorSchema);
+const BookModel = mongoose.model("BookCollection", bookSchema);
 
 module.exports = { AuthorModel, BookModel };
 
