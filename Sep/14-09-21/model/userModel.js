@@ -12,7 +12,6 @@ const userSchema = Schema({
     type: String,
     required: "You have to provide a password.",
   },
-  // odlPass
 });
 
 const User = mongoose.model("User", userSchema);

@@ -6,7 +6,7 @@ const mongoose = require("mongoose");
         render()
         json()
         end()
-        */
+*/
 const userControllers = {};
 // GET
 userControllers.getAllUsers = async (req, res) => {
