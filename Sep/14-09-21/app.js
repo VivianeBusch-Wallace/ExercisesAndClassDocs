@@ -18,6 +18,8 @@ mongoose
     console.log(`There was a problem connecting the database: ${err.message}`)
   );
 
+const userControllers = require("./controller/userController");
+
 // Routes
 
 // GET all users, POST new user
