@@ -16,10 +16,19 @@ function App() {
       </header>
       <main>
         <form>
-          <label for="username">Username: </label>
-          <input type="text" id="username" />
-          <label for="position">Position: </label>
-          <input type="text" id="position" />
+          <ul>
+            <li>
+              <label for="username">Username: </label>
+              <input type="text" id="username" />
+            </li>
+            <li>
+              <label for="position">Position: </label>
+              <input type="text" id="position" />
+            </li>
+          </ul>
+          <button type="submit" class="form_button">
+            Submit
+          </button>
         </form>
       </main>
     </div>
