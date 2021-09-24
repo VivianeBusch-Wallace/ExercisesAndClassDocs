@@ -4,3 +4,5 @@ export const addNewUser = (newUser) => {
     payload: newUser,
   };
 };
+
+// skipped types
