@@ -22,13 +22,15 @@ function App() {
               <input type="text" id="username" />
             </li>
             <li>
-              <label for="position">Position: </label>
+              <label for="position">Job position: </label>
               <input type="text" id="position" />
             </li>
+            <li>
+              <button type="submit" class="form_button">
+                Submit
+              </button>
+            </li>
           </ul>
-          <button type="submit" class="form_button">
-            Submit
-          </button>
         </form>
       </main>
     </div>
