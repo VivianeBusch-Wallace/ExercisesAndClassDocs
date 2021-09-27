@@ -56,7 +56,17 @@ in your package.json of our root folder we need to add the following scripts >>
 << all commands have to be in double quotes, the \ helps ignore the double quotes, this command line works with the concurrently dependency and combines running react and BE app at the same time
 
 inside React package.json: add "proxy": "http://localhost:5000" after browsersList
+<< this will make fetching data easier because we don't need to repeat it in every fetch command:
+fetch("http://localhost:5000/users") will only become
+fetch("/users")
 
 now we can go to root in terminal and run:
 npm run dev
 which will start both BE and React
+don't forget to run localhost of server also
+
+Other Notes:
+
+empty files won't be uploaded to github
+
+killing PORTs is bad for your laptop, you will always have to do that
