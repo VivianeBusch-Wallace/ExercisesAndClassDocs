@@ -18,6 +18,7 @@ npm i express-validator
 npm i uuid
 npm i multer
 npm i concurrently
+(concurrently is a package to run combined scripts together)
 
 npm i nodemon --save-dev
 

@@ -37,6 +37,7 @@ mongoose
   .catch((error) => {
     console.log(`There was a problem ${error.message}`);
   });
+
 // Alow uploads
 app.use("/uploads", express.static("uploads"));
 
