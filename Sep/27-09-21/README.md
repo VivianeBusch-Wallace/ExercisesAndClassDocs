@@ -1,6 +1,12 @@
+Step by step:
+
 npm init -y
+
 echo "PORT=5000\nDB_URL=mongodb://localhost:27017/users" > .env
+
 echo "node_modules/" > .gitignore
+add .env to gitignore
+
 npm i express
 npm i dotenv
 npm i morgan
@@ -12,21 +18,42 @@ npm i express-validator
 npm i uuid
 npm i multer
 npm i concurrently
+
 npm i nodemon --save-dev
+
 mkdir server
+
 touch server/server.js server/app.js
+
 mkdir server/models server/controllers
+
 touch server/models/userModel.js
+
 touch server/controllers/userController.js
+
 npx create-react-app client
+<< to start react part inside a folder called "client"
+clean out react files which are unnecessary
 
-we now have react inside a folder called client
+we now have react inside the folder client
 react will have its own package.json and .gitignore etc.
+everything BE will live in our folder called "server"
 
-in your package.json we need to add the following scripts
+in your package.json of our root folder we need to add the following scripts >>
+
 "start": "node server/server.js",
+<< this is optional
+
 "server": "nodemon server/server.js",
+
 "client": "npm start --prefix client",
+<< prefix will tell npm start to go inside client and execute
+
 "dev": "concurrently \"npm run server\" \"npm run client\""
+<< the \ help ignore the double quotes, this command line works with the concurrently dependency and combines running react and BE app at the same time
 
 inside React package.json: add "proxy": "http://localhost:5000" after browsersList
+
+now we can go to root in terminal and run:
+npm run dev
+which will start both BE and React
