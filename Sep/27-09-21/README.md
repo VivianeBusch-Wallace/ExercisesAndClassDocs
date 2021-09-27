@@ -34,6 +34,7 @@ touch server/controllers/userController.js
 npx create-react-app client
 << to start react part inside a folder called "client"
 clean out react files which are unnecessary
+you can delete README inside react
 
 we now have react inside the folder client
 react will have its own package.json and .gitignore etc.
