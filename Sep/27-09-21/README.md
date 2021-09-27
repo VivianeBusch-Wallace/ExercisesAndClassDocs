@@ -66,6 +66,8 @@ npm run dev
 which will start both BE and React
 don't forget to run localhost of server also
 
+Also make sure that in terminal you always go to the directory which you want to download packages into
+
 Other Notes:
 
 empty files won't be uploaded to github
